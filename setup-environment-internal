@@ -90,6 +90,11 @@ if [ -z "${DISTRO}" ]; then
     fi
     unset DISTROTABLE
     unset ITEM
+
+    # If nothing has been set, go for 'nodistro'
+    if [ -z "$DISTRO" ]; then
+        DISTRO="nodistro"
+    fi
 fi
 # guard against Ctrl-D or cancel
 if [ -z "$MACHINE" ]; then
