@@ -18,7 +18,7 @@
   <project remote="github" name="OSSystems/meta-browser" path="sources/meta-browser"/>
   <project remote="github" name="meta-qt5/meta-qt5" path="sources/meta-qt5"/>
   <project remote="github" name="96boards/meta-96boards" path="sources/meta-96boards"/>
-  <project remote="github" name="ndechesne/meta-qcom" path="sources/meta-qcom"/>
+  <project remote="github" name="ndechesne/meta-qcom" path="sources/meta-qcom">
       <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
 
