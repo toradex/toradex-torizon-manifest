@@ -1,4 +1,4 @@
-oe-rbp-manifest
+oe-rpb-manifest
 =================
 
 OE RPB Repo manifest repository
@@ -16,11 +16,11 @@ To configure the scripts and download the build metadata, do:
 
 Run repo init to bring down the latest version of Repo with all its most recent bug fixes. You must specify a URL for the manifest, which specifies where the various repositories included in the Android source will be placed within your working directory.
 
-	$ repo init -u git://github.com/96booards/oe-rbp-manifest
+	$ repo init -u git://github.com/96booards/oe-rpb-manifest
 
 To check out a branch other than "master", specify it with -b:
 
-	$ repo init -u git://github.com/96booards/oe-rbp-manifest -b angstrom-v2015.06-yocto1.8
+	$ repo init -u git://github.com/96booards/oe-rpb-manifest -b angstrom-v2015.06-yocto1.8
 
 When prompted, configure Repo with your real name and email address.
 
@@ -73,7 +73,7 @@ Rease your local committed changes
 
 If you find any bugs please report them here
 
-https://github.com/96booards/oe-rbp-manifest/issues
+https://github.com/96booards/oe-rpb-manifest/issues
 
 If you have questions or feedback, please subscribe to
 
