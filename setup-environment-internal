@@ -61,6 +61,36 @@ if [ -z "${MACHINE}" ]; then
     unset ITEM
 fi
 
+# create a common list of "<distro>(<layer>)", sorted by <distro>
+# Blacklist OE-core and meta-linaro, we only want 96boards + vendor layers
+DISTROLAYERS=$(find sources -print | grep "conf/distro/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' | awk -F'/' '{print $NF "(" $2 ")"}' | sort)
+
+if [ -z "${DISTRO}" ]; then
+    # whiptail
+    which whiptail > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        for ITEM in $DISTROLAYERS; do
+            DISTROTABLE="${DISTROTABLE} $(echo $ITEM | cut -d'(' -f1) $(echo $ITEM | cut -d'(' -f2 | cut -d')' -f1) OFF\n"
+        done
+        DISTRO=$(whiptail --title "Available Distributions" --radiolist \
+            "Please choose a distribution" 0 0 20 \
+            ${DISTROTABLE} 3>&1 1>&2 2>&3)
+        unset DISTROTABLE
+    fi
+
+    # dialog
+    if [ -z "$DISTRO" ]; then
+        which dialog > /dev/null 2>&1
+        if [ $? -eq 0 ]; then
+            for ITEM in $DISTROLAYERS; do
+                DISTROTABLE="$DISTROTABLE $(echo $ITEM | cut -d'(' -f1) $(echo $ITEM | cut -d'(' -f2 | cut -d')' -f1)"
+            done
+            DISTRO=$(dialog --title "Available Distributions" --menu "Please choose a distribution" 0 0 20 $MACHINETABLE 3>&1 1>&2 2>&3)
+        fi
+    fi
+    unset DISTROTABLE
+    unset ITEM
+fi
 # guard against Ctrl-D or cancel
 if [ -z "$MACHINE" ]; then
     echo "To choose a machine interactively please install whiptail or dialog."
@@ -115,10 +145,10 @@ ln -sf "${MANIFESTS}" sources/
 repo sync
 repo start work --all
 
-DISTRO=$(grep -w DISTRO conf/local.conf | grep -v '^#' | awk -F\" '{print $2}')
 export DISTRO_DIRNAME=`echo ${DISTRO} | sed 's#[.-]#_#g'`
 
 cat > conf/auto.conf <<EOF
+DISTRO = "${DISTRO}"
 MACHINE ?= "${MACHINE}"
 SDKMACHINE ?= "${SDKMACHINE}"
 EOF
