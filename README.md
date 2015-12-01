@@ -77,7 +77,7 @@ https://github.com/96booards/oe-rbp-manifest/issues
 
 If you have questions or feedback, please subscribe to
 
-http://lists.linuxtogo.org/cgi-bin/mailman/listinfo/angstrom-distro-devel
+https://lists.linaro.org/mailman/listinfo/openembedded
 
 OE RPB Distribution maintainers
 ---------------------------------
