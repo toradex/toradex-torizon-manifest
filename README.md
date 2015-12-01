@@ -46,7 +46,7 @@ Setup Environment
 	$ . setup-environment
 
 	$ MACHINE=<machine> bitbake <image>
-	e.g. MACHINE=beaglebone bitbake systemd-image
+	e.g. MACHINE=hikey bitbake systemd-image
 
 Creating a local topic branch
 -----------------------------

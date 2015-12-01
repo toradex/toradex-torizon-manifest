@@ -145,7 +145,7 @@ fi
 
 cat <<EOF
 
-Welcome to Ångström ( A Yocto Project Compatible Distribution )
+Welcome to OE RPB
 
 For more information about OpenEmbedded see their website:
     http://www.openembedded.org/
