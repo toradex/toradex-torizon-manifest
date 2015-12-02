@@ -156,7 +156,7 @@ repo start work --all
 export DISTRO_DIRNAME=`echo ${DISTRO} | sed 's#[.-]#_#g'`
 
 cat > conf/auto.conf <<EOF
-DISTRO = "${DISTRO}"
+DISTRO ?= "${DISTRO}"
 MACHINE ?= "${MACHINE}"
 SDKMACHINE ?= "${SDKMACHINE}"
 EOF
@@ -191,9 +191,9 @@ For more information about OpenEmbedded see their website:
 
 Your build environemnt has been configured with:
 
-    MACHINE=${MACHINE}
+    MACHINE ?= ${MACHINE}
     SDKMACHINE=${SDKMACHINE}
-    DISTRO=${DISTRO}
+    DISTRO ?=${DISTRO}
 
 You can now run 'bitbake <target>'
 
