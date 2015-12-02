@@ -88,7 +88,7 @@ if [ -z "${DISTRO}" ]; then
             for ITEM in $DISTROLAYERS; do
                 DISTROTABLE="$DISTROTABLE $(echo $ITEM | cut -d'(' -f1) $(echo $ITEM | cut -d'(' -f2 | cut -d')' -f1)"
             done
-            DISTRO=$(dialog --title "Available Distributions" --menu "Please choose a distribution" 0 0 20 $MACHINETABLE 3>&1 1>&2 2>&3)
+            DISTRO=$(dialog --title "Available Distributions" --menu "Please choose a distribution" 0 0 20 $DISTROTABLE 3>&1 1>&2 2>&3)
         fi
     fi
     unset DISTROTABLE
