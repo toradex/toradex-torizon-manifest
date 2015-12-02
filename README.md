@@ -79,7 +79,9 @@ If you have questions or feedback, please subscribe to
 
 https://lists.linaro.org/mailman/listinfo/openembedded
 
-OE RPB Distribution maintainers
----------------------------------
+Maintainers
+-------------------------
 
 * Koen Kooi <mailto:koen.kooi@linaro.org>
+* Nicolas Dechesne <nicolas.dechesne@linaro.org>
+* Fathi Boudra <mailto:fathi.boudra@linaro.org>
