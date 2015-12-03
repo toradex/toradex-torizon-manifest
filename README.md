@@ -14,13 +14,9 @@ To configure the scripts and download the build metadata, do:
 	$ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 	$ chmod a+x ~/bin/repo
 
-Run repo init to bring down the latest version of Repo with all its most recent bug fixes. You must specify a URL for the manifest, which specifies where the various repositories included in the Android source will be placed within your working directory.
+Run repo init to bring down the latest version of Repo with all its most recent bug fixes. You must specify a URL for the manifest, which specifies where the various repositories included in the Android source will be placed within your working directory. To check out the current branch, specify it with -b:
 
-	$ repo init -u git://github.com/96booards/oe-rpb-manifest
-
-To check out a branch other than "master", specify it with -b:
-
-	$ repo init -u git://github.com/96booards/oe-rpb-manifest -b angstrom-v2015.06-yocto1.8
+	$ repo init -u git://github.com/96booards/oe-rpb-manifest -b oe-rpb-manifest
 
 When prompted, configure Repo with your real name and email address.
 
@@ -43,10 +39,19 @@ More rarely, Linux clients experience connectivity issues, getting stuck in the 
 
 Setup Environment
 -----------------
-	$ . setup-environment
 
-	$ MACHINE=<machine> bitbake <image>
-	e.g. MACHINE=hikey bitbake systemd-image
+MACHINE values can be:
+* dragonboard-410c
+* hikey
+
+DISTRO values can be:
+* rpb-x11
+* rpb-wayland
+
+	$ . setup-environment
+	$ MACHINE=<machine> DISTRO=<distro> bitbake <image>
+
+e.g. MACHINE=hikey DISTRO=rpb-x11 bitbake core-image-minimal
 
 Creating a local topic branch
 -----------------------------
@@ -69,7 +74,6 @@ use following commands
 Rease your local committed changes
 
 	$ repo rebase
-
 
 If you find any bugs please report them here
 
