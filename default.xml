@@ -10,7 +10,7 @@
   <remote fetch="http://git.linaro.org" name="linaro"/>
   <remote fetch="http://git.shr-project.org" name="shr"/>
 
-  <project remote="linaro" name="openembedded/meta-linaro" path="sources/meta-linaro"/>
+  <project remote="linaro" name="openembedded/meta-linaro" path="sources/meta-linaro" revision="jethro"/>
 
   <project remote="github" name="openembedded/openembedded-core" path="sources/openembedded-core" revision="jethro"/>
   <project remote="github" name="openembedded/meta-openembedded" path="sources/meta-openembedded" revision="jethro"/>
