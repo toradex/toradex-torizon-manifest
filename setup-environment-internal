@@ -130,7 +130,7 @@ export BB_ENV_EXTRAWHITE="MACHINE DISTRO TCLIBC TCMODE GIT_PROXY_COMMAND http_pr
 
 mkdir -p conf
 if [ -f "${OEROOT}/conf/auto.conf" ]; then
-    oldmach=`fgrep "^MACHINE" "${OEROOT}/conf/auto.conf" | sed -e 's%^MACHINE ?= %%' | sed -e 's/^"//'  -e 's/"$//'`
+    oldmach=`egrep "^MACHINE" "${OEROOT}/conf/auto.conf" | sed -e 's%^MACHINE ?= %%' | sed -e 's/^"//'  -e 's/"$//'`
 fi
 if [ -e conf/checksum -a "${MACHINE}" = "$oldmach" ]
 then
