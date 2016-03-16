@@ -24,7 +24,7 @@ if [ "$(whoami)" = "root" ]; then
     return
 fi
 
-OEROOT="`pwd`"
+OEROOT=$(pwd)
 cd "$OEROOT"
 if [ -n "$ZSH_VERSION" ]; then
     setopt sh_word_split
@@ -144,10 +144,10 @@ fi
 
 # Clean up PATH, because if it includes tokens to current directories somehow,
 # wrong binaries can be used instead of the expected ones during task execution
-export PATH="`echo ${PATH} | sed 's/\(:.\|:\)*:/:/g;s/^.\?://;s/:.\?$//'`"
+export PATH=$(echo ${PATH} | sed 's/\(:.\|:\)*:/:/g;s/^.\?://;s/:.\?$//')
 export PATH="${OEROOT}"/sources/openembedded-core/scripts:"${OEROOT}"/sources/bitbake/bin:"${OEROOT}"/.repo/repo:"${PATH}"
 #remove duplicate path entries
-export PATH="`echo $PATH | awk -F: '{for (i=1;i<=NF;i++) { if ( !x[$i]++ ) printf("%s:",$i); }}' | sed 's/:$//'`"
+export PATH=$(echo $PATH | awk -F: '{for (i=1;i<=NF;i++) { if ( !x[$i]++ ) printf("%s:",$i); }}' | sed 's/:$//')
 # Make sure Bitbake doesn't filter out the following variables from our
 # environment.
 export BB_ENV_EXTRAWHITE="MACHINE DISTRO TCLIBC TCMODE GIT_PROXY_COMMAND http_proxy ftp_proxy https_proxy all_proxy ALL_PROXY no_proxy SSH_AGENT_PID SSH_AUTH_SOCK BB_SRCREV_POLICY SDKMACHINE BB_NUMBER_THREADS"
