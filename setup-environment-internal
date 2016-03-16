@@ -174,7 +174,6 @@ ln -sf "${MANIFESTS}"/README.md README.md
 
 ln -sf "${MANIFESTS}" "${OEROOT}"/sources/
 
-repo sync
 repo start work --all
 
 export DISTRO_DIRNAME=`echo ${DISTRO} | sed 's#[.-]#_#g'`
