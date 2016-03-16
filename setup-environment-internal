@@ -194,9 +194,6 @@ DL_DIR = "${OEROOT}/sources/downloads"
 # Where to save shared state
 SSTATE_DIR = "${OEROOT}/${_BUILDDIR}/sstate-cache"
 
-# Which files do we want to parse:
-BBFILES ?= "${OEROOT}/sources/openembedded-core/meta/recipes-*/*/*.bb"
-
 TMPDIR = "${OEROOT}/${_BUILDDIR}/tmp-${DISTRO_DIRNAME}"
 
 # Go through the Firewall
