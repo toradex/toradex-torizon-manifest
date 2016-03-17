@@ -11,6 +11,7 @@
   <remote fetch="http://git.shr-project.org" name="shr"/>
 
   <project remote="linaro" name="openembedded/meta-linaro" path="sources/meta-linaro"/>
+  <project remote="linaro" name="openembedded/meta-backports" path="sources/meta-backports"/>
 
   <project remote="github" name="openembedded/openembedded-core" path="sources/openembedded-core"/>
   <project remote="github" name="openembedded/meta-openembedded" path="sources/meta-openembedded"/>
