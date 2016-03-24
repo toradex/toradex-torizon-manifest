@@ -192,7 +192,7 @@ SCONF_VERSION = "1"
 DL_DIR = "${OEROOT}/downloads"
 
 # Where to save shared state
-SSTATE_DIR = "${OEROOT}/${_BUILDDIR}/sstate-cache"
+SSTATE_DIR = "${OEROOT}/sstate-cache"
 
 TMPDIR = "${OEROOT}/${_BUILDDIR}/tmp-${DISTRO_DIRNAME}"
 
