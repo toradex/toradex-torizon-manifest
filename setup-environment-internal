@@ -52,7 +52,7 @@ fi
 
 # create a common list of "<machine>(<layer>)", sorted by <machine>
 # Blacklist OE-core and meta-linaro, we only want 96boards + vendor layers
-MACHLAYERS=$(find sources -print | grep "conf/machine/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' -e 's/sources\///' | awk -F'/conf/machine/' '{print $NF "(" $1 ")"}' | sort)
+MACHLAYERS=$(find layers -print | grep "conf/machine/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' -e 's/layers\///' | awk -F'/conf/machine/' '{print $NF "(" $1 ")"}' | sort)
 
 if [ -z "${MACHINE}" ]; then
     # whiptail
@@ -83,8 +83,8 @@ fi
 
 # create a common list of "<distro>(<layer>)", sorted by <distro>
 # Blacklist OE-core and meta-linaro, we only want 96boards + vendor layers
-DISTROLAYERS=$(find sources -print | grep "conf/distro/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' | awk -F'/' '{print $NF "(" $2 ")"}' | sort)
-DISTROLAYERS=$(find sources -print | grep "conf/distro/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' -e 's/sources\///' | awk -F'/conf/distro/' '{print $NF "(" $1 ")"}' | sort)
+DISTROLAYERS=$(find layers -print | grep "conf/distro/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' | awk -F'/' '{print $NF "(" $2 ")"}' | sort)
+DISTROLAYERS=$(find layers -print | grep "conf/distro/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' -e 's/layers\///' | awk -F'/conf/distro/' '{print $NF "(" $1 ")"}' | sort)
 
 if [ -z "${DISTRO}" ]; then
     # whiptail
@@ -145,7 +145,7 @@ fi
 # Clean up PATH, because if it includes tokens to current directories somehow,
 # wrong binaries can be used instead of the expected ones during task execution
 export PATH=$(echo ${PATH} | sed 's/\(:.\|:\)*:/:/g;s/^.\?://;s/:.\?$//')
-export PATH="${OEROOT}"/sources/openembedded-core/scripts:"${OEROOT}"/bitbake/bin:"${OEROOT}"/.repo/repo:"${PATH}"
+export PATH="${OEROOT}"/layers/openembedded-core/scripts:"${OEROOT}"/bitbake/bin:"${OEROOT}"/.repo/repo:"${PATH}"
 #remove duplicate path entries
 export PATH=$(echo $PATH | awk -F: '{for (i=1;i<=NF;i++) { if ( !x[$i]++ ) printf("%s:",$i); }}' | sed 's/:$//')
 # Make sure Bitbake doesn't filter out the following variables from our
@@ -172,7 +172,7 @@ ln -sf "${MANIFESTS}"/conf/local.conf conf/local.conf
 ln -sf "${MANIFESTS}"/conf/bblayers.conf conf/bblayers.conf
 ln -sf "${MANIFESTS}"/README.md README.md
 
-ln -sf "${MANIFESTS}" "${OEROOT}"/sources/
+ln -sf "${MANIFESTS}" "${OEROOT}"/layers/
 
 repo start work --all
 
@@ -211,7 +211,7 @@ fi
 # If the env variable EULA_$MACHINE is set it is used by default,
 # without prompting the user.
 # FIXME: there is a potential issue if the same $MACHINE is set in more than one layer.. but we should assert that earlier
-EULA=$(find ../sources -print | grep "conf/eula/$MACHINE" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro || true)
+EULA=$(find ../layers -print | grep "conf/eula/$MACHINE" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro || true)
 
 if [ -n "$EULA" ]; then
 
