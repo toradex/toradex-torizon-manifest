@@ -15,7 +15,7 @@
 
   <project remote="github" name="openembedded/openembedded-core" path="sources/openembedded-core"/>
   <project remote="github" name="openembedded/meta-openembedded" path="sources/meta-openembedded"/>
-  <project remote="github" name="openembedded/bitbake" path="sources/bitbake" revision="1.28"/>
+  <project remote="github" name="openembedded/bitbake" path="bitbake" revision="1.28"/>
   <project remote="github" name="OSSystems/meta-browser" path="sources/meta-browser"/>
   <project remote="github" name="meta-qt5/meta-qt5" path="sources/meta-qt5"/>
   <project remote="github" name="96boards/meta-96boards" path="sources/meta-96boards" revision="master"/>
