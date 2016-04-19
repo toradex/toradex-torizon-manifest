@@ -290,6 +290,9 @@ Your build environemnt has been configured with:
 You can now run 'bitbake <target>'
 
 Some of common targets are:
+    rpb-console-image
+    rpb-desktop-image
+    rpb-wayland-image
     core-image-base
     core-image-minimal
 
