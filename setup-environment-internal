@@ -64,7 +64,6 @@ if [ -z "${MACHINE}" ]; then
         MACHINE=$(whiptail --title "Available Machines" --radiolist \
             "Please choose a machine" 0 0 20 \
             ${MACHINETABLE} 3>&1 1>&2 2>&3)
-        unset MACHINETABLE
     fi
 
     # dialog
@@ -77,8 +76,6 @@ if [ -z "${MACHINE}" ]; then
             MACHINE=$(dialog --title "Available Machines" --menu "Please choose a machine" 0 0 20 $MACHINETABLE 3>&1 1>&2 2>&3)
         fi
     fi
-    unset MACHINETABLE
-    unset ITEM
 fi
 
 # create a common list of "<distro>(<layer>)", sorted by <distro>
@@ -95,7 +92,6 @@ if [ -z "${DISTRO}" ]; then
         DISTRO=$(whiptail --title "Available Distributions" --radiolist \
             "Please choose a distribution" 0 0 20 \
             ${DISTROTABLE} 3>&1 1>&2 2>&3)
-        unset DISTROTABLE
     fi
 
     # dialog
@@ -108,14 +104,13 @@ if [ -z "${DISTRO}" ]; then
             DISTRO=$(dialog --title "Available Distributions" --menu "Please choose a distribution" 0 0 20 $DISTROTABLE 3>&1 1>&2 2>&3)
         fi
     fi
-    unset DISTROTABLE
-    unset ITEM
 
     # If nothing has been set, go for 'nodistro'
     if [ -z "$DISTRO" ]; then
         DISTRO="nodistro"
     fi
 fi
+
 # guard against Ctrl-D or cancel
 if [ -z "$MACHINE" ]; then
     echo "To choose a machine interactively please install whiptail or dialog."
@@ -127,7 +122,6 @@ if [ -z "$MACHINE" ]; then
     echo $MACHLAYERS | sed -e 's/(/ (/g' | sed -e 's/)/)\n/g' | sed -e 's/^ */\t/g'
     return
 fi
-unset MACHLAYERS
 
 if [ -z "${SDKMACHINE}" ]; then
     SDKMACHINE='x86_64'
@@ -175,7 +169,7 @@ ln -sf "${MANIFESTS}" "${OEROOT}"/layers/
 
 repo start work --all
 
-export DISTRO_DIRNAME=`echo ${DISTRO} | sed 's#[.-]#_#g'`
+DISTRO_DIRNAME=`echo ${DISTRO} | sed 's#[.-]#_#g'`
 
 cat > conf/auto.conf <<EOF
 DISTRO ?= "${DISTRO}"
@@ -297,3 +291,7 @@ Some of common targets are:
     core-image-minimal
 
 EOF
+
+unset MACHINETABLE MACHLAYERS DISTROTABLE DISTROLAYERS DISTRO_DIRNAME OEROOT
+unset ITEM MANIFESTS EULA EULA_MACHINE REPLY READ_EULA MACHINE SDKMACHINE DISTRO
+unset oldmach
