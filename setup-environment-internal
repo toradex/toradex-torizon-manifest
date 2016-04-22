@@ -130,10 +130,11 @@ fi
 MANIFESTS="${OEROOT}"/.repo/manifests
 
 # we can be called with only 1 parameter max, <build> folder, or default to build-$distro
-_BUILDDIR=build-$DISTRO
+BUILDDIR=build-$DISTRO
 if [ $# -eq 1 ]; then
-    _BUILDDIR=$1
+    BUILDDIR=$1
 fi
+BUILDDIR=$OEROOT/$BUILDDIR
 
 # Clean up PATH, because if it includes tokens to current directories somehow,
 # wrong binaries can be used instead of the expected ones during task execution
@@ -145,7 +146,7 @@ export PATH=$(echo $PATH | awk -F: '{for (i=1;i<=NF;i++) { if ( !x[$i]++ ) print
 # environment.
 export BB_ENV_EXTRAWHITE="MACHINE DISTRO TCLIBC TCMODE GIT_PROXY_COMMAND http_proxy ftp_proxy https_proxy all_proxy ALL_PROXY no_proxy SSH_AGENT_PID SSH_AUTH_SOCK BB_SRCREV_POLICY SDKMACHINE BB_NUMBER_THREADS"
 
-mkdir -p ${_BUILDDIR}/conf && cd ${_BUILDDIR}
+mkdir -p ${BUILDDIR}/conf && cd ${BUILDDIR}
 if [ -f "conf/auto.conf" ]; then
     oldmach=`egrep "^MACHINE" "conf/auto.conf" | sed -e 's%^MACHINE ?= %%' | sed -e 's/^"//'  -e 's/"$//'`
 fi
@@ -187,7 +188,7 @@ DL_DIR = "${OEROOT}/downloads"
 # Where to save shared state
 SSTATE_DIR = "${OEROOT}/sstate-cache"
 
-TMPDIR = "${OEROOT}/${_BUILDDIR}/tmp-${DISTRO_DIRNAME}"
+TMPDIR = "${BUILDDIR}/tmp-${DISTRO_DIRNAME}"
 
 # Go through the Firewall
 #HTTP_PROXY        = "http://${PROXYHOST}:${PROXYPORT}/"
@@ -295,3 +296,4 @@ EOF
 unset MACHINETABLE MACHLAYERS DISTROTABLE DISTROLAYERS DISTRO_DIRNAME OEROOT
 unset ITEM MANIFESTS EULA EULA_MACHINE REPLY READ_EULA MACHINE SDKMACHINE DISTRO
 unset oldmach
+export BUILDDIR
