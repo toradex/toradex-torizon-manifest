@@ -64,7 +64,6 @@ if [ -z "${MACHINE}" ]; then
         MACHINE=$(whiptail --title "Available Machines" --radiolist \
             "Please choose a machine" 0 0 20 \
             ${MACHINETABLE} 3>&1 1>&2 2>&3)
-        unset MACHINETABLE
     fi
 
     # dialog
@@ -77,8 +76,6 @@ if [ -z "${MACHINE}" ]; then
             MACHINE=$(dialog --title "Available Machines" --menu "Please choose a machine" 0 0 20 $MACHINETABLE 3>&1 1>&2 2>&3)
         fi
     fi
-    unset MACHINETABLE
-    unset ITEM
 fi
 
 # create a common list of "<distro>(<layer>)", sorted by <distro>
@@ -95,7 +92,6 @@ if [ -z "${DISTRO}" ]; then
         DISTRO=$(whiptail --title "Available Distributions" --radiolist \
             "Please choose a distribution" 0 0 20 \
             ${DISTROTABLE} 3>&1 1>&2 2>&3)
-        unset DISTROTABLE
     fi
 
     # dialog
@@ -108,14 +104,13 @@ if [ -z "${DISTRO}" ]; then
             DISTRO=$(dialog --title "Available Distributions" --menu "Please choose a distribution" 0 0 20 $DISTROTABLE 3>&1 1>&2 2>&3)
         fi
     fi
-    unset DISTROTABLE
-    unset ITEM
 
     # If nothing has been set, go for 'nodistro'
     if [ -z "$DISTRO" ]; then
         DISTRO="nodistro"
     fi
 fi
+
 # guard against Ctrl-D or cancel
 if [ -z "$MACHINE" ]; then
     echo "To choose a machine interactively please install whiptail or dialog."
@@ -127,7 +122,6 @@ if [ -z "$MACHINE" ]; then
     echo $MACHLAYERS | sed -e 's/(/ (/g' | sed -e 's/)/)\n/g' | sed -e 's/^ */\t/g'
     return
 fi
-unset MACHLAYERS
 
 if [ -z "${SDKMACHINE}" ]; then
     SDKMACHINE='x86_64'
@@ -136,10 +130,11 @@ fi
 MANIFESTS="${OEROOT}"/.repo/manifests
 
 # we can be called with only 1 parameter max, <build> folder, or default to build-$distro
-_BUILDDIR=build-$DISTRO
+BUILDDIR=build-$DISTRO
 if [ $# -eq 1 ]; then
-    _BUILDDIR=$1
+    BUILDDIR=$1
 fi
+BUILDDIR=$OEROOT/$BUILDDIR
 
 # Clean up PATH, because if it includes tokens to current directories somehow,
 # wrong binaries can be used instead of the expected ones during task execution
@@ -151,7 +146,7 @@ export PATH=$(echo $PATH | awk -F: '{for (i=1;i<=NF;i++) { if ( !x[$i]++ ) print
 # environment.
 export BB_ENV_EXTRAWHITE="MACHINE DISTRO TCLIBC TCMODE GIT_PROXY_COMMAND http_proxy ftp_proxy https_proxy all_proxy ALL_PROXY no_proxy SSH_AGENT_PID SSH_AUTH_SOCK BB_SRCREV_POLICY SDKMACHINE BB_NUMBER_THREADS"
 
-mkdir -p ${_BUILDDIR}/conf && cd ${_BUILDDIR}
+mkdir -p ${BUILDDIR}/conf && cd ${BUILDDIR}
 if [ -f "conf/auto.conf" ]; then
     oldmach=`egrep "^MACHINE" "conf/auto.conf" | sed -e 's%^MACHINE ?= %%' | sed -e 's/^"//'  -e 's/"$//'`
 fi
@@ -175,7 +170,7 @@ ln -sf "${MANIFESTS}" "${OEROOT}"/layers/
 
 repo start work --all
 
-export DISTRO_DIRNAME=`echo ${DISTRO} | sed 's#[.-]#_#g'`
+DISTRO_DIRNAME=`echo ${DISTRO} | sed 's#[.-]#_#g'`
 
 cat > conf/auto.conf <<EOF
 DISTRO ?= "${DISTRO}"
@@ -193,7 +188,7 @@ DL_DIR = "${OEROOT}/downloads"
 # Where to save shared state
 SSTATE_DIR = "${OEROOT}/sstate-cache"
 
-TMPDIR = "${OEROOT}/${_BUILDDIR}/tmp-${DISTRO_DIRNAME}"
+TMPDIR = "${BUILDDIR}/tmp-${DISTRO_DIRNAME}"
 
 # Go through the Firewall
 #HTTP_PROXY        = "http://${PROXYHOST}:${PROXYPORT}/"
@@ -235,7 +230,7 @@ EOF
         echo
         REPLY=
         while [ -z "$REPLY" ]; do
-            echo -n "Do you read the EULA ? (y/n) "
+            echo -n "Would you like to read the EULA ? (y/n) "
             read REPLY
             case "$REPLY" in
                 y|Y)
@@ -290,7 +285,15 @@ Your build environemnt has been configured with:
 You can now run 'bitbake <target>'
 
 Some of common targets are:
+    rpb-console-image
+    rpb-desktop-image
+    rpb-wayland-image
     core-image-base
     core-image-minimal
 
 EOF
+
+unset MACHINETABLE MACHLAYERS DISTROTABLE DISTROLAYERS DISTRO_DIRNAME OEROOT
+unset ITEM MANIFESTS EULA EULA_MACHINE REPLY READ_EULA
+unset oldmach
+export BUILDDIR
