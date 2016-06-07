@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # -*- mode: shell-script-mode; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
 #
 # Copyright (C) 2012-13 O.S. Systems Software LTDA.
@@ -36,7 +36,7 @@ fi
 usage () {
     cat <<EOF
 
-Usage: [DISTRO=<DISTRO>] [MACHINE=<MACHINE>] source $BASH_SOURCE [BUILDDIR]
+Usage: [DISTRO=<DISTRO>] [MACHINE=<MACHINE>] source ${BASH_SOURCE[0]} [BUILDDIR]
 
 If no MACHINE is set, list all possible machines, and ask user to choose.
 If no DISTRO is set, list all possible distros, and ask user to choose.
@@ -59,11 +59,11 @@ if [ -z "${MACHINE}" ]; then
     which whiptail > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         for ITEM in $MACHLAYERS; do
-            MACHINETABLE="${MACHINETABLE} $(echo $ITEM | cut -d'(' -f1) $(echo $ITEM | cut -d'(' -f2 | cut -d')' -f1) OFF\n"
+            MACHINETABLE="${MACHINETABLE} $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1) OFF\n"
         done
         MACHINE=$(whiptail --title "Available Machines" --radiolist \
             "Please choose a machine" 0 0 20 \
-            ${MACHINETABLE} 3>&1 1>&2 2>&3)
+            "${MACHINETABLE}" 3>&1 1>&2 2>&3)
     fi
 
     # dialog
@@ -71,9 +71,9 @@ if [ -z "${MACHINE}" ]; then
         which dialog > /dev/null 2>&1
         if [ $? -eq 0 ]; then
             for ITEM in $MACHLAYERS; do
-                MACHINETABLE="$MACHINETABLE $(echo $ITEM | cut -d'(' -f1) $(echo $ITEM | cut -d'(' -f2 | cut -d')' -f1)"
+                MACHINETABLE="$MACHINETABLE $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1)"
             done
-            MACHINE=$(dialog --title "Available Machines" --menu "Please choose a machine" 0 0 20 $MACHINETABLE 3>&1 1>&2 2>&3)
+            MACHINE=$(dialog --title "Available Machines" --menu "Please choose a machine" 0 0 20 "$MACHINETABLE" 3>&1 1>&2 2>&3)
         fi
     fi
 fi
@@ -87,11 +87,11 @@ if [ -z "${DISTRO}" ]; then
     which whiptail > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         for ITEM in $DISTROLAYERS; do
-            DISTROTABLE="${DISTROTABLE} $(echo $ITEM | cut -d'(' -f1) $(echo $ITEM | cut -d'(' -f2 | cut -d')' -f1) OFF\n"
+            DISTROTABLE="${DISTROTABLE} $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1) OFF\n"
         done
         DISTRO=$(whiptail --title "Available Distributions" --radiolist \
             "Please choose a distribution" 0 0 20 \
-            ${DISTROTABLE} 3>&1 1>&2 2>&3)
+            "${DISTROTABLE}" 3>&1 1>&2 2>&3)
     fi
 
     # dialog
@@ -99,9 +99,9 @@ if [ -z "${DISTRO}" ]; then
         which dialog > /dev/null 2>&1
         if [ $? -eq 0 ]; then
             for ITEM in $DISTROLAYERS; do
-                DISTROTABLE="$DISTROTABLE $(echo $ITEM | cut -d'(' -f1) $(echo $ITEM | cut -d'(' -f2 | cut -d')' -f1)"
+                DISTROTABLE="$DISTROTABLE $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1)"
             done
-            DISTRO=$(dialog --title "Available Distributions" --menu "Please choose a distribution" 0 0 20 $DISTROTABLE 3>&1 1>&2 2>&3)
+            DISTRO=$(dialog --title "Available Distributions" --menu "Please choose a distribution" 0 0 20 "$DISTROTABLE" 3>&1 1>&2 2>&3)
         fi
     fi
 
@@ -118,8 +118,8 @@ if [ -z "$MACHINE" ]; then
     echo "    MACHINE=<your-machine> . ./setup-environment"
     echo ""
     echo "Press <ENTER> to see a list of your choices"
-    read
-    echo $MACHLAYERS | sed -e 's/(/ (/g' | sed -e 's/)/)\n/g' | sed -e 's/^ */\t/g'
+    read -r
+    echo "$MACHLAYERS" | sed -e 's/(/ (/g' | sed -e 's/)/)\n/g' | sed -e 's/^ */\t/g'
     return
 fi
 
@@ -138,17 +138,17 @@ BUILDDIR=$OEROOT/$BUILDDIR
 
 # Clean up PATH, because if it includes tokens to current directories somehow,
 # wrong binaries can be used instead of the expected ones during task execution
-export PATH=$(echo ${PATH} | sed 's/\(:.\|:\)*:/:/g;s/^.\?://;s/:.\?$//')
+export PATH=$(echo "${PATH}" | sed 's/\(:.\|:\)*:/:/g;s/^.\?://;s/:.\?$//')
 export PATH="${OEROOT}"/layers/openembedded-core/scripts:"${OEROOT}"/bitbake/bin:"${OEROOT}"/.repo/repo:"${PATH}"
 #remove duplicate path entries
-export PATH=$(echo $PATH | awk -F: '{for (i=1;i<=NF;i++) { if ( !x[$i]++ ) printf("%s:",$i); }}' | sed 's/:$//')
+export PATH=$(echo "$PATH" | awk -F: '{for (i=1;i<=NF;i++) { if ( !x[$i]++ ) printf("%s:",$i); }}' | sed 's/:$//')
 # Make sure Bitbake doesn't filter out the following variables from our
 # environment.
 export BB_ENV_EXTRAWHITE="MACHINE DISTRO TCLIBC TCMODE GIT_PROXY_COMMAND http_proxy ftp_proxy https_proxy all_proxy ALL_PROXY no_proxy SSH_AGENT_PID SSH_AUTH_SOCK BB_SRCREV_POLICY SDKMACHINE BB_NUMBER_THREADS"
 
-mkdir -p ${BUILDDIR}/conf && cd ${BUILDDIR}
+mkdir -p "${BUILDDIR}"/conf && cd "${BUILDDIR}"
 if [ -f "conf/auto.conf" ]; then
-    oldmach=`egrep "^MACHINE" "conf/auto.conf" | sed -e 's%^MACHINE ?= %%' | sed -e 's/^"//'  -e 's/"$//'`
+    oldmach=$(egrep "^MACHINE" "conf/auto.conf" | sed -e 's%^MACHINE ?= %%' | sed -e 's/^"//'  -e 's/"$//')
 fi
 if [ -e conf/checksum -a "${MACHINE}" = "$oldmach" ]
 then
@@ -170,7 +170,7 @@ ln -sf "${MANIFESTS}" "${OEROOT}"/layers/
 
 repo start work --all
 
-DISTRO_DIRNAME=`echo ${DISTRO} | sed 's#[.-]#_#g'`
+DISTRO_DIRNAME=$(echo "${DISTRO}" | sed 's#[.-]#_#g')
 
 cat > conf/auto.conf <<EOF
 DISTRO ?= "${DISTRO}"
@@ -210,7 +210,7 @@ EULA=$(find ../layers -print | grep "conf/eula/$MACHINE" | grep -v scripts | gre
 if [ -n "$EULA" ]; then
 
     # remove '-' since we are constructing a bash variable name here
-    EULA_MACHINE="EULA_$(echo $MACHINE | sed 's/-//g')"
+    EULA_MACHINE="EULA_$(echo "$MACHINE" | sed 's/-//g')"
 
     # NOTE: indirect reference / dynamic variable
     if [ -n "${!EULA_MACHINE}" ]; then
@@ -231,7 +231,7 @@ EOF
         REPLY=
         while [ -z "$REPLY" ]; do
             echo -n "Would you like to read the EULA ? (y/n) "
-            read REPLY
+            read -r REPLY
             case "$REPLY" in
                 y|Y)
                     READ_EULA=1
@@ -245,13 +245,13 @@ EOF
             esac
         done
 
-        if [ "$READ_EULA" == 1 ]; then
-            more -d ${EULA}
+        if [ "$READ_EULA" = 1 ]; then
+            more -d "${EULA}"
             echo
             REPLY=
             while [ -z "$REPLY" ]; do
                 echo -n "Do you accept the EULA you just read? (y/n) "
-                read REPLY
+                read -r REPLY
                 case "$REPLY" in
                     y|Y)
                         echo "EULA has been accepted."
