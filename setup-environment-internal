@@ -60,9 +60,9 @@ if [ -z "${MACHINE}" ]; then
     if [ $? -eq 0 ]; then
         MACHINETABLE=
         for ITEM in $MACHLAYERS; do
-            MACHINETABLE="${MACHINETABLE} $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1) OFF\n"
+            MACHINETABLE="${MACHINETABLE} $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1)"
         done
-        MACHINE=$(whiptail --title "Available Machines" --radiolist \
+        MACHINE=$(whiptail --title "Available Machines" --menu \
             "Please choose a machine" 0 0 20 \
             ${MACHINETABLE} 3>&1 1>&2 2>&3)
     fi
@@ -90,9 +90,9 @@ if [ -z "${DISTRO}" ]; then
     if [ $? -eq 0 ]; then
         DISTROTABLE=
         for ITEM in $DISTROLAYERS; do
-            DISTROTABLE="${DISTROTABLE} $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1) OFF\n"
+            DISTROTABLE="${DISTROTABLE} $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1)"
         done
-        DISTRO=$(whiptail --title "Available Distributions" --radiolist \
+        DISTRO=$(whiptail --title "Available Distributions" --menu \
             "Please choose a distribution" 0 0 20 \
             ${DISTROTABLE} 3>&1 1>&2 2>&3)
     fi
