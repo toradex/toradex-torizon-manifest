@@ -58,22 +58,24 @@ if [ -z "${MACHINE}" ]; then
     # whiptail
     which whiptail > /dev/null 2>&1
     if [ $? -eq 0 ]; then
+        MACHINETABLE=
         for ITEM in $MACHLAYERS; do
             MACHINETABLE="${MACHINETABLE} $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1) OFF\n"
         done
         MACHINE=$(whiptail --title "Available Machines" --radiolist \
             "Please choose a machine" 0 0 20 \
-            "${MACHINETABLE}" 3>&1 1>&2 2>&3)
+            ${MACHINETABLE} 3>&1 1>&2 2>&3)
     fi
 
     # dialog
     if [ -z "$MACHINE" ]; then
         which dialog > /dev/null 2>&1
         if [ $? -eq 0 ]; then
+            MACHINETABLE=
             for ITEM in $MACHLAYERS; do
                 MACHINETABLE="$MACHINETABLE $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1)"
             done
-            MACHINE=$(dialog --title "Available Machines" --menu "Please choose a machine" 0 0 20 "$MACHINETABLE" 3>&1 1>&2 2>&3)
+            MACHINE=$(dialog --title "Available Machines" --menu "Please choose a machine" 0 0 20 $MACHINETABLE 3>&1 1>&2 2>&3)
         fi
     fi
 fi
@@ -86,22 +88,24 @@ if [ -z "${DISTRO}" ]; then
     # whiptail
     which whiptail > /dev/null 2>&1
     if [ $? -eq 0 ]; then
+        DISTROTABLE=
         for ITEM in $DISTROLAYERS; do
             DISTROTABLE="${DISTROTABLE} $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1) OFF\n"
         done
         DISTRO=$(whiptail --title "Available Distributions" --radiolist \
             "Please choose a distribution" 0 0 20 \
-            "${DISTROTABLE}" 3>&1 1>&2 2>&3)
+            ${DISTROTABLE} 3>&1 1>&2 2>&3)
     fi
 
     # dialog
     if [ -z "$DISTRO" ]; then
         which dialog > /dev/null 2>&1
         if [ $? -eq 0 ]; then
+            DISTROTABLE=
             for ITEM in $DISTROLAYERS; do
                 DISTROTABLE="$DISTROTABLE $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1)"
             done
-            DISTRO=$(dialog --title "Available Distributions" --menu "Please choose a distribution" 0 0 20 "$DISTROTABLE" 3>&1 1>&2 2>&3)
+            DISTRO=$(dialog --title "Available Distributions" --menu "Please choose a distribution" 0 0 20 $DISTROTABLE 3>&1 1>&2 2>&3)
         fi
     fi
 
