@@ -56,8 +56,7 @@ e.g. MACHINE=hikey DISTRO=rpb-x11 bitbake core-image-minimal
 Creating a local topic branch
 -----------------------------
 
-Setup will already create a branch called $USER/work
-but if you need to create local branches for all repos which then can be done e.g.
+If you need to create local branches for all repos which then can be done e.g.
 ```
 $ ~/bin/repo start myangstrom --all
 ```
@@ -66,8 +65,7 @@ Where 'myangstrom' is the name of branch you choose
 Updating the sandbox
 --------------------
 
-Setup will do this as well but in between if you need to bring changes from upstream then
-use following commands
+If you need to bring changes from upstream then use following commands
 ```
 $ repo sync
 ```
