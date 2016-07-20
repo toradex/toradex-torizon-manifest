@@ -84,7 +84,7 @@ fi
 # Blacklist OE-core and meta-linaro, we only want 96boards + vendor layers
 DISTROLAYERS=$(find layers -print | grep "conf/distro/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' -e 's/layers\///' | awk -F'/conf/distro/' '{print $NF "(" $1 ")"}' | sort)
 
-if [ -z "${DISTRO}" ]; then
+if [ -n "${DISTROLAYERS}" ] && [ -z "${DISTRO}" ]; then
     # whiptail
     which whiptail > /dev/null 2>&1
     if [ $? -eq 0 ]; then
@@ -108,11 +108,11 @@ if [ -z "${DISTRO}" ]; then
             DISTRO=$(dialog --title "Available Distributions" --menu "Please choose a distribution" 0 0 20 $DISTROTABLE 3>&1 1>&2 2>&3)
         fi
     fi
+fi
 
-    # If nothing has been set, go for 'nodistro'
-    if [ -z "$DISTRO" ]; then
-        DISTRO="nodistro"
-    fi
+# If nothing has been set, go for 'nodistro'
+if [ -z "$DISTRO" ]; then
+    DISTRO="nodistro"
 fi
 
 # guard against Ctrl-D or cancel
