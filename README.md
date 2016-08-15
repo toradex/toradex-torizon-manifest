@@ -75,7 +75,7 @@ $ repo rebase
 ```
 If you find any bugs please report them here
 
-https://github.com/96booards/oe-rpb-manifest/issues
+https://github.com/96boards/oe-rpb-manifest/issues
 
 If you have questions or feedback, please subscribe to
 
