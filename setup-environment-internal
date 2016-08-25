@@ -60,7 +60,6 @@ if [ $# -gt 1 ]; then
     usage
     return 1
 fi
-
 # create a common list of "<machine>(<layer>)", sorted by <machine>
 # Blacklist OE-core and meta-linaro, we only want 96boards + vendor layers
 MACHLAYERS=$(find layers -print | grep "conf/machine/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' -e 's/layers\///' | awk -F'/conf/machine/' '{print $NF "(" $1 ")"}' | sort)
@@ -173,6 +172,65 @@ then
        return
     fi
 fi
+
+# Helper command for building images for mixed 32bit/64bit
+# ARM builds. The command allow to specify a secondary MACHINE
+# and image that will be built next to the primary target.
+# If no secondary image is specified the rpb-minimal-image image
+# will be built.
+
+bitbake_secondary_image () {
+    BITBAKE_OPTIONS=""
+    unset EXTRA_MACHINE
+    unset SECONDARY_IMAGE
+
+    SECONDARY_IMAGE='rpb-minimal-image'
+    while [[ $# -gt 1 ]]
+    do
+        key="$1"
+        case $key in
+            --extra-machine)
+            EXTRA_MACHINE="$2"
+            shift
+            ;;
+            --secondary-image)
+            SECONDARY_IMAGE="$2"
+            shift
+            ;;
+        *)
+            BITBAKE_OPTIONS=$BITBAKE_OPTIONS" "$1
+        ;;
+    esac
+    shift
+    done
+    BITBAKE_OPTIONS=$BITBAKE_OPTIONS" "$1
+    if [ -z "$EXTRA_MACHINE" ]
+    then
+        echo "   Error: you need to run $FUNCNAME with --extra-machine agument"
+        echo
+        echo "   Example:"
+        echo "     $ $FUNCNAME --extra-machine hikey rpb-weston-image"
+        return
+    fi
+
+    if [ "$EXTRA_MACHINE" == "$MACHINE" ]
+    then
+        echo "Error: the extra machine must be different from the machine you already set using setup-environment: "$MACHINE
+        return
+    fi
+
+    echo "Building first image. MACHINE:" $EXTRA_MACHINE " DISTRO:" $DISTRO
+
+    MACHINE=$EXTRA_MACHINE bitbake $SECONDARY_IMAGE
+
+    if [ $? != 0 ]; then
+        printf "Error building image"
+        return
+    fi
+    echo "Building second image. MACHINE:" $MACHINE " DISTRO:" $DISTRO
+
+    MACHINE=$MACHINE bitbake $BITBAKE_OPTIONS
+}
 
 # evaluate new checksum and regenerate the conf files
 sha512sum "${MANIFESTS}"/setup-environment-internal 2>&1 > conf/checksum
