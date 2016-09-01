@@ -19,6 +19,17 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
+RPBcleanup() {
+        unset MACHINETABLE MACHLAYERS DISTROTABLE DISTROLAYERS DISTRO_DIRNAME OEROOT
+        unset ITEM MANIFESTS EULA EULA_MACHINE REPLY READ_EULA
+        unset usage oldmach
+
+        if [ -n "$BUILDDIR" ]; then
+                export BUILDDIR
+        fi
+}
+trap RPBcleanup RETURN
+
 if [ "$(whoami)" = "root" ]; then
     echo "ERROR: do not use the BSP as root. Exiting..."
     return
@@ -294,8 +305,3 @@ Some of common targets are:
     core-image-minimal
 
 EOF
-
-unset MACHINETABLE MACHLAYERS DISTROTABLE DISTROLAYERS DISTRO_DIRNAME OEROOT
-unset ITEM MANIFESTS EULA EULA_MACHINE REPLY READ_EULA
-unset oldmach
-export BUILDDIR
