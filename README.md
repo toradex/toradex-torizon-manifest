@@ -44,14 +44,14 @@ MACHINE values can be:
 * hikey
 
 DISTRO values can be:
-* rpb-x11
+* rpb
 * rpb-wayland
 
 ```
 $ . setup-environment
 $ MACHINE=<machine> DISTRO=<distro> bitbake <image>
 ```
-e.g. MACHINE=hikey DISTRO=rpb-x11 bitbake core-image-minimal
+e.g. MACHINE=hikey DISTRO=rpb bitbake core-image-minimal
 
 Creating a local topic branch
 -----------------------------
