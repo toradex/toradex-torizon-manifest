@@ -18,7 +18,6 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-
 RPBcleanup() {
         unset MACHINETABLE MACHLAYERS DISTROTABLE DISTROLAYERS DISTRO_DIRNAME OEROOT
         unset ITEM MANIFESTS EULA EULA_MACHINE REPLY READ_EULA
@@ -160,24 +159,12 @@ export PATH=$(echo "$PATH" | awk -F: '{for (i=1;i<=NF;i++) { if ( !x[$i]++ ) pri
 # environment.
 export BB_ENV_EXTRAWHITE="MACHINE DISTRO TCLIBC TCMODE GIT_PROXY_COMMAND http_proxy ftp_proxy https_proxy all_proxy ALL_PROXY no_proxy SSH_AGENT_PID SSH_AUTH_SOCK BB_SRCREV_POLICY SDKMACHINE BB_NUMBER_THREADS"
 
-mkdir -p "${BUILDDIR}"/conf && cd "${BUILDDIR}"
-if [ -f "conf/auto.conf" ]; then
-    oldmach=$(egrep "^MACHINE" "conf/auto.conf" | sed -e 's%^MACHINE ?= %%' | sed -e 's/^"//'  -e 's/"$//')
-fi
-if [ -e conf/checksum -a "${MACHINE}" = "$oldmach" ]
-then
-    sha512sum --quiet -c conf/checksum > /dev/null 2>&1
-    if [ $? -eq 0 ]
-    then
-       return
-    fi
-fi
-
 # Helper command for building images for mixed 32bit/64bit
 # ARM builds. The command allow to specify a secondary MACHINE
 # and image that will be built next to the primary target.
 # If no secondary image is specified the rpb-minimal-image image
 # will be built.
+
 
 bitbake_secondary_image () {
     BITBAKE_OPTIONS=""
@@ -231,6 +218,18 @@ bitbake_secondary_image () {
 
     MACHINE=$MACHINE bitbake $BITBAKE_OPTIONS
 }
+mkdir -p "${BUILDDIR}"/conf && cd "${BUILDDIR}"
+if [ -f "conf/auto.conf" ]; then
+    oldmach=$(egrep "^MACHINE" "conf/auto.conf" | sed -e 's%^MACHINE ?= %%' | sed -e 's/^"//'  -e 's/"$//')
+fi
+if [ -e conf/checksum -a "${MACHINE}" = "$oldmach" ]
+then
+    sha512sum --quiet -c conf/checksum > /dev/null 2>&1
+    if [ $? -eq 0 ]
+    then
+       return
+    fi
+fi
 
 # evaluate new checksum and regenerate the conf files
 sha512sum "${MANIFESTS}"/setup-environment-internal 2>&1 > conf/checksum
