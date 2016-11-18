@@ -61,7 +61,7 @@ if [ $# -gt 1 ]; then
 fi
 # create a common list of "<machine>(<layer>)", sorted by <machine>
 # Blacklist OE-core and meta-linaro, we only want 96boards + vendor layers
-MACHLAYERS=$(find layers -print | grep "conf/machine/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' -e 's/layers\///' | awk -F'/conf/machine/' '{print $NF "(" $1 ")"}' | sort)
+MACHLAYERS=$(find layers -print | grep "conf/machine/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' -e 's/layers\///' | awk -F'/conf/machine/' '{print $NF "(" $1 ")"}' | LANG=C sort)
 
 if [ -z "${MACHINE}" ]; then
     # whiptail
@@ -91,7 +91,7 @@ fi
 
 # create a common list of "<distro>(<layer>)", sorted by <distro>
 # Blacklist OE-core and meta-linaro, we only want 96boards + vendor layers
-DISTROLAYERS=$(find layers -print | grep "conf/distro/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' -e 's/layers\///' | awk -F'/conf/distro/' '{print $NF "(" $1 ")"}' | sort)
+DISTROLAYERS=$(find layers -print | grep "conf/distro/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' -e 's/layers\///' | awk -F'/conf/distro/' '{print $NF "(" $1 ")"}' | LANG=C sort)
 
 if [ -n "${DISTROLAYERS}" ] && [ -z "${DISTRO}" ]; then
     # whiptail
