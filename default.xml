@@ -19,7 +19,8 @@
   <project remote="github" name="meta-qt5/meta-qt5" path="layers/meta-qt5"/>
   <project remote="github" name="96boards/meta-96boards" path="layers/meta-96boards"/>
   <project remote="github" name="96boards/meta-rpb" path="layers/meta-rpb"/>
-  <project remote="github" name="ndechesne/meta-qcom" path="layers/meta-qcom">
+  <project remote="github" name="ndechesne/meta-qcom" path="layers/meta-qcom"/>
+  <project remote="yocto" name="git/meta-ti" path="layers/meta-ti">
       <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
 
