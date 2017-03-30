@@ -246,6 +246,9 @@ cat > conf/auto.conf <<EOF
 DISTRO ?= "${DISTRO}"
 MACHINE ?= "${MACHINE}"
 SDKMACHINE ?= "${SDKMACHINE}"
+
+# Extra options that can be changed by the user
+INHERIT += "rm_work"
 EOF
 if [ ! -e conf/site.conf ]; then
     cat > conf/site.conf <<_EOF
