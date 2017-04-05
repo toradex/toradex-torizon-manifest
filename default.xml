@@ -23,6 +23,9 @@
 
   <project remote="github" name="linaro-technologies/meta-ltd" path="layers/meta-ltd"/>
 
+  <project remote="yocto"  name="git/meta-freescale" path="layers/meta-freescale"/>
+  <project remote="github" name="Freescale/meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty"/>
+
   <project remote="yocto" name="git/meta-virtualization" path="layers/meta-virtualization"/>
   <project remote="yocto" name="git/meta-ti" path="layers/meta-ti">
       <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
