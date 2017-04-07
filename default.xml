@@ -25,7 +25,6 @@
 
   <project remote="yocto"  name="git/meta-freescale" path="layers/meta-freescale"/>
   <project remote="github" name="Freescale/meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty"/>
-  <project remote="github" name="compulab/yocto-compulab-layer" path="layers/meta-compulab" revision="krogoth/devel"/>
   <project remote="github" name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2"/>
 
   <project remote="yocto" name="git/meta-virtualization" path="layers/meta-virtualization"/>
