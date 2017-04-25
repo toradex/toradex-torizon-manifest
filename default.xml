@@ -23,6 +23,7 @@
 
   <project remote="github" name="linaro-technologies/meta-ltd" path="layers/meta-ltd"/>
 
+  <project remote="yocto"  name="git/meta-raspberrypi" path="layers/meta-raspberrypi"/>
   <project remote="yocto"  name="git/meta-freescale" path="layers/meta-freescale"/>
   <project remote="github" name="Freescale/meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty"/>
   <project remote="github" name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2"/>
