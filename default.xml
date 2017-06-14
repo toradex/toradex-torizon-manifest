@@ -7,22 +7,22 @@
   <remote fetch="https://github.com" name="github"/>
   <remote fetch="http://git.linaro.org" name="linaro"/>
 
-  <project name="openembedded/bitbake" path="bitbake"/>
-  <project name="openembedded/openembedded-core" path="layers/openembedded-core"/>
-  <project name="openembedded/meta-openembedded" path="layers/meta-openembedded"/>
+  <project name="openembedded/bitbake" path="bitbake" revision="5639faa3eef55cc476a82e810e61ca228cbdf221"/>
+  <project name="openembedded/openembedded-core" path="layers/openembedded-core" revision="059846662f1ea1c82804cfce5f91afcb2980ec8a"/>
+  <project name="openembedded/meta-openembedded" path="layers/meta-openembedded" revision="d3dd8bc3721f3958eb7ddeb026f7221d48daa986"/>
 
-  <project remote="linaro" name="openembedded/meta-linaro" path="layers/meta-linaro"/>
-  <project remote="yocto" name="git/meta-virtualization" path="layers/meta-virtualization"/>
-  <project name="96boards/meta-rpb" path="layers/meta-rpb"/>
-  <project name="linaro-technologies/meta-ltd" path="layers/meta-ltd"/>
+  <project remote="linaro" name="openembedded/meta-linaro" path="layers/meta-linaro" revision="51d0de5f83991c032c6e300b30eebb73367dc7d2"/>
+  <project remote="yocto" name="git/meta-virtualization" path="layers/meta-virtualization" revision="e73608d56e498a7075e7a3e5550aafd76987d7aa"/>
+  <project name="96boards/meta-rpb" path="layers/meta-rpb" revision="16a952af33c873e1995eca48a2cb80900fc18185"/>
+  <project name="linaro-technologies/meta-ltd" path="layers/meta-ltd" revision="cc6695805ca04b6d6537beed220409a5aa9ddb95"/>
 
-  <project name="96boards/meta-96boards" path="layers/meta-96boards"/>
-  <project name="ndechesne/meta-qcom" path="layers/meta-qcom"/>
-  <project name="Freescale/meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty"/>
-  <project name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2"/>
-  <project remote="yocto" name="git/meta-raspberrypi" path="layers/meta-raspberrypi"/>
-  <project remote="yocto" name="git/meta-freescale" path="layers/meta-freescale"/>
-  <project remote="yocto" name="git/meta-yocto" path="layers/meta-yocto">
+  <project name="96boards/meta-96boards" path="layers/meta-96boards" revision="3bce974c381cae3b52040e06643ed6892f211896"/>
+  <project name="ndechesne/meta-qcom" path="layers/meta-qcom" revision="a95622c51486b3c584ec276c78a3a3a58c91c912"/>
+  <project name="Freescale/meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="fd3962a994b2f477d3e81fa7083f6b3d4e666df5"/>
+  <project name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2" revision="8abc5197f3456590c493c59d1e6f696e25f88927"/>
+  <project remote="yocto" name="git/meta-raspberrypi" path="layers/meta-raspberrypi" revision="11fec461330982ee15b4ac6dca5014fabe59198f"/>
+  <project remote="yocto" name="git/meta-freescale" path="layers/meta-freescale" revision="98d57b06d88cb22129bd417a9a3edbaf24612460"/>
+  <project remote="yocto" name="git/meta-yocto" path="layers/meta-yocto" revision="86ab7ab6688f250bb5777371d2cbc28c770847d4">
       <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
 
