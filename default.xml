@@ -14,7 +14,7 @@
   <project remote="linaro" name="openembedded/meta-linaro" path="layers/meta-linaro" revision="51d0de5f83991c032c6e300b30eebb73367dc7d2"/>
   <project remote="yocto" name="git/meta-virtualization" path="layers/meta-virtualization" revision="e73608d56e498a7075e7a3e5550aafd76987d7aa"/>
   <project name="96boards/meta-rpb" path="layers/meta-rpb" revision="16a952af33c873e1995eca48a2cb80900fc18185"/>
-  <project name="linaro-technologies/meta-ltd" path="layers/meta-ltd" revision="cc6695805ca04b6d6537beed220409a5aa9ddb95"/>
+  <project name="linaro-technologies/meta-ltd" path="layers/meta-ltd" revision="17199fbb1b9f14be699704d088ce0dcdbd9f92c9"/>
 
   <project name="96boards/meta-96boards" path="layers/meta-96boards" revision="3bce974c381cae3b52040e06643ed6892f211896"/>
   <project name="ndechesne/meta-qcom" path="layers/meta-qcom" revision="a95622c51486b3c584ec276c78a3a3a58c91c912"/>
