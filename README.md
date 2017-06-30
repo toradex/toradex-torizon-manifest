@@ -1,7 +1,7 @@
 oe-rpb-manifest
 =================
 
-OE RPB Repo manifest repository
+LTD OE RPB Repo manifest repository
 
 These are the setup scripts for the OE RPB buildsystem. If you want to (re)build packages or images for OE RPB, this is the thing to use.
 The OE RPB buildsystem is using various components from the Yocto Project, most importantly the Openembedded buildsystem, the bitbake task executor and various application and BSP layers.
@@ -16,7 +16,7 @@ chmod a+x ~/bin/repo
 ```
 Run repo init to bring down the latest version of Repo with all its most recent bug fixes. You must specify a URL for the manifest, which specifies where the various repositories included in the Android source will be placed within your working directory. To check out the current branch, specify it with -b:
 ```
-repo init -u https://github.com/96boards/oe-rpb-manifest.git -b master
+repo init -u https://github.com/linaro-technologies/oe-rpb-manifest.git -b ltd-17.06
 ```
 When prompted, configure Repo with your real name and email address.
 
@@ -40,18 +40,23 @@ Setup Environment
 -----------------
 
 MACHINE values can be:
+* beaglebone
+* cl-som-imx7
+* cubox-i
 * dragonboard-410c
+* dragonboard-820c
 * hikey
+* ls1043ardb
+* raspberrypi3 
 
 DISTRO values can be:
 * rpb
-* rpb-wayland
 
 ```
 . setup-environment
-MACHINE=<machine> DISTRO=<distro> bitbake <image>
+MACHINE=<machine> DISTRO=<distro> bitbake rpb-ltd-gateway-image
 ```
-e.g. MACHINE=hikey DISTRO=rpb bitbake core-image-minimal
+e.g. MACHINE=hikey DISTRO=rpb bitbake rpb-ltd-gateway-image
 
 Creating a local topic branch
 -----------------------------
@@ -75,15 +80,9 @@ repo rebase
 ```
 If you find any bugs please report them here
 
-https://github.com/96boards/oe-rpb-manifest/issues
-
-If you have questions or feedback, please subscribe to
-
-https://lists.linaro.org/mailman/listinfo/openembedded
+https://github.com/linaro-technologies/oe-rpb-manifest/issues
 
 Maintainers
 -------------------------
 
-* Koen Kooi <mailto:koen.kooi@linaro.org>
-* Nicolas Dechesne <nicolas.dechesne@linaro.org>
-* Fathi Boudra <mailto:fathi.boudra@linaro.org>
+* Ricardo Salveti <mailto:ricardo.salveti@linaro.org>
