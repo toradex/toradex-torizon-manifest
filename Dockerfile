@@ -10,7 +10,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
-	  android-tools-fsutils chrpath cpio diffstat file gawk g++ iproute2 iputils-ping less libmagickwand-dev libmath-prime-util-perl libsdl1.2-dev libssl-dev locales openssh-client python-requests python3 repo texinfo vim-tiny wget whiptail \
+	  android-tools-fsutils ca-certificates chrpath cpio diffstat file gawk g++ iproute2 iputils-ping less libmagickwand-dev libmath-prime-util-perl libsdl1.2-dev libssl-dev locales openssh-client perl-modules python2.7 python-requests python3 repo texinfo vim-tiny wget whiptail \
 	&& apt-get autoremove -y \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* \
