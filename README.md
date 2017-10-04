@@ -1,13 +1,15 @@
-oe-rpb-manifest
+default.xml
 =================
 
-LTD OE RPB Repo manifest repository
+Open Source Foundries Linux microPlatform manifest.
 
-These are the setup scripts for the OE RPB buildsystem. If you want to
-(re)build packages or images for OE RPB, this is the thing to use.
+This directory contains a Repo manifest and setup scripts for the
+Linux microPlatform build system. If you want to (re)build packages or
+images for the Linux microPlatform, this is the manifest repository to
+use.
 
-The OE RPB buildsystem is using various components from the Yocto
-Project, most importantly the Openembedded buildsystem, the bitbake
+The build system uses various components from the Yocto
+Project, most importantly the OpenEmbedded build system, the bitbake
 task executor and various application and BSP layers.
 
 To configure the scripts and download the build metadata, do:
@@ -24,11 +26,14 @@ Run repo init to bring down the latest version of Repo with all its
 most recent bug fixes. You must specify a URL for the manifest, which
 specifies where the various repositories included in the Android
 source will be placed within your working directory. To check out the
-current branch, specify it with -b:
+latest branch:
 
 ```
-repo init -u https://github.com/linaro-technologies/oe-rpb-manifest.git -b ltd-17.06
+repo init -u https://git.foundries.io/YOUR_TREE/manifests.git
 ```
+
+Where YOUR_TREE in the URL points to a version of this repository you
+have access to.
 
 When prompted, configure Repo with your real name and email address.
 
@@ -38,7 +43,7 @@ now contain a .repo directory where files such as the manifest will be
 kept.
 
 To pull down the metadata sources to your working directory from the
-repositories as specified in the default manifest, run
+repositories as specified in the Linux microPlatform manifest, run
 
 ```
 repo sync
@@ -82,43 +87,12 @@ DISTRO values can be:
 
 ```
 . setup-environment
-MACHINE=<machine> DISTRO=<distro> bitbake rpb-ltd-gateway-image
+MACHINE=<machine> DISTRO=<distro> bitbake IMAGE_NAME
 ```
 
 e.g. MACHINE=hikey DISTRO=rpb bitbake rpb-ltd-gateway-image
 
-Creating a local topic branch
------------------------------
-
-If you need to create local branches for all repos which then can be
-done e.g.
-
-```
-~/bin/repo start myangstrom --all
-```
-
-Where 'myangstrom' is the name of branch you choose
-
-Updating the sandbox
---------------------
-
-If you need to bring changes from upstream then use following commands
-
-```
-repo sync
-```
-
-Rease your local committed changes
-
-```
-repo rebase
-```
-
-If you find any bugs please report them here
-
-https://github.com/linaro-technologies/oe-rpb-manifest/issues
-
 Maintainers
 -------------------------
 
-* Ricardo Salveti <mailto:ricardo.salveti@linaro.org>
+* Ricardo Salveti <mailto:ricardo@opensourcefoundries.com>
