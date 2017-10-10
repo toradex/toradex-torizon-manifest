@@ -3,6 +3,9 @@
 
   <default remote="github" revision="master" sync-j="4"/>
 
+  <remote name="osf-lmp"
+          fetch="https://git.opensourcefoundries.com/development/microplatforms/linux"/>
+
   <remote fetch="http://git.yoctoproject.org" name="yocto"/>
   <remote fetch="https://github.com" name="github"/>
   <remote fetch="http://git.linaro.org" name="linaro"/>
@@ -14,7 +17,7 @@
   <project remote="linaro" name="openembedded/meta-linaro" path="layers/meta-linaro" revision="51d0de5f83991c032c6e300b30eebb73367dc7d2"/>
   <project remote="yocto" name="git/meta-virtualization" path="layers/meta-virtualization" revision="e73608d56e498a7075e7a3e5550aafd76987d7aa"/>
   <project name="96boards/meta-rpb" path="layers/meta-rpb" revision="16a952af33c873e1995eca48a2cb80900fc18185"/>
-  <project name="linaro-technologies/meta-ltd" path="layers/meta-ltd" revision="2b9370f35dd3b5f2dde2ae165095406547162ba6"/>
+  <project remote="osf-lmp" name="meta-osf" path="layers/meta-osf" revision="96a916d843c9e35d7b05344b002ca169f5cc5df8"/>
 
   <project name="96boards/meta-96boards" path="layers/meta-96boards" revision="3bce974c381cae3b52040e06643ed6892f211896"/>
   <project name="ndechesne/meta-qcom" path="layers/meta-qcom" revision="a95622c51486b3c584ec276c78a3a3a58c91c912"/>
