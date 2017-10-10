@@ -4,7 +4,7 @@
   <default remote="github" revision="master" sync-j="4"/>
 
   <remote name="osf-lmp"
-          fetch="https://git.opensourcefoundries.com/development/microplatforms/linux"/>
+          fetch="https://git.foundries.io/development/microplatforms/linux"/>
 
   <remote fetch="http://git.yoctoproject.org" name="yocto"/>
   <remote fetch="https://github.com" name="github"/>
