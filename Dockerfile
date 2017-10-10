@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Andy Doan <andy.doan@linaro.org>
+MAINTAINER Andy Doan <andy@opensourcefoundries.com>
 
 # bitbake requires a utf8 filesystem encoding
 ENV LANG en_US.UTF-8
