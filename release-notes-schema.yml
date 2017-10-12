@@ -1,0 +1,59 @@
+## A pykwalify schema to validate the release-notes.yml file
+
+type: map
+mapping:
+  highlights:
+    required: true
+    type: seq
+    sequence:
+      - type: str
+
+  summary:
+    required: true
+    type: str
+
+  parts:
+    required: false
+    type: seq
+    sequence:
+      - type: map
+        mapping:
+          name:
+            required: true
+            type: str
+          summary:
+            required: true
+            type: str
+          projects:
+            required: true
+            type: seq
+            sequence:
+              - type: map
+                mapping:
+                  name:
+                    required: true
+                    type: str
+                  manifest_project:
+                    type: str
+                  features:
+                    type: seq
+                    sequence:
+                      - type: map
+                        mapping:
+                          heading:
+                            required: true
+                            type: str
+                          summary:
+                            required: true
+                            type: str
+                  bug_fixes:
+                    type: seq
+                    sequence:
+                      - type: map
+                        mapping:
+                          heading:
+                            required: true
+                            type: str
+                          summary:
+                            required: true
+                            type: str
