@@ -19,7 +19,7 @@
   <project name="96boards/meta-rpb" path="layers/meta-rpb" revision="16a952af33c873e1995eca48a2cb80900fc18185"/>
   <project remote="osf-lmp" name="meta-osf" path="layers/meta-osf" revision="bf6307fdf76a255fbca9e22d2997d08acc96c5e7"/>
 
-  <project name="96boards/meta-96boards" path="layers/meta-96boards" revision="3bce974c381cae3b52040e06643ed6892f211896"/>
+  <project name="96boards/meta-96boards" path="layers/meta-96boards" revision="eee9e16eece8780ae44357f92664491174211a06"/>
   <project name="ndechesne/meta-qcom" path="layers/meta-qcom" revision="a95622c51486b3c584ec276c78a3a3a58c91c912"/>
   <project name="Freescale/meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="fd3962a994b2f477d3e81fa7083f6b3d4e666df5"/>
   <project name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2" revision="8abc5197f3456590c493c59d1e6f696e25f88927"/>
