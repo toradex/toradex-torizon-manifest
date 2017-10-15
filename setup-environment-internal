@@ -18,8 +18,8 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-RPBcleanup() {
-        unset MACHINETABLE MACHLAYERS DISTROTABLE DISTROLAYERS DISTRO_DIRNAME OEROOT
+env_cleanup() {
+        unset MACHINETABLE MACHLAYERS DISTRO_DIRNAME OEROOT
         unset ITEM MANIFESTS EULA EULA_MACHINE REPLY READ_EULA
         unset usage oldmach
 
@@ -27,10 +27,10 @@ RPBcleanup() {
                 export BUILDDIR
         fi
 }
-trap RPBcleanup RETURN
+trap env_cleanup RETURN
 
 if [ "$(whoami)" = "root" ]; then
-    echo "ERROR: do not use the BSP as root. Exiting..."
+    echo "ERROR: do not build LMP as root. Exiting..."
     return
 fi
 
@@ -43,14 +43,16 @@ elif [ -n "$BASH_VERSION" ]; then
     set +o noclobber
 fi
 
+# Set default distro to Linux microPlatform
+DISTRO=lmp
+
 usage () {
     cat <<EOF
 
-Usage: [DISTRO=<DISTRO>] [MACHINE=<MACHINE>] source ${BASH_SOURCE[0]} [BUILDDIR]
+Usage: [MACHINE=<MACHINE>] source ${BASH_SOURCE[0]} [BUILDDIR]
 
 If no MACHINE is set, list all possible machines, and ask user to choose.
-If no DISTRO is set, list all possible distros, and ask user to choose.
-If no BUILDIR is set, it will be set to build-DISTRO.
+If no BUILDIR is set, it will be set to build-$DISTRO.
 
 EOF
 }
@@ -59,6 +61,7 @@ if [ $# -gt 1 ]; then
     usage
     return 1
 fi
+
 # create a common list of "<machine>(<layer>)", sorted by <machine>
 # Blacklist OE-core and meta-linaro, we only want 96boards + vendor layers
 MACHLAYERS=$(find layers -print | grep "conf/machine/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' -e 's/layers\///' | awk -F'/conf/machine/' '{print $NF "(" $1 ")"}' | LANG=C sort)
@@ -87,41 +90,6 @@ if [ -z "${MACHINE}" ]; then
             MACHINE=$(dialog --title "Available Machines" --menu "Please choose a machine" 0 0 20 $MACHINETABLE 3>&1 1>&2 2>&3)
         fi
     fi
-fi
-
-# create a common list of "<distro>(<layer>)", sorted by <distro>
-# Blacklist OE-core and meta-linaro, we only want 96boards + vendor layers
-DISTROLAYERS=$(find layers -print | grep "conf/distro/.*\.conf" | grep -v scripts | grep -v openembedded-core | grep -v meta-linaro | sed -e 's/\.conf//g' -e 's/layers\///' | awk -F'/conf/distro/' '{print $NF "(" $1 ")"}' | LANG=C sort)
-
-if [ -n "${DISTROLAYERS}" ] && [ -z "${DISTRO}" ]; then
-    # whiptail
-    which whiptail > /dev/null 2>&1
-    if [ $? -eq 0 ]; then
-        DISTROTABLE=
-        for ITEM in $DISTROLAYERS; do
-            DISTROTABLE="${DISTROTABLE} $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1)"
-        done
-        DISTRO=$(whiptail --title "Available Distributions" --menu \
-            "Please choose a distribution" 0 0 20 \
-            ${DISTROTABLE} 3>&1 1>&2 2>&3)
-    fi
-
-    # dialog
-    if [ -z "$DISTRO" ]; then
-        which dialog > /dev/null 2>&1
-        if [ $? -eq 0 ]; then
-            DISTROTABLE=
-            for ITEM in $DISTROLAYERS; do
-                DISTROTABLE="$DISTROTABLE $(echo "$ITEM" | cut -d'(' -f1) $(echo "$ITEM" | cut -d'(' -f2 | cut -d')' -f1)"
-            done
-            DISTRO=$(dialog --title "Available Distributions" --menu "Please choose a distribution" 0 0 20 $DISTROTABLE 3>&1 1>&2 2>&3)
-        fi
-    fi
-fi
-
-# If nothing has been set, go for 'nodistro'
-if [ -z "$DISTRO" ]; then
-    DISTRO="nodistro"
 fi
 
 # guard against Ctrl-D or cancel
@@ -159,65 +127,6 @@ export PATH=$(echo "$PATH" | awk -F: '{for (i=1;i<=NF;i++) { if ( !x[$i]++ ) pri
 # environment.
 export BB_ENV_EXTRAWHITE="MACHINE DISTRO TCLIBC TCMODE GIT_PROXY_COMMAND http_proxy ftp_proxy https_proxy all_proxy ALL_PROXY no_proxy SSH_AGENT_PID SSH_AUTH_SOCK BB_SRCREV_POLICY SDKMACHINE BB_NUMBER_THREADS"
 
-# Helper command for building images for mixed 32bit/64bit
-# ARM builds. The command allow to specify a secondary MACHINE
-# and image that will be built next to the primary target.
-# If no secondary image is specified the rpb-minimal-image image
-# will be built.
-
-
-bitbake_secondary_image () {
-    BITBAKE_OPTIONS=""
-    unset EXTRA_MACHINE
-    unset SECONDARY_IMAGE
-
-    SECONDARY_IMAGE='rpb-minimal-image'
-    while [[ $# -gt 1 ]]
-    do
-        key="$1"
-        case $key in
-            --extra-machine)
-            EXTRA_MACHINE="$2"
-            shift
-            ;;
-            --secondary-image)
-            SECONDARY_IMAGE="$2"
-            shift
-            ;;
-        *)
-            BITBAKE_OPTIONS=$BITBAKE_OPTIONS" "$1
-        ;;
-    esac
-    shift
-    done
-    BITBAKE_OPTIONS=$BITBAKE_OPTIONS" "$1
-    if [ -z "$EXTRA_MACHINE" ]
-    then
-        echo "   Error: you need to run $FUNCNAME with --extra-machine agument"
-        echo
-        echo "   Example:"
-        echo "     $ $FUNCNAME --extra-machine hikey rpb-weston-image"
-        return
-    fi
-
-    if [ "$EXTRA_MACHINE" == "$MACHINE" ]
-    then
-        echo "Error: the extra machine must be different from the machine you already set using setup-environment: "$MACHINE
-        return
-    fi
-
-    echo "Building first image. MACHINE:" $EXTRA_MACHINE " DISTRO:" $DISTRO
-
-    MACHINE=$EXTRA_MACHINE bitbake $SECONDARY_IMAGE
-
-    if [ $? != 0 ]; then
-        printf "Error building image"
-        return
-    fi
-    echo "Building second image. MACHINE:" $MACHINE " DISTRO:" $DISTRO
-
-    MACHINE=$MACHINE bitbake $BITBAKE_OPTIONS
-}
 mkdir -p "${BUILDDIR}"/conf && cd "${BUILDDIR}"
 if [ -f "conf/auto.conf" ]; then
     oldmach=$(egrep "^MACHINE" "conf/auto.conf" | sed -e 's%^MACHINE ?= %%' | sed -e 's/^"//'  -e 's/"$//')
@@ -344,7 +253,7 @@ fi
 
 cat <<EOF
 
-Welcome to OpenEmbedded Reference Platform Build (OE RPB)
+Welcome to Open Source Foundries Linux microPlatform (OSF LMP)
 
 For more information about OpenEmbedded see their website:
     http://www.openembedded.org/
@@ -358,10 +267,6 @@ Your build environemnt has been configured with:
 You can now run 'bitbake <target>'
 
 Some of common targets are:
-    rpb-console-image
-    rpb-desktop-image
-    rpb-weston-image
-    core-image-base
-    core-image-minimal
+    lmp-gateway-image
 
 EOF
