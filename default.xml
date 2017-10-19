@@ -16,7 +16,7 @@
 
   <project remote="linaro" name="openembedded/meta-linaro" path="layers/meta-linaro" revision="e487ca4b1590c1104b7a3b20f7bf343a2861b0fc"/>
   <project remote="yocto" name="git/meta-virtualization" path="layers/meta-virtualization" revision="8d3beeb4f45a9b9e700dbdd40555f3e62e368104"/>
-  <project remote="osf-lmp" name="meta-osf" path="layers/meta-osf" revision="a0b3c0a85235949963caf0e884f54d1f9b60b5e7"/>
+  <project remote="osf-lmp" name="meta-osf" path="layers/meta-osf" revision="dc2e7c60901d6b05e6e12871915d94ed037972b1"/>
 
   <project name="96boards/meta-96boards" path="layers/meta-96boards" revision="eee9e16eece8780ae44357f92664491174211a06"/>
   <project name="ndechesne/meta-qcom" path="layers/meta-qcom" revision="e27bc2054557df848f22b05674e51f289491723b"/>
