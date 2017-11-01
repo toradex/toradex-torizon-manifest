@@ -57,3 +57,8 @@ mapping:
                           summary:
                             required: true
                             type: str
+                          cves:
+                            required: false
+                            type: seq
+                            sequence:
+                              - type: str
