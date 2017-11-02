@@ -1,6 +1,6 @@
 highlights:
   - Layers updated to the latest OpenEmbedded / Yocto Rocko (2.4) baseline
-  - Bitbake updated to the latest 1.36 branch
+  - Bitbake updated to the latest 1.37 branch
   - LMP distribution available as part of Meta-OSF
   - Go updated to 1.9
   - Docker CE updated to 17.06
@@ -37,8 +37,10 @@ parts:
           - heading: Layer Update
             summary: |
               Ipk package creation can now be parallelised.
+              Busybox updated to 1.27.2.
+              Cmake updated to 3.9.3.
               Glibc updated to 2.25.90.
-              BlueZ updated to 5.46.
+              BlueZ updated to 5.47.
               systemd updated to 234.
               GCC updated to 7.2.0.
               Binutils updated to 2.29.
@@ -71,6 +73,7 @@ parts:
               - 2017-1000099
               - 2017-1000100
               - 2017-1000101
+              - 2017-1000254
           - heading: ncurses
             summary: |
               Multiple issues.
@@ -235,13 +238,26 @@ parts:
               - 2017-13086
               - 2017-13087
               - 2017-13088
+          - heading: bluez5
+            summary: |
+              SDP server in BlueZ 5.46 and earlier are vulnerable to an
+              information disclosure vulnerability which allows remote
+              attackers to obtain sensitive information from the bluetoothd
+              process memory
+            cves:
+              - 2017-1000250
+          - heading: busybox
+            summary: |
+              Prevent unsafe links extracting.
+            cves:
+              - 2011-5325
       - name: Meta Linaro Layer
         manifest_project: openembedded/meta-linaro
         features:
           - heading: Layer Update
             summary: |
               GCC Linaro updated to 7.1.1-2017.08.
-              OP-TEE updated to 2.5.0+.
+              OP-TEE updated to 2.6.0.
       - name: Meta Virtualization Layer
         manifest_project: git/meta-virtualization
         features:
@@ -281,12 +297,14 @@ parts:
         features:
           - heading: Layer Update
             summary: |
-              U-Boot-Fslc updated to 2017.07.
+              U-Boot-Fslc updated to 2017.09.
               U-Boot-Fslc-fw-utils updated to 2017.09.
+              UEFI updated to a812f17.
               Added machine configuration for imx25pdk, imx6sllevk and imx7ulpevk.
               wic.gz image format is now used for all i.MX machines by default.
               Added i.MX SDMA firmwares.
               imx-vpu updated to v5.4.37.
+              Change git.freescale repository URLs (using code aurora mirror instead).
       - name: Meta Freescale 3rdparty Layer
         manifest_project: Freescale/meta-freescale-3rdparty
         features:

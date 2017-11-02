@@ -10,21 +10,21 @@
   <remote fetch="https://github.com" name="github"/>
   <remote fetch="http://git.linaro.org" name="linaro"/>
 
-  <project name="openembedded/bitbake" path="bitbake" revision="be393f247a08c0a4a50a6a76b8fd57f78295d2a1"/>
-  <project name="openembedded/openembedded-core" path="layers/openembedded-core" revision="3b413a80578caacd9a7f405f3c51a3921d78a60d"/>
-  <project name="openembedded/meta-openembedded" path="layers/meta-openembedded" revision="6e3fc5b8d904d06e3aa77e9ec9968ab37a798188"/>
+  <project name="openembedded/bitbake" path="bitbake" revision="cc420f430b1dafd9ca944bea259a564aaab34595"/>
+  <project name="openembedded/openembedded-core" path="layers/openembedded-core" revision="73c6f85457361cd82d44838946aa81ba9bd1662a"/>
+  <project name="openembedded/meta-openembedded" path="layers/meta-openembedded" revision="5d6d21e98ed594809169d2b2f6964e90a3369a96"/>
 
-  <project remote="linaro" name="openembedded/meta-linaro" path="layers/meta-linaro" revision="e487ca4b1590c1104b7a3b20f7bf343a2861b0fc"/>
+  <project remote="linaro" name="openembedded/meta-linaro" path="layers/meta-linaro" revision="740dd01bf55ea1db88363db6b6a38cab455a385b"/>
   <project remote="yocto" name="git/meta-virtualization" path="layers/meta-virtualization" revision="8d3beeb4f45a9b9e700dbdd40555f3e62e368104"/>
-  <project remote="osf-lmp" name="meta-osf" path="layers/meta-osf" revision="dc2e7c60901d6b05e6e12871915d94ed037972b1"/>
+  <project remote="osf-lmp" name="meta-osf" path="layers/meta-osf" revision="36ab0829180919dfe99d16fbc327ba4f2f2c023e"/>
 
   <project name="96boards/meta-96boards" path="layers/meta-96boards" revision="eee9e16eece8780ae44357f92664491174211a06"/>
-  <project name="ndechesne/meta-qcom" path="layers/meta-qcom" revision="e27bc2054557df848f22b05674e51f289491723b"/>
+  <project name="ndechesne/meta-qcom" path="layers/meta-qcom" revision="281fbd4a16779ef810eea3e730da9a9fae10f395"/>
   <project name="Freescale/meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="46916bbd74cbc6f66b8027d6cfdd6c02e17c8e02"/>
   <project name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2" revision="8abc5197f3456590c493c59d1e6f696e25f88927"/>
-  <project remote="yocto" name="git/meta-raspberrypi" path="layers/meta-raspberrypi" revision="fe99478aa9ebfbcf78d02bad35fd1310912e4857"/>
-  <project remote="yocto" name="git/meta-freescale" path="layers/meta-freescale" revision="e2de0908b1d88e3bd60cb11d25b70cf92fe2f089"/>
-  <project remote="yocto" name="git/meta-yocto" path="layers/meta-yocto" revision="2d8a572df7498ce8eb3a78f05384f0f7dd5ecb91">
+  <project remote="yocto" name="git/meta-raspberrypi" path="layers/meta-raspberrypi" revision="76f5a7df711b12165a01f933b6a9cb2793940e88"/>
+  <project remote="yocto" name="git/meta-freescale" path="layers/meta-freescale" revision="fb66d5010363083ea8d84160b74c62dad67f9a13"/>
+  <project remote="yocto" name="git/meta-yocto" path="layers/meta-yocto" revision="0d44e59bfaa95162cf2133df1d08f6419314bb8e">
       <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
 
