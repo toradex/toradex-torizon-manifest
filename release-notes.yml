@@ -1,5 +1,311 @@
 highlights:
-  - Converted to Open Source Foundries Meta Layer
-
+  - Layers updated to the latest OpenEmbedded / Yocto Rocko (2.4) baseline
+  - Bitbake updated to the latest 1.36 branch
+  - LMP distribution available as part of Meta-OSF
+  - Go updated to 1.9
+  - Docker CE updated to 17.06
+  - Images are now compressed (xz) by default.
+  - U-Boot support for RaspberryPi 3
 summary: |
- This is the first Linux microPlatform release created by Open Source Foundries.
+ This release includes a major OpenEmbedded / Yocto update, which is now based
+ on the latest Rocko (2.4) baseline (which is in the process to be released).
+
+ Go was updated to 1.9 and Docker was updated to the CE 17.06 release.
+parts:
+  - name: Linux microPlatform
+    summary: |
+      OpenEmbedded / Yocto layers updated to the latest Rocko (2.4) baseline.
+
+      LMP distribution now replaces Linaro's RPB, available as part of the
+      Meta-OSF layer.
+
+      Go was updated to 1.9 and Docker CE updated to 17.06.
+    projects:
+      - name: Meta-96boards Layer
+        manifest_project: 96boards/meta-96boards
+        features:
+          - heading: Layer Update
+            summary: |
+              Grub is now compatible with GCC 7 (default version in Rocko).
+              Grub's default boot configuration now includes the distro name.
+              HiKey serial console now can be configured externally.
+              96boards-tools was updated to 0.11, including improvements to the
+              rootfs resize script.
+      - name: OpenEmbedded-Core Layer
+        manifest_project: openembedded/openembedded-core
+        features:
+          - heading: Layer Update
+            summary: |
+              Ipk package creation can now be parallelised.
+              Glibc updated to 2.25.90.
+              BlueZ updated to 5.46.
+              systemd updated to 234.
+              GCC updated to 7.2.0.
+              Binutils updated to 2.29.
+              CA-Certificates updated to 20170717.
+              U-Boot updated to 2017.09.
+              Go updated to 1.9, including major changes in the bbclass.
+              Linux-firmware updated to the latest git revision.
+              Improved support for WIC, with several minor bugfixes.
+        bug_fixes:
+          - heading: libxml2
+            summary: |
+              Multiple issues.
+            cves:
+              - 2017-0663
+              - 2017-5969
+              - 2017-8872
+              - 2017-9047
+              - 2017-9048
+              - 2017-9049
+              - 2017-9050
+          - heading: wget
+            summary: |
+              CRLF injection vulnerability in the url_parse function.
+            cves:
+              - 2017-6508
+          - heading: curl
+            summary: |
+              Multiple issues.
+            cves:
+              - 2017-1000099
+              - 2017-1000100
+              - 2017-1000101
+          - heading: ncurses
+            summary: |
+              Multiple issues.
+            cves:
+              - 2017-13728
+              - 2017-13729
+              - 2017-13730
+              - 2017-13731
+              - 2017-13732
+              - 2017-13734
+          - heading: libgcrypt
+            summary: |
+              Libgcrypt before 1.8.1 does not properly consider Curve25519
+              side-channel attacks.
+            cves:
+              - 2017-0379
+          - heading: wpa_supplicant
+            summary: |
+              Several issues related to the Key Reinstallation Attacks (KRACK).
+            cves:
+              - 2017-13077
+              - 2017-13078
+              - 2017-13079
+              - 2017-13080
+              - 2017-13081
+              - 2017-13082
+              - 2017-13086
+              - 2017-13087
+              - 2017-13088
+          - heading: shadow
+            summary: |
+              In shadow before 4.5, the newusers tool could be made to
+              manipulate internal data structures in ways unintended by the
+              authors.
+            cves:
+              - 2017-12424
+          - heading: sqlite3
+            summary: |
+              The dump_callback function in SQLite 3.20.0 allows remote
+              attackers to cause a denial of service (EXC_BAD_ACCESS
+              and application crash) via a crafted file.
+            cves:
+              - 2017-13685
+      - name: Meta OpenEmbedded Layer
+        manifest_project: openembedded/meta-openembedded
+        features:
+          - heading: Layer Update
+            summary: |
+              Gvfs updated to 1.32.1.
+              Parted updated to 0.28.1.
+              VIM updated to 8.0.0983.
+              Rsyslog updated to 8.29.
+              Dnsmasq upadted to 2.78.
+              Tcpdump updated to 4.9.2.
+        bug_fixes:
+          - heading: tcpdump
+            summary: |
+              Multiple issues.
+            cves:
+              - 2017-11543
+              - 2017-13011
+              - 2017-12989
+              - 2017-12990
+              - 2017-12995
+              - 2017-12997
+              - 2017-11541
+              - 2017-11542
+              - 2017-12893
+              - 2017-12894
+              - 2017-12895
+              - 2017-12896
+              - 2017-12897
+              - 2017-12898
+              - 2017-12899
+              - 2017-12900
+              - 2017-12901
+              - 2017-12902
+              - 2017-12985
+              - 2017-12986
+              - 2017-12987
+              - 2017-12988
+              - 2017-12991
+              - 2017-12992
+              - 2017-12993
+              - 2017-11542
+              - 2017-11541
+              - 2017-12994
+              - 2017-12996
+              - 2017-12998
+              - 2017-12999
+              - 2017-13000
+              - 2017-13001
+              - 2017-13002
+              - 2017-13003
+              - 2017-13004
+              - 2017-13005
+              - 2017-13006
+              - 2017-13007
+              - 2017-13008
+              - 2017-13009
+              - 2017-13010
+              - 2017-13012
+              - 2017-13013
+              - 2017-13014
+              - 2017-13015
+              - 2017-11543
+              - 2017-13016
+              - 2017-13017
+              - 2017-13018
+              - 2017-13019
+              - 2017-13020
+              - 2017-13021
+              - 2017-13022
+              - 2017-13023
+              - 2017-13024
+              - 2017-13025
+              - 2017-13026
+              - 2017-13027
+              - 2017-13028
+              - 2017-13029
+              - 2017-13030
+              - 2017-13031
+              - 2017-13032
+              - 2017-13033
+              - 2017-13034
+              - 2017-13035
+              - 2017-13036
+              - 2017-13037
+              - 2017-13038
+              - 2017-13039
+              - 2017-13040
+              - 2017-13041
+              - 2017-13042
+              - 2017-13043
+              - 2017-13044
+              - 2017-13045
+              - 2017-13046
+              - 2017-13047
+              - 2017-13048
+              - 2017-13049
+              - 2017-13050
+              - 2017-13051
+              - 2017-13052
+              - 2017-13053
+              - 2017-13054
+              - 2017-13055
+              - 2017-13687
+              - 2017-13688
+              - 2017-13689
+              - 2017-13690
+              - 2017-13725
+          - heading: hostapd
+            summary: |
+              Several issues related to the Key Reinstallation Attacks (KRACK).
+            cves:
+              - 2017-13077
+              - 2017-13078
+              - 2017-13079
+              - 2017-13080
+              - 2017-13081
+              - 2017-13082
+              - 2017-13086
+              - 2017-13087
+              - 2017-13088
+      - name: Meta Linaro Layer
+        manifest_project: openembedded/meta-linaro
+        features:
+          - heading: Layer Update
+            summary: |
+              GCC Linaro updated to 7.1.1-2017.08.
+              OP-TEE updated to 2.5.0+.
+      - name: Meta Virtualization Layer
+        manifest_project: git/meta-virtualization
+        features:
+          - heading: Layer Update
+            summary: |
+              runc-docker updated to to 1.0-rc3+.
+              Docker CE updated to 17.06.
+              Containerd updated to latest 0.2.x.
+              Added support for Python Docker 1.16.1.
+              Runc-opencontainers updated to v1.0.0-rc4.
+      - name: Meta OSF Layer
+        manifest_project: meta-osf
+        features:
+          - heading: Layer Update
+            summary: |
+              Added new LMP distro configuration.
+              Gateway image renamed from rpb-osf-gateway-image to lmp-gateway-image.
+              The LMP distribution now using GCC Linaro 7.x.
+              Added WKS file for cl-som-imx7.
+        bug_fixes:
+          - heading: docker
+            summary: |
+              Go-fsinotify fixes to enable docker logs -f on arm64.
+          - heading: 96boards-tools
+            summary: |
+              Force resize-helper to wait for udevadm settle so it can always
+              have a successful run.
+      - name: Meta Qualcomm Layer
+        manifest_project: ndechesne/meta-qcom
+        features:
+          - heading: Layer Update
+            summary: |
+              Added firmware for ath10k (dragonboard820c).
+              Kernel format changed from Image to Image.gz.
+      - name: Meta Freescale Layer
+        manifest_project: git/meta-freescale
+        features:
+          - heading: Layer Update
+            summary: |
+              U-Boot-Fslc updated to 2017.07.
+              U-Boot-Fslc-fw-utils updated to 2017.09.
+              Added machine configuration for imx25pdk, imx6sllevk and imx7ulpevk.
+              wic.gz image format is now used for all i.MX machines by default.
+              Added i.MX SDMA firmwares.
+              imx-vpu updated to v5.4.37.
+      - name: Meta Freescale 3rdparty Layer
+        manifest_project: Freescale/meta-freescale-3rdparty
+        features:
+          - heading: Layer Update
+            summary: |
+              Added machine configuration for imx7d-pico.
+              Added support for Wandboard D1.
+              Added wic image support for several supported machines.
+      - name: Meta RaspberryPi Layer
+        manifest_project: git/meta-raspberrypi
+        features:
+          - heading: Layer Update
+            summary: |
+              RaspberryPi firmware updated to tag 1.20170811.
+              Updated linux-firmware-brcmfmac43430 to 7.45.41.46.
+              Improved support for raspberrypi3-64.
+      - name: Meta Yocto Layer
+        manifest_project: git/meta-yocto
+        features:
+          - heading: Layer Update
+            summary: |
+              Added kernel device tree config for Beagle Bone Green.
