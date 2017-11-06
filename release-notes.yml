@@ -274,6 +274,7 @@ parts:
           - heading: Layer Update
             summary: |
               Added new LMP distro configuration.
+              Match distro version with Yocto.
               Gateway image renamed from rpb-osf-gateway-image to lmp-gateway-image.
               The LMP distribution now using GCC Linaro 7.x.
               Added WKS file for cl-som-imx7.
