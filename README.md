@@ -82,7 +82,6 @@ Supported **MACHINE** targets (officially tested by OSF):
 * dragonboard-410c
 * dragonboard-820c
 * hikey
-* ls1043ardb
 * raspberrypi3
 
 Supported image targets:
