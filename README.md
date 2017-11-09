@@ -1,11 +1,11 @@
-default.xml
-=================
+Linux microPlatform Manifest
+============================
 
 Open Source Foundries Linux microPlatform manifest.
 
 This directory contains a Repo manifest and setup scripts for the
-Linux microPlatform build system. If you want to (re)build packages or
-images for the Linux microPlatform, this is the manifest repository to
+Linux microPlatform build system. If you want to modify, extend or port Linux
+microPlatform to a new hardware platform, this is the manifest repository to
 use.
 
 The build system uses various components from the Yocto
@@ -22,18 +22,21 @@ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/rep
 chmod a+x ~/bin/repo
 ```
 
-Run repo init to bring down the latest version of Repo with all its
-most recent bug fixes. You must specify a URL for the manifest, which
-specifies where the various repositories included in the Android
-source will be placed within your working directory. To check out the
-latest branch:
+Run `repo init` to bring down the latest stable version of Repo. You must
+specify a URL for the manifest, which specifies the various repositories that
+will be placed within your working directory.
+
+To check out the latest LMP subscriber continuous release:
 
 ```
-repo init -u https://git.foundries.io/YOUR_TREE/manifests.git
+repo init -u https://source.foundries.io/lmp-manifest
 ```
 
-Where YOUR_TREE in the URL points to a version of this repository you
-have access to.
+To check out the latest LMP public release:
+
+```
+repo init -u https://github.com/OpenSourceFoundries/lmp-manifest
+```
 
 When prompted, configure Repo with your real name and email address.
 
@@ -43,7 +46,7 @@ now contain a .repo directory where files such as the manifest will be
 kept.
 
 To pull down the metadata sources to your working directory from the
-repositories as specified in the Linux microPlatform manifest, run
+repositories as specified in the Linux microPlatform manifest, run:
 
 ```
 repo sync
@@ -72,27 +75,38 @@ repo sync -j1
 Setup Environment
 -----------------
 
-MACHINE values can be:
+Supported **MACHINE** targets (officially tested by OSF):
 * beaglebone
 * cl-som-imx7
 * cubox-i
 * dragonboard-410c
 * dragonboard-820c
 * hikey
-* ls1043ardb
 * raspberrypi3
 
-DISTRO values can be:
-* rpb
+Supported image targets:
+* lmp-gateway-image
+
+The default distribution (DISTRO) variable is automatically set to `lmp`,
+which is provided by the `meta-osf` layer.
+
+Setup the work environment by using the `setup-environment` script:
 
 ```
-. setup-environment
-MACHINE=<machine> DISTRO=<distro> bitbake IMAGE_NAME
+[MACHINE=<MACHINE>] source setup-environment [BUILDDIR]
 ```
 
-e.g. MACHINE=hikey DISTRO=rpb bitbake rpb-ltd-gateway-image
+If **MACHINE** is not provided, the script will list all possible machines and
+force one to be selected.
 
-Maintainers
--------------------------
+To build the Linux microPlatform gateway image:
 
-* Ricardo Salveti <mailto:ricardo@opensourcefoundries.com>
+```
+bitbake lmp-gateway-image
+```
+
+Issues and Support
+------------------
+
+Please report any bugs, issues or suggestions at
+https://opensourcefoundries.freshdesk.com.
