@@ -8,6 +8,14 @@ ENV LC_ALL en_US.UTF-8
 
 ARG DEBIAN_FRONTEND=noninteractive
 
+# OSF PPA for additional dependencies and newer packages
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends \
+	   software-properties-common \
+	&& add-apt-repository ppa:osf-maintainers/ppa \
+	&& apt-get clean \
+	&& rm -rf /var/lib/apt/lists/*
+
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
 		android-tools-fsutils ca-certificates chrpath cpio diffstat \
