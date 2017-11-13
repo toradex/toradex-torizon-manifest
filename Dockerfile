@@ -41,3 +41,6 @@ RUN useradd -c $DEV_USER_NAME \
 
 # Add default password for the SDK user (useful with sudo)
 RUN echo $DEV_USER:$DEV_USER_PASSWD | chpasswd
+
+# Initialize development environment for $DEV_USER.
+RUN sudo -u $DEV_USER -H git config --global credential.helper 'cache --timeout=3600'
