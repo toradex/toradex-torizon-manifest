@@ -7,6 +7,9 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 ARG DEBIAN_FRONTEND=noninteractive
+ARG DEV_USER_NAME=Builder
+ARG DEV_USER=builder
+ARG DEV_USER_PASSWD=builder
 
 # OSF PPA for additional dependencies and newer packages
 RUN apt-get update \
@@ -29,8 +32,8 @@ RUN apt-get update \
 	&& locale-gen en_US.UTF-8
 
 # Create the user which will run the SDK binaries.
-RUN useradd -c builder \
-		-d /home/builder \
+RUN useradd -c $DEV_USER_NAME \
+		-d /home/$DEV_USER \
 		-m \
 		-s /bin/bash \
-		builder
+		$DEV_USER
