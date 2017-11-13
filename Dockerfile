@@ -25,7 +25,7 @@ RUN apt-get update \
 		file gawk g++ iproute2 iputils-ping less libmagickwand-dev \
 		libmath-prime-util-perl libsdl1.2-dev libssl-dev locales \
 		openssh-client perl-modules python2.7 python-requests python3 \
-		repo texinfo vim-tiny wget whiptail \
+		repo sudo texinfo vim-tiny wget whiptail \
 	&& apt-get autoremove -y \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* \
@@ -34,6 +34,10 @@ RUN apt-get update \
 # Create the user which will run the SDK binaries.
 RUN useradd -c $DEV_USER_NAME \
 		-d /home/$DEV_USER \
+		-G sudo,dialout,floppy,plugdev,users \
 		-m \
 		-s /bin/bash \
 		$DEV_USER
+
+# Add default password for the SDK user (useful with sudo)
+RUN echo $DEV_USER:$DEV_USER_PASSWD | chpasswd
