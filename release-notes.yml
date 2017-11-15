@@ -5,7 +5,8 @@ summary: |
  Linux microPlatform build system improvements to easy the platform build process
  in docker containers.
 
- Layer updates for meta-osf, meta-freescale-3rdparty meta-qcom and meta-linaro.
+ Layer updates for meta-osf, meta-freescale-3rdparty meta-qcom, meta-raspberrypi
+ and meta-linaro.
 parts:
   - name: Linux microPlatform
     summary: |
@@ -48,3 +49,9 @@ parts:
               Removal of the ACCEPT_EULA variable for firmware-qcom-dragonboard410c.
               Added firmware recipe and package for DragonBoard-820c.
               Added support for a bootable SD card image for DragonBoard-410c.
+      - name: Meta RaspberryPi Layer
+        manifest_project: git/meta-raspberrypi
+        features:
+          - heading: Layer Update
+            summary: |
+              Disable asm for raspberrypi0-wifi when building x264.
