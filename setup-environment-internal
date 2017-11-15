@@ -2,6 +2,7 @@
 # -*- mode: shell-script-mode; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
 #
 # Copyright (C) 2012-13 O.S. Systems Software LTDA.
+# Copyright (C) 2017 Open Source Foundries Ltd.
 # Authored-by:  Otavio Salvador <otavio@ossystems.com.br>
 # Adopted to Angstrom:  Khem Raj <raj.khem@gmail.com>
 #
