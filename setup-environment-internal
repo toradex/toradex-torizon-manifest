@@ -172,6 +172,9 @@ SSTATE_DIR ?= "${OEROOT}/sstate-cache"
 # Where to save the build system work output
 TMPDIR = "${BUILDDIR}/tmp-${DISTRO_DIRNAME}"
 
+# Where to save the packages and images
+DEPLOY_DIR = "${BUILDDIR}/deploy"
+
 # Go through the Firewall
 #HTTP_PROXY = "http://${PROXYHOST}:${PROXYPORT}/"
 _EOF
