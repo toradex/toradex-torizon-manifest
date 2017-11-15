@@ -3,6 +3,8 @@ highlights:
 summary: |
  Linux microPlatform build system improvements to easy the platform build process
  in docker containers.
+
+ Layer updates for meta-osf and meta-freescale-3rddparty.
 parts:
   - name: Linux microPlatform
     summary: |
@@ -19,3 +21,13 @@ parts:
               libc at this point.
               Default git repository and namespace used by the Linux recipe
               changed to use the subscriber repository by default.
+      - name: Meta Freescale 3rdparty Layer
+        manifest_project: Freescale/meta-freescale-3rdparty
+        features:
+          - heading: Layer Update
+            summary: |
+              U-boot-toradex updated to 2016.11 (toradex bsp 2.7.4).
+              SPL, wic and device tree machine fixes for apalis-imx6 and
+              colibri-imx7.
+              Added device tree for the aster carrier board and migrated
+              colibri-vf machine configuration to use wic image format.

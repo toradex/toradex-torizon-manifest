@@ -8,7 +8,7 @@
   <default remote="github" revision="master" sync-j="4"/>
 
   <project name="96boards/meta-96boards" path="layers/meta-96boards" revision="eee9e16eece8780ae44357f92664491174211a06"/>
-  <project name="Freescale/meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="46916bbd74cbc6f66b8027d6cfdd6c02e17c8e02"/>
+  <project name="Freescale/meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="1a3fb4e0c726429dfa48f1ef4c01bcf5bef15c66"/>
   <project name="core-containers" path="containers/core-containers" remote="osf-lmp" revision="62d1178666390e3e7e49a323dbc65468013b395f"/>
   <project name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2" revision="8abc5197f3456590c493c59d1e6f696e25f88927"/>
   <project name="extra-containers" path="containers/extra-containers" remote="osf-lmp" revision="a80304f9f9ea6ff12b34592c6e95e38994776d43"/>
