@@ -4,7 +4,7 @@ summary: |
  Linux microPlatform build system improvements to easy the platform build process
  in docker containers.
 
- Layer updates for meta-osf and meta-freescale-3rddparty.
+ Layer updates for meta-osf, meta-freescale-3rdparty and meta-linaro.
 parts:
   - name: Linux microPlatform
     summary: |
@@ -31,3 +31,11 @@ parts:
               colibri-imx7.
               Added device tree for the aster carrier board and migrated
               colibri-vf machine configuration to use wic image format.
+      - name: Meta Linaro Layer
+        manifest_project: openembedded/meta-linaro
+        features:
+          - heading: Layer Update
+            summary: |
+              linux.inc no longer includes linux-dtb.inc, removing a build
+              warning.
+              Stress-ng recipe removed as it was merged into meta-oe.

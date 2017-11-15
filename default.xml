@@ -22,7 +22,7 @@
   <project name="meta-osf" path="layers/meta-osf" remote="osf-lmp" revision="54c8060efecebed11661c754f01676915bfd7f17"/>
   <project name="ndechesne/meta-qcom" path="layers/meta-qcom" revision="281fbd4a16779ef810eea3e730da9a9fae10f395"/>
   <project name="openembedded/bitbake" path="bitbake" revision="cc420f430b1dafd9ca944bea259a564aaab34595"/>
-  <project name="openembedded/meta-linaro" path="layers/meta-linaro" remote="linaro" revision="740dd01bf55ea1db88363db6b6a38cab455a385b"/>
+  <project name="openembedded/meta-linaro" path="layers/meta-linaro" remote="linaro" revision="0313c6d13645fb32a592d807ef1c7a527cb1efa4"/>
   <project name="openembedded/meta-openembedded" path="layers/meta-openembedded" revision="5d6d21e98ed594809169d2b2f6964e90a3369a96"/>
   <project name="openembedded/openembedded-core" path="layers/openembedded-core" revision="73c6f85457361cd82d44838946aa81ba9bd1662a"/>
 </manifest>
