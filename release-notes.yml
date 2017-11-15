@@ -1,10 +1,11 @@
 highlights:
   - Build system improvements to easy the platform build process in docker containers
+  - Removal of the ACCEPT_EULA variable for firmware-qcom-dragonboard410c
 summary: |
  Linux microPlatform build system improvements to easy the platform build process
  in docker containers.
 
- Layer updates for meta-osf, meta-freescale-3rdparty and meta-linaro.
+ Layer updates for meta-osf, meta-freescale-3rdparty meta-qcom and meta-linaro.
 parts:
   - name: Linux microPlatform
     summary: |
@@ -39,3 +40,11 @@ parts:
               linux.inc no longer includes linux-dtb.inc, removing a build
               warning.
               Stress-ng recipe removed as it was merged into meta-oe.
+      - name: Meta Qualcomm Layer
+        manifest_project: ndechesne/meta-qcom
+        features:
+          - heading: Layer Update
+            summary: |
+              Removal of the ACCEPT_EULA variable for firmware-qcom-dragonboard410c.
+              Added firmware recipe and package for DragonBoard-820c.
+              Added support for a bootable SD card image for DragonBoard-410c.
