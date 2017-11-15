@@ -161,7 +161,6 @@ INHERIT += "rm_work"
 EOF
 if [ ! -e conf/site.conf ]; then
     cat > conf/site.conf <<_EOF
-
 SCONF_VERSION = "1"
 
 # Where to store sources
@@ -170,11 +169,11 @@ DL_DIR = "${OEROOT}/downloads"
 # Where to save shared state
 SSTATE_DIR = "${OEROOT}/sstate-cache"
 
+# Where to save the build system work output
 TMPDIR = "${BUILDDIR}/tmp-${DISTRO_DIRNAME}"
 
 # Go through the Firewall
-#HTTP_PROXY        = "http://${PROXYHOST}:${PROXYPORT}/"
-
+#HTTP_PROXY = "http://${PROXYHOST}:${PROXYPORT}/"
 _EOF
 fi
 
