@@ -1,6 +1,7 @@
 highlights:
   - Build system improvements to easy the platform build process in docker containers
   - Removal of the ACCEPT_EULA variable for firmware-qcom-dragonboard410c
+  - SD card image now available for DragonBoard-410c
 summary: |
  Linux microPlatform build system improvements to easy the platform build process
  in docker containers.
