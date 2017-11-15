@@ -19,7 +19,7 @@
   <project name="git/meta-yocto" path="layers/meta-yocto" remote="yocto" revision="0d44e59bfaa95162cf2133df1d08f6419314bb8e">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
-  <project name="meta-osf" path="layers/meta-osf" remote="osf-lmp" revision="588f7ef18756ca09aeaaf6470c064554551b94e9"/>
+  <project name="meta-osf" path="layers/meta-osf" remote="osf-lmp" revision="54c8060efecebed11661c754f01676915bfd7f17"/>
   <project name="ndechesne/meta-qcom" path="layers/meta-qcom" revision="281fbd4a16779ef810eea3e730da9a9fae10f395"/>
   <project name="openembedded/bitbake" path="bitbake" revision="cc420f430b1dafd9ca944bea259a564aaab34595"/>
   <project name="openembedded/meta-linaro" path="layers/meta-linaro" remote="linaro" revision="740dd01bf55ea1db88363db6b6a38cab455a385b"/>
