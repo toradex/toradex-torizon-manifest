@@ -8,7 +8,10 @@
   
   <project name="96boards/meta-96boards" path="layers/meta-96boards" revision="eee9e16eece8780ae44357f92664491174211a06" />
   <project name="Freescale/meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="46916bbd74cbc6f66b8027d6cfdd6c02e17c8e02" />
+  <project name="core-containers" path="containers/core-containers" remote="subscriber-microplatforms" revision="62d1178666390e3e7e49a323dbc65468013b395f" />
   <project name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2" revision="8abc5197f3456590c493c59d1e6f696e25f88927" />
+  <project name="extra-containers" path="containers/extra-containers" remote="subscriber-microplatforms" revision="a80304f9f9ea6ff12b34592c6e95e38994776d43" />
+  <project name="gateway-containers" path="containers/gateway-containers" remote="subscriber-microplatforms" revision="4861f08499f5873dae5246df8cf344114efe44cf" />
   <project name="git/meta-freescale" path="layers/meta-freescale" remote="yocto" revision="fb66d5010363083ea8d84160b74c62dad67f9a13" />
   <project name="git/meta-raspberrypi" path="layers/meta-raspberrypi" remote="yocto" revision="76f5a7df711b12165a01f933b6a9cb2793940e88" />
   <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="8d3beeb4f45a9b9e700dbdd40555f3e62e368104" />
