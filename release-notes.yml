@@ -6,7 +6,7 @@ summary: |
  in docker containers.
 
  Layer updates for meta-osf, meta-freescale-3rdparty meta-qcom, meta-raspberrypi
- and meta-linaro.
+ and openembedded-core and meta-linaro.
 parts:
   - name: Linux microPlatform
     summary: |
@@ -55,3 +55,32 @@ parts:
           - heading: Layer Update
             summary: |
               Disable asm for raspberrypi0-wifi when building x264.
+      - name: OpenEmbedded-Core Layer
+        manifest_project: openembedded/openembedded-core
+        features:
+          - heading: Layer Update
+            summary: |
+              Tzdata updated to 2017c.
+              Bind updated to 9.10.6.
+              OpenSSH updated to 7.6.
+              Wic now supports part-name argument for naming GPT partitions.
+              Util-linux updated to 2.31.
+              libxml2 updated to 2.9.7.
+              Wget updated to 1.19.2.
+              Expact updated to 2.2.5.
+        bug_fixes:
+          - heading: bind
+            summary: |
+              Multiple issues.
+            cves:
+              - 2017-3142
+              - 2017-3143
+              - 2017-3141
+              - 2017-3140
+          - heading: wget
+            summary: |
+              Multiple issues.
+            cves:
+              - 2017-13089
+              - 2017-13090
+              - 2017-6508
