@@ -1,87 +1,29 @@
 highlights:
-  - Build system improvements to easy the platform build process in docker containers
-  - Removal of the ACCEPT_EULA variable for firmware-qcom-dragonboard410c
-  - SD card image now available for DragonBoard-410c
+  - Added meta-intel layer to provide intel-corei7-64 machine type
+  - Switched Intel targets to use OSF kernel
+  - Enabled specific drivers for Minnowboard Turbot variants
 summary: |
- Linux microPlatform build system improvements to easy the platform build process
- in docker containers.
+ Linux microPlatform add supports for generic 64bit Intel targets.
+ Validated with Minnowboard Turbot and NUC variants.
 
- Layer updates for meta-osf, meta-freescale-3rdparty meta-qcom, meta-raspberrypi
- and openembedded-core and meta-linaro.
+ Layer updates for meta-osf, and meta-intel.
 parts:
   - name: Linux microPlatform
     summary: |
-      Linux microPlatform build system improvements to easy the platform build
-      process in docker containers.
+      Linux microPlatform add supports for generic 64bit Intel targets.
+      Validated using Minnowboard Turbot and NUC variants.
     projects:
       - name: Meta OSF Layer
         manifest_project: meta-osf
         features:
           - heading: Layer Update
             summary: |
-              Default distro maintainer set to OSF Support.
-              Clear TCLIBCAPPEND for a single TMPDIR as LMP only supports one
-              libc at this point.
-              Default git repository and namespace used by the Linux recipe
-              changed to use the subscriber repository by default.
-      - name: Meta Freescale 3rdparty Layer
-        manifest_project: Freescale/meta-freescale-3rdparty
+              Added support for generic 64bit Intel targets using OSF
+              kernel.
+              Enabled Minnowboard Turbot specific platform drivers.
+      - name: Meta Intel
+        manifest_project: git/meta-intel
         features:
-          - heading: Layer Update
+          - heading: Layer Addition
             summary: |
-              U-boot-toradex updated to 2016.11 (toradex bsp 2.7.4).
-              SPL, wic and device tree machine fixes for apalis-imx6 and
-              colibri-imx7.
-              Added device tree for the aster carrier board and migrated
-              colibri-vf machine configuration to use wic image format.
-      - name: Meta Linaro Layer
-        manifest_project: openembedded/meta-linaro
-        features:
-          - heading: Layer Update
-            summary: |
-              linux.inc no longer includes linux-dtb.inc, removing a build
-              warning.
-              Stress-ng recipe removed as it was merged into meta-oe.
-      - name: Meta Qualcomm Layer
-        manifest_project: ndechesne/meta-qcom
-        features:
-          - heading: Layer Update
-            summary: |
-              Removal of the ACCEPT_EULA variable for firmware-qcom-dragonboard410c.
-              Added firmware recipe and package for DragonBoard-820c.
-              Added support for a bootable SD card image for DragonBoard-410c.
-      - name: Meta RaspberryPi Layer
-        manifest_project: git/meta-raspberrypi
-        features:
-          - heading: Layer Update
-            summary: |
-              Disable asm for raspberrypi0-wifi when building x264.
-      - name: OpenEmbedded-Core Layer
-        manifest_project: openembedded/openembedded-core
-        features:
-          - heading: Layer Update
-            summary: |
-              Tzdata updated to 2017c.
-              Bind updated to 9.10.6.
-              OpenSSH updated to 7.6.
-              Wic now supports part-name argument for naming GPT partitions.
-              Util-linux updated to 2.31.
-              libxml2 updated to 2.9.7.
-              Wget updated to 1.19.2.
-              Expact updated to 2.2.5.
-        bug_fixes:
-          - heading: bind
-            summary: |
-              Multiple issues.
-            cves:
-              - 2017-3142
-              - 2017-3143
-              - 2017-3141
-              - 2017-3140
-          - heading: wget
-            summary: |
-              Multiple issues.
-            cves:
-              - 2017-13089
-              - 2017-13090
-              - 2017-6508
+              Initial import of the meta-intel layer.
