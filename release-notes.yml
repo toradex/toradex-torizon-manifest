@@ -2,6 +2,7 @@ highlights:
   - Added meta-intel layer to provide intel-corei7-64 machine type
   - Switched Intel targets to use OSF kernel
   - Enabled specific drivers for Minnowboard Turbot variants
+  - Migrated linux-osf to use the linux-yocto infrastructure
 summary: |
  Linux microPlatform add supports for generic 64bit Intel targets.
  Validated with Minnowboard Turbot and NUC variants.
@@ -21,6 +22,7 @@ parts:
               Added support for generic 64bit Intel targets using OSF
               kernel.
               Enabled Minnowboard Turbot specific platform drivers.
+              Migrated linux-osf to use the linux-yocto infrastructure.
       - name: Meta Intel
         manifest_project: git/meta-intel
         features:
