@@ -1,20 +1,18 @@
 highlights:
-  - Raspberry Pi 3 kernel configuration now uses the OSF config fragment
+  - OSF Unified Linux Kernel updated to the 4.14 series (4.14.7)
 summary: |
- Raspberry Pi 3 kernel was updated to use the same OSF distro configuration
- fragment as used by the other machines.
+ OSF Unified Linux Kernel was updated to the 4.14 series. The Linux Kernel
+ update also includes changes required to properly implement RFC 766 (IPv6 over
+ Bluetooth Low Energy), causing incompatibilities with Zephyr devices using the
+ NET_L2_BT_ZEP1656 Zephyr workaround (required for kernels older than 4.12).
 parts:
   - name: Linux microPlatform
     summary: |
-      Raspberry Pi 3 kernel was updated to use the same OSF distro
-      configuration fragment as used by the other machines.
+      OSF Unified Linux Kernel updated to the 4.14 series (4.14.7).
     projects:
       - name: Meta OSF Layer
         manifest_project: meta-osf
         features:
           - heading: Layer Update
             summary: |
-              Raspberry Pi 3 kernel updated to use the OSF distro config
-              fragment.
-              Power off bluetooth interface during shutdown if enabled via
-              the btattach service.
+              OSF Unified Linux Kernel updated to the 4.14 series (4.14.7).
