@@ -1,0 +1,45 @@
+# The default.xml manifest defines all the git repositories needed to build
+# the LMP. That file points at mirrored copies of each repository living on
+# source.foundries.io. This file describes the origin of each of these mirrors
+# so that subscribers understand where the code comes from and internal
+# mirroring services know what to track.
+
+meta-96boards:
+  url: "https://github.com/96boards/meta-96boards"
+
+meta-freescale-3rdparty:
+  url: "https://github.com/Freescale/meta-freescale-3rdparty"
+
+meta-st-cannes2:
+  url: "https://github.com/cpriouzeau/meta-st-cannes2"
+
+meta-freescale:
+  url: "https://git.yoctoproject.org/git/meta-freescale"
+
+meta-intel:
+  url: "https://git.yoctoproject.org/git/meta-intel"
+
+meta-raspberrypi:
+  url: "https://git.yoctoproject.org/git/meta-raspberrypi"
+
+meta-virtualization:
+  url: "https://git.yoctoproject.org/git/meta-virtualization"
+
+meta-yocto:
+  url: "https://git.yoctoproject.org/git/meta-yocto"
+
+meta-qcom:
+  url: "https://github.com/ndechesne/meta-qcom"
+
+bitbake:
+  url: "https://github.com/openembedded/bitbake"
+
+meta-openembedded:
+  url: "https://github.com/openembedded/meta-openembedded"
+
+openembedded-core:
+  url: "https://github.com/openembedded/openembedded-core"
+
+meta-linaro:
+  url: "https://git.linaro.org/openembedded/meta-linaro"
+
