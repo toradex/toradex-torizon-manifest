@@ -17,6 +17,11 @@ parts:
             summary: |
               OSF Unified Linux Kernel updated to 4.14.13.
               QCA6174 firmware updated to WLAN.RM.4.4.1-00079-QCARMSWPZ-1.
+          - heading: Build Environment Speedup
+            summary: |
+              The build environment has been updated to use a mirror of the
+              sstate cache which drastically improves the time it takes to
+              build the first time.
       - name: Meta Intel
         manifest_project: git/meta-intel
         features:
