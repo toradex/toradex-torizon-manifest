@@ -1,4 +1,20 @@
 highlights:
-  - No changes were made since 0.3
+  - Raspberry Pi 3 kernel configuration now uses the OSF config fragment
 summary: |
- No changes have gone into the LMP since 0.3.
+ Raspberry Pi 3 kernel was updated to use the same OSF distro configuration
+ fragment as used by the other machines.
+parts:
+  - name: Linux microPlatform
+    summary: |
+      Raspberry Pi 3 kernel was updated to use the same OSF distro
+      configuration fragment as used by the other machines.
+    projects:
+      - name: Meta OSF Layer
+        manifest_project: meta-osf
+        features:
+          - heading: Layer Update
+            summary: |
+              Raspberry Pi 3 kernel updated to use the OSF distro config
+              fragment.
+              Power off bluetooth interface during shutdown if enabled via
+              the btattach service.
