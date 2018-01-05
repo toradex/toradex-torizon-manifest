@@ -14,7 +14,7 @@
   <project name="extra-containers" path="containers/extra-containers" remote="osf-lmp" revision="a80304f9f9ea6ff12b34592c6e95e38994776d43"/>
   <project name="gateway-containers" path="containers/gateway-containers" remote="osf-lmp" revision="4861f08499f5873dae5246df8cf344114efe44cf"/>
   <project name="git/meta-freescale" path="layers/meta-freescale" remote="yocto" revision="fb66d5010363083ea8d84160b74c62dad67f9a13"/>
-  <project name="git/meta-intel" path="layers/meta-intel" remote="yocto" revision="5adbf6df4fd89e7531ccccfb9cec7a5314d635f0"/>
+  <project name="git/meta-intel" path="layers/meta-intel" remote="yocto" revision="1580913674bc84c8e6c10cf855dbf38d2ee8f3d2"/>
   <project name="git/meta-raspberrypi" path="layers/meta-raspberrypi" remote="yocto" revision="c07d7055e51a80e6d4698380199151b6e3ebdfdf"/>
   <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="8d3beeb4f45a9b9e700dbdd40555f3e62e368104"/>
   <project name="git/meta-yocto" path="layers/meta-yocto" remote="yocto" revision="0d44e59bfaa95162cf2133df1d08f6419314bb8e">

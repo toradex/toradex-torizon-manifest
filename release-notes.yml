@@ -14,3 +14,9 @@ parts:
           - heading: Layer Update
             summary: |
               OSF Unified Linux Kernel updated to 4.14.12.
+      - name: Meta Intel
+        manifest_project: git/meta-intel
+        features:
+          - heading: Layer Update
+            summary: |
+              Intel microcode updated to 20171117.
