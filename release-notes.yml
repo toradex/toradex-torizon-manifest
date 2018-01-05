@@ -1,18 +1,16 @@
 highlights:
-  - OSF Unified Linux Kernel updated to the 4.14 series (4.14.7)
+  - OSF Unified Linux Kernel updated to 4.14.12
 summary: |
- OSF Unified Linux Kernel was updated to the 4.14 series. The Linux Kernel
- update also includes changes required to properly implement RFC 766 (IPv6 over
- Bluetooth Low Energy), causing incompatibilities with Zephyr devices using the
- NET_L2_BT_ZEP1656 Zephyr workaround (required for kernels older than 4.12).
+ This kernel update includes x86 support for kernel page-table isolation
+ (KPTI), which mitigates the recent meltdown security vulnerability.
 parts:
   - name: Linux microPlatform
     summary: |
-      OSF Unified Linux Kernel updated to the 4.14 series (4.14.7).
+      OSF Unified Linux Kernel updated to 4.14.12.
     projects:
       - name: Meta OSF Layer
         manifest_project: meta-osf
         features:
           - heading: Layer Update
             summary: |
-              OSF Unified Linux Kernel updated to the 4.14 series (4.14.7).
+              OSF Unified Linux Kernel updated to 4.14.12.
