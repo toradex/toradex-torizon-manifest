@@ -151,3 +151,21 @@ parts:
           - heading: Layer Update
             summary: |
               Switch remaining pypi recipes to use the pypi class.
+      - name: Meta OpenEmbedded Layer
+        manifest_project: openembedded/meta-openembedded
+        features:
+          - heading: Layer Update
+            summary: |
+              Python-pyopenssl updated to 17.5.0.
+              Python-cryptography updated to 2.1.4.
+              Python-asn1crypto updated to 0.24.0.
+              Python3-certifi updated to 2017.11.5.
+              Python-pytest updated to 3.2.3.
+              Python-pyasn1 updated to 0.3.7.
+              Htop updated to v2.0.2.
+        bug_fixes:
+          - heading: vim
+            summary: |
+              Information leak when creating swp files.
+            cves:
+              - 2017-17087
