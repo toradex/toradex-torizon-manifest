@@ -1,5 +1,6 @@
 highlights:
   - OSF Unified Linux Kernel updated to 4.14.12
+  - U-Boot updated to the 2017.11 release.
 summary: |
  This kernel update includes x86 support for kernel page-table isolation
  (KPTI), which mitigates the recent meltdown security vulnerability.
@@ -36,3 +37,111 @@ parts:
           - heading: Layer Update
             summary: |
               wic.bmap image type added for Dragonboard 410c.
+      - name: OpenEmbedded-Core Layer
+        manifest_project: openembedded/openembedded-core
+        features:
+          - heading: Layer Update
+            summary: |
+              Glibc updated to the latest on 2.26 release.
+              Binutils updated to 2.29.1.
+              Python Setuptools updated to 38.2.5.
+              Nss updated to 3.34.1.
+              Avahi updated to 0.7.
+              Dbus updated to 1.12.2.
+              Coreutils updated to 8.28.
+              libunistring updated to 0.9.8.
+              Mc updated to 4.8.20.
+              Psmisc updated to 23.0.
+              Gobject introspection updated to 1.54.1.
+              Pciutils updated to 3.5.6.
+              Alsa-utils, alsa-plugins and alsa-lib updated to 1.1.5.
+              Gnutls updated to 3.6.1.
+              Openssl10 updated to 1.0.2m.
+              Icu updated to 60.1.
+              libpciaccess updated to 0.14.
+              Dtc updated to 1.4.5.
+              Glib-2.0 updated to 2.54.2.
+              U-Boot updated to 2017.11.
+              Ethtool updated to 4.13.
+              Strace updated to 4.19.
+              Less updated to 527.
+              Logrotate updated to 3.13.0.
+              Git updated to 2.15.0.
+              File updated to 5.32.
+              e2fsprogs updated to 1.43.7.
+              Iproute2 updated to 4.13.
+              Gawk updated to 4.2.0.
+              Sudo updated to 1.8.21p2.
+              SQlite3 updated to 3.21.0.
+              Quota updated to 4.04.
+              Linux-firmware updated to the bf04291 git revision.
+              CMake updated to 3.9.5.
+              libgudev updated to 232.
+              Shared-mime-info updated to 1.9.
+              Iso-codes updated to 3.76.
+              Boost updated to 1.65.1.
+              libsolv updated to 0.6.29.
+              Vala updated to 0.38.2.
+              Qemu updated to 2.10.1.
+        bug_fixes:
+          - heading: icu
+            summary: |
+              Fix double free in i18n/zonemeta.cpp.
+            cves:
+              - 2017-14952
+          - heading: openssl10
+            summary: |
+              Multiple issues.
+            cves:
+              - 2017-3736
+              - 2017-3735
+          - heading: busybox
+            summary: |
+              Vulnerability in the tab-complete logic.
+            cves:
+              - 2017-16544
+          - heading: binutils
+            summary: |
+              Multiple issues.
+            cves:
+              - 2017-15939
+              - 2017-15938
+              - 2017-15225
+              - 2017-15025
+              - 2017-15024
+              - 2017-15023
+              - 2017-15022
+              - 2017-15021
+              - 2017-15020
+              - 2017-14974
+              - 2017-14940
+              - 2017-14939
+              - 2017-14938
+              - 2017-14934
+              - 2017-14933
+              - 2017-14932
+              - 2017-14930
+              - 2017-14745
+              - 2017-14729
+              - 2017-14529
+              - 2017-14333
+              - 2017-14130
+              - 2017-14129
+              - 2017-14128
+              - 2017-13757
+              - 2017-13716
+              - 2017-13710
+              - 2017-12967
+              - 2017-12799
+              - 2017-12459
+              - 2017-12458
+              - 2017-12457
+              - 2017-12456
+              - 2017-12455
+              - 2017-12454
+              - 2017-12453
+              - 2017-12452
+              - 2017-12451
+              - 2017-12450
+              - 2017-12449
+              - 2017-12448
