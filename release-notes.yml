@@ -145,3 +145,9 @@ parts:
               - 2017-12450
               - 2017-12449
               - 2017-12448
+      - name: Meta Virtualization
+        manifest_project: git/meta-virtualization
+        features:
+          - heading: Layer Update
+            summary: |
+              Switch remaining pypi recipes to use the pypi class.
