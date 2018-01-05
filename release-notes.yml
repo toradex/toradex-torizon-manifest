@@ -1,6 +1,7 @@
 highlights:
   - OSF Unified Linux Kernel updated to 4.14.12
   - U-Boot updated to the 2017.11 release.
+  - Raspberry Pi firmware updated to the 20171029 snapshot.
 summary: |
  This kernel update includes x86 support for kernel page-table isolation
  (KPTI), which mitigates the recent meltdown security vulnerability.
@@ -169,3 +170,12 @@ parts:
               Information leak when creating swp files.
             cves:
               - 2017-17087
+      - name: Meta Raspberrypi Layer
+        manifest_project: git/meta-raspberrypi
+        features:
+          - heading: Layer Update
+            summary: |
+              Config RPI_EXTRA_CONFIG added to rpi-config.
+              Default KERNEL_IMAGETYPE changed to zImage.
+              Default KERNEL_IMAGETYPE for raspberrypi3-64 changed to Image.
+              Firmware updated to 20171029.

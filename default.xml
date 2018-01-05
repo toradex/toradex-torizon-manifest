@@ -15,7 +15,7 @@
   <project name="gateway-containers" path="containers/gateway-containers" remote="osf-lmp" revision="4861f08499f5873dae5246df8cf344114efe44cf"/>
   <project name="git/meta-freescale" path="layers/meta-freescale" remote="yocto" revision="fb66d5010363083ea8d84160b74c62dad67f9a13"/>
   <project name="git/meta-intel" path="layers/meta-intel" remote="yocto" revision="1580913674bc84c8e6c10cf855dbf38d2ee8f3d2"/>
-  <project name="git/meta-raspberrypi" path="layers/meta-raspberrypi" remote="yocto" revision="c07d7055e51a80e6d4698380199151b6e3ebdfdf"/>
+  <project name="git/meta-raspberrypi" path="layers/meta-raspberrypi" remote="yocto" revision="24ffe9fb592dda483fb5dfec30782955fcc18a5e"/>
   <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="d1969606e3540d3771a5ba4626d4e5ea42bd683a"/>
   <project name="git/meta-yocto" path="layers/meta-yocto" remote="yocto" revision="0d44e59bfaa95162cf2133df1d08f6419314bb8e">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
