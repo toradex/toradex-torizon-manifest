@@ -20,3 +20,13 @@ parts:
           - heading: Layer Update
             summary: |
               Intel microcode updated to 20171117.
+      - name: Meta Linaro
+        manifest_project: openembedded/meta-linaro
+        features:
+          - heading: Layer Update
+            summary: |
+              OPTEE OS recipe updated to simplify the deply logic.
+              GCC Linaro 7.1 updated to include ILP32 patches for correct
+              triplet.
+              Binutils updated to include patches for correct gnu_ilp32
+              triplet.
