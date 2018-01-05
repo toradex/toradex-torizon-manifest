@@ -30,3 +30,9 @@ parts:
               triplet.
               Binutils updated to include patches for correct gnu_ilp32
               triplet.
+      - name: Meta Qualcomm
+        manifest_project: ndechesne/meta-qcom
+        features:
+          - heading: Layer Update
+            summary: |
+              wic.bmap image type added for Dragonboard 410c.
