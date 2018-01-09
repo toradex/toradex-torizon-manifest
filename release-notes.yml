@@ -16,6 +16,7 @@ parts:
           - heading: Layer Update
             summary: |
               OSF Unified Linux Kernel updated to 4.14.12.
+              QCA6174 firmware updated to WLAN.RM.4.4.1-00079-QCARMSWPZ-1.
       - name: Meta Intel
         manifest_project: git/meta-intel
         features:
