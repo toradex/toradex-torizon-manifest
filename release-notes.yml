@@ -1,5 +1,5 @@
 highlights:
-  - OSF Unified Linux Kernel updated to 4.14.12
+  - OSF Unified Linux Kernel updated to 4.14.13
   - U-Boot updated to the 2017.11 release.
   - Raspberry Pi firmware updated to the 20171029 snapshot.
 summary: |
@@ -8,14 +8,14 @@ summary: |
 parts:
   - name: Linux microPlatform
     summary: |
-      OSF Unified Linux Kernel updated to 4.14.12.
+      OSF Unified Linux Kernel updated to 4.14.13.
     projects:
       - name: Meta OSF Layer
         manifest_project: meta-osf
         features:
           - heading: Layer Update
             summary: |
-              OSF Unified Linux Kernel updated to 4.14.12.
+              OSF Unified Linux Kernel updated to 4.14.13.
               QCA6174 firmware updated to WLAN.RM.4.4.1-00079-QCARMSWPZ-1.
       - name: Meta Intel
         manifest_project: git/meta-intel
