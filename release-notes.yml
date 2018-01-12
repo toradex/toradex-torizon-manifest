@@ -2,6 +2,7 @@ highlights:
   - OSF Unified Linux Kernel updated to 4.14.13
   - U-Boot updated to the 2017.11 release.
   - Raspberry Pi firmware updated to the 20171029 snapshot.
+  - Initial support for Raspberry Pi 3 64-bit.
 summary: |
  This kernel update includes x86 support for kernel page-table isolation
  (KPTI), which mitigates the recent meltdown security vulnerability.
@@ -17,6 +18,7 @@ parts:
             summary: |
               OSF Unified Linux Kernel updated to 4.14.13.
               QCA6174 firmware updated to WLAN.RM.4.4.1-00079-QCARMSWPZ-1.
+              Initial support for Raspberry Pi 3 64-bit.
           - heading: Build Environment Speedup
             summary: |
               The build environment has been updated to use a mirror of the
