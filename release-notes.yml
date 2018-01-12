@@ -185,6 +185,7 @@ parts:
               Default KERNEL_IMAGETYPE changed to zImage.
               Default KERNEL_IMAGETYPE for raspberrypi3-64 changed to Image.
               Firmware updated to 20171029.
+              U-Boot support for Raspberry Pi Zero W.
       - name: Meta Freescale Layer
         manifest_project: git/meta-freescale
         features:
