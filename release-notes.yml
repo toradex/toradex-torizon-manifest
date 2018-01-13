@@ -29,7 +29,7 @@ parts:
         features:
           - heading: Layer Update
             summary: |
-              Intel microcode updated to 20171117.
+              Intel microcode updated to 20180108.
       - name: Meta Linaro
         manifest_project: openembedded/meta-linaro
         features:
