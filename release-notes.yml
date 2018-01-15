@@ -1,3 +1,4 @@
+
 - update: 0.8
   highlights:
     - OSF Unified Linux Kernel updated to 4.14.15
@@ -19,6 +20,16 @@
                 Default inputrc config file changed for better serial (readline) support.
                 Runc-Docker updated to improve the terminal settings.
                 Default GCC changed from 7.1-Linaro to 7.2-OE.
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded/openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Coreutils updated to 8.29.
+                Linux-firmware updated to the 65b1c68c git revision.
+                libgcrypt updated to 1.8.2.
+                gnupg updated to 2.2.4.
+                BlueZ updated to 5.48.
 
 - update: 0.7
   highlights:
