@@ -29,6 +29,12 @@
                 libgcrypt updated to 1.8.2.
                 gnupg updated to 2.2.4.
                 BlueZ updated to 5.48.
+                Icu updated to 60.2.
+                Iproute2 updated to 4.14.1.
+                CMake updated to 3.10.1.
+                Qemu updated to 2.11.
+                Usbutils updated to 009.
+                Go-dep updated to 0.3.2.
         - name: Meta OpenEmbedded Layer
           manifest_project: openembedded/meta-openembedded
           features:
