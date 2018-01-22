@@ -37,6 +37,12 @@
                 Python-pytest updated to 3.3.2.
                 Consolekit dependency removal from NetworkManager.
                 Bridge-utils updated to v1.6.
+        - name: Meta Virtualization
+          manifest_project: git/meta-virtualization
+          features:
+            - heading: Layer Update
+              summary: |
+                Docker-compose now rdepends on python3-terminal.
 
 - update: 0.7
   highlights:

@@ -15,7 +15,7 @@
   <project name="git/meta-freescale" path="layers/meta-freescale" remote="yocto" revision="bf7fd9cfe0788fe2f819a4ae2cc7db8327fe161a"/>
   <project name="git/meta-intel" path="layers/meta-intel" remote="yocto" revision="7969d8e442bdefd8036a334ca9d9ce133272399b"/>
   <project name="git/meta-raspberrypi" path="layers/meta-raspberrypi" remote="yocto" revision="c47caaca325b8cd81ee5bcd7cb30295faf0d440d"/>
-  <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="d1969606e3540d3771a5ba4626d4e5ea42bd683a"/>
+  <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="8d0aa86aa403ba818922f44f41e3c7bcc6ea90f1"/>
   <project name="git/meta-yocto" path="layers/meta-yocto" remote="yocto" revision="0d44e59bfaa95162cf2133df1d08f6419314bb8e">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
