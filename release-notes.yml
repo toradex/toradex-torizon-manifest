@@ -2,6 +2,7 @@
   highlights:
     - OSF Unified Linux Kernel updated to 4.14.15
     - Default GCC changed from 7.1-Linaro to 7.2-OE.
+    - Raspberry Pi 3 image format changed from rpi-sdimg to WIC (standard OE format).
   summary: |
    OSF Unified Linux Kernel updated to the 4.14.15 stable release.
    Default GCC version was changed from the 7.1-Linaro to the latest OpenEmbedded 7.2 release.
