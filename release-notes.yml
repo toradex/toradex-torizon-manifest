@@ -44,6 +44,7 @@
                 Python-pytest updated to 3.3.2.
                 Consolekit dependency removal from NetworkManager.
                 Bridge-utils updated to v1.6.
+                Python-cffi updated to 1.11.4.
         - name: Meta Virtualization
           manifest_project: git/meta-virtualization
           features:
