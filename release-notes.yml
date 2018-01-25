@@ -1,18 +1,196 @@
 highlights:
-  - OSF Unified Linux Kernel updated to the 4.14 series (4.14.7)
+  - OSF Unified Linux Kernel updated to 4.14.13
+  - U-Boot updated to the 2017.11 release.
+  - Raspberry Pi firmware updated to the 20171029 snapshot.
+  - Initial support for Raspberry Pi 3 64-bit.
 summary: |
- OSF Unified Linux Kernel was updated to the 4.14 series. The Linux Kernel
- update also includes changes required to properly implement RFC 766 (IPv6 over
- Bluetooth Low Energy), causing incompatibilities with Zephyr devices using the
- NET_L2_BT_ZEP1656 Zephyr workaround (required for kernels older than 4.12).
+ This kernel update includes x86 support for kernel page-table isolation
+ (KPTI), which mitigates the recent meltdown security vulnerability.
 parts:
   - name: Linux microPlatform
     summary: |
-      OSF Unified Linux Kernel updated to the 4.14 series (4.14.7).
+      OSF Unified Linux Kernel updated to 4.14.13.
     projects:
       - name: Meta OSF Layer
         manifest_project: meta-osf
         features:
           - heading: Layer Update
             summary: |
-              OSF Unified Linux Kernel updated to the 4.14 series (4.14.7).
+              OSF Unified Linux Kernel updated to 4.14.13.
+              QCA6174 firmware updated to WLAN.RM.4.4.1-00079-QCARMSWPZ-1.
+              Initial support for Raspberry Pi 3 64-bit.
+          - heading: Build Environment Speedup
+            summary: |
+              The build environment has been updated to use a mirror of the
+              sstate cache which drastically improves the time it takes to
+              build the first time.
+      - name: Meta Intel
+        manifest_project: git/meta-intel
+        features:
+          - heading: Layer Update
+            summary: |
+              Intel microcode updated to 20180108.
+      - name: Meta Linaro
+        manifest_project: openembedded/meta-linaro
+        features:
+          - heading: Layer Update
+            summary: |
+              OPTEE OS recipe updated to simplify the deply logic.
+              GCC Linaro 7.1 updated to include ILP32 patches for correct
+              triplet.
+              Binutils updated to include patches for correct gnu_ilp32
+              triplet.
+      - name: Meta Qualcomm
+        manifest_project: ndechesne/meta-qcom
+        features:
+          - heading: Layer Update
+            summary: |
+              wic.bmap image type added for Dragonboard 410c.
+      - name: OpenEmbedded-Core Layer
+        manifest_project: openembedded/openembedded-core
+        features:
+          - heading: Layer Update
+            summary: |
+              Glibc updated to the latest on 2.26 release.
+              Binutils updated to 2.29.1.
+              Python Setuptools updated to 38.2.5.
+              Nss updated to 3.34.1.
+              Avahi updated to 0.7.
+              Dbus updated to 1.12.2.
+              Coreutils updated to 8.28.
+              libunistring updated to 0.9.8.
+              Mc updated to 4.8.20.
+              Psmisc updated to 23.0.
+              Gobject introspection updated to 1.54.1.
+              Pciutils updated to 3.5.6.
+              Alsa-utils, alsa-plugins and alsa-lib updated to 1.1.5.
+              Gnutls updated to 3.6.1.
+              Openssl10 updated to 1.0.2m.
+              Icu updated to 60.1.
+              libpciaccess updated to 0.14.
+              Dtc updated to 1.4.5.
+              Glib-2.0 updated to 2.54.2.
+              U-Boot updated to 2017.11.
+              Ethtool updated to 4.13.
+              Strace updated to 4.19.
+              Less updated to 527.
+              Logrotate updated to 3.13.0.
+              Git updated to 2.15.0.
+              File updated to 5.32.
+              e2fsprogs updated to 1.43.7.
+              Iproute2 updated to 4.13.
+              Gawk updated to 4.2.0.
+              Sudo updated to 1.8.21p2.
+              SQlite3 updated to 3.21.0.
+              Quota updated to 4.04.
+              Linux-firmware updated to the bf04291 git revision.
+              CMake updated to 3.9.5.
+              libgudev updated to 232.
+              Shared-mime-info updated to 1.9.
+              Iso-codes updated to 3.76.
+              Boost updated to 1.65.1.
+              libsolv updated to 0.6.29.
+              Vala updated to 0.38.2.
+              Qemu updated to 2.10.1.
+        bug_fixes:
+          - heading: icu
+            summary: |
+              Fix double free in i18n/zonemeta.cpp.
+            cves:
+              - 2017-14952
+          - heading: openssl10
+            summary: |
+              Multiple issues.
+            cves:
+              - 2017-3736
+              - 2017-3735
+          - heading: busybox
+            summary: |
+              Vulnerability in the tab-complete logic.
+            cves:
+              - 2017-16544
+          - heading: binutils
+            summary: |
+              Multiple issues.
+            cves:
+              - 2017-15939
+              - 2017-15938
+              - 2017-15225
+              - 2017-15025
+              - 2017-15024
+              - 2017-15023
+              - 2017-15022
+              - 2017-15021
+              - 2017-15020
+              - 2017-14974
+              - 2017-14940
+              - 2017-14939
+              - 2017-14938
+              - 2017-14934
+              - 2017-14933
+              - 2017-14932
+              - 2017-14930
+              - 2017-14745
+              - 2017-14729
+              - 2017-14529
+              - 2017-14333
+              - 2017-14130
+              - 2017-14129
+              - 2017-14128
+              - 2017-13757
+              - 2017-13716
+              - 2017-13710
+              - 2017-12967
+              - 2017-12799
+              - 2017-12459
+              - 2017-12458
+              - 2017-12457
+              - 2017-12456
+              - 2017-12455
+              - 2017-12454
+              - 2017-12453
+              - 2017-12452
+              - 2017-12451
+              - 2017-12450
+              - 2017-12449
+              - 2017-12448
+      - name: Meta Virtualization
+        manifest_project: git/meta-virtualization
+        features:
+          - heading: Layer Update
+            summary: |
+              Switch remaining pypi recipes to use the pypi class.
+      - name: Meta OpenEmbedded Layer
+        manifest_project: openembedded/meta-openembedded
+        features:
+          - heading: Layer Update
+            summary: |
+              Python-pyopenssl updated to 17.5.0.
+              Python-cryptography updated to 2.1.4.
+              Python-asn1crypto updated to 0.24.0.
+              Python3-certifi updated to 2017.11.5.
+              Python-pytest updated to 3.2.3.
+              Python-pyasn1 updated to 0.3.7.
+              Htop updated to v2.0.2.
+        bug_fixes:
+          - heading: vim
+            summary: |
+              Information leak when creating swp files.
+            cves:
+              - 2017-17087
+      - name: Meta Raspberrypi Layer
+        manifest_project: git/meta-raspberrypi
+        features:
+          - heading: Layer Update
+            summary: |
+              Config RPI_EXTRA_CONFIG added to rpi-config.
+              Default KERNEL_IMAGETYPE changed to zImage.
+              Default KERNEL_IMAGETYPE for raspberrypi3-64 changed to Image.
+              Firmware updated to 20171029.
+              U-Boot support for Raspberry Pi Zero W.
+      - name: Meta Freescale Layer
+        manifest_project: git/meta-freescale
+        features:
+          - heading: Layer Update
+            summary: |
+              U-boot-fslc updated to 2017.11-based fork.

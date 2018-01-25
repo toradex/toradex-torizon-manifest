@@ -12,17 +12,17 @@
   <project name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2" revision="8abc5197f3456590c493c59d1e6f696e25f88927" />
   <project name="extra-containers" path="containers/extra-containers" remote="subscriber-microplatforms" revision="a80304f9f9ea6ff12b34592c6e95e38994776d43" />
   <project name="gateway-containers" path="containers/gateway-containers" remote="subscriber-microplatforms" revision="4861f08499f5873dae5246df8cf344114efe44cf" />
-  <project name="git/meta-freescale" path="layers/meta-freescale" remote="yocto" revision="fb66d5010363083ea8d84160b74c62dad67f9a13" />
-  <project name="git/meta-intel" path="layers/meta-intel" remote="yocto" revision="5adbf6df4fd89e7531ccccfb9cec7a5314d635f0" />
-  <project name="git/meta-raspberrypi" path="layers/meta-raspberrypi" remote="yocto" revision="c07d7055e51a80e6d4698380199151b6e3ebdfdf" />
-  <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="8d3beeb4f45a9b9e700dbdd40555f3e62e368104" />
+  <project name="git/meta-freescale" path="layers/meta-freescale" remote="yocto" revision="bf7fd9cfe0788fe2f819a4ae2cc7db8327fe161a" />
+  <project name="git/meta-intel" path="layers/meta-intel" remote="yocto" revision="7969d8e442bdefd8036a334ca9d9ce133272399b" />
+  <project name="git/meta-raspberrypi" path="layers/meta-raspberrypi" remote="yocto" revision="c47caaca325b8cd81ee5bcd7cb30295faf0d440d" />
+  <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="d1969606e3540d3771a5ba4626d4e5ea42bd683a" />
   <project name="git/meta-yocto" path="layers/meta-yocto" remote="yocto" revision="0d44e59bfaa95162cf2133df1d08f6419314bb8e">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment" />
   </project>
-  <project name="meta-osf" path="layers/meta-osf" remote="subscriber-microplatforms" revision="478133b07f0d6cd36e7f73cbfef7da88fa83479a" />
-  <project name="ndechesne/meta-qcom" path="layers/meta-qcom" revision="39b205741407da5d9ea2d4b65530915ca7ca79ed" />
-  <project name="openembedded/bitbake" path="bitbake" revision="cc420f430b1dafd9ca944bea259a564aaab34595" />
-  <project name="openembedded/meta-linaro" path="layers/meta-linaro" remote="linaro" revision="0313c6d13645fb32a592d807ef1c7a527cb1efa4" />
-  <project name="openembedded/meta-openembedded" path="layers/meta-openembedded" revision="5d6d21e98ed594809169d2b2f6964e90a3369a96" />
-  <project name="openembedded/openembedded-core" path="layers/openembedded-core" revision="ccffc66c64fc0dde433b0375c69760983c657427" />
+  <project name="meta-osf" path="layers/meta-osf" remote="subscriber-microplatforms" revision="b46d57d863a98699a801a1b417c9988efc20bc66" />
+  <project name="ndechesne/meta-qcom" path="layers/meta-qcom" revision="5fbd011c7852d46399018647d09e3b581b1b637d" />
+  <project name="openembedded/bitbake" path="bitbake" revision="643eacb162b8710330ef292bfda21cfeab97f95c" />
+  <project name="openembedded/meta-linaro" path="layers/meta-linaro" remote="linaro" revision="259b8bfbb5dc13a4173f9e90bdf09f5aebea473e" />
+  <project name="openembedded/meta-openembedded" path="layers/meta-openembedded" revision="29a4983d5a4462d8e7b9abcd55bfb3013f578fdd" />
+  <project name="openembedded/openembedded-core" path="layers/openembedded-core" revision="e0a4e78b879eeacff8ef6803c1345056abf018e7" />
 </manifest>
