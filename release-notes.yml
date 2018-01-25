@@ -1,3 +1,25 @@
+- update: 0.8
+  highlights:
+    - OSF Unified Linux Kernel updated to 4.14.15
+    - Default GCC changed from 7.1-Linaro to 7.2-OE.
+  summary: |
+   OSF Unified Linux Kernel updated to the 4.14.15 stable release.
+   Default GCC version was changed from the 7.1-Linaro to the latest OpenEmbedded 7.2 release.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        OSF Unified Linux Kernel updated to 4.14.15.
+      projects:
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.14.15.
+                Default inputrc config file changed for better serial (readline) support.
+                Runc-Docker updated to improve the terminal settings.
+                Default GCC changed from 7.1-Linaro to 7.2-OE.
+
 - update: 0.7
   highlights:
     - OSF Unified Linux Kernel updated to 4.14.13
