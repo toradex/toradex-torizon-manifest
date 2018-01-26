@@ -157,7 +157,9 @@ fi
 # Evaluate new checksum and regenerate the conf files
 sha512sum "${MANIFESTS}"/setup-environment-internal 2>&1 > conf/checksum
 
-ln -sf "${MANIFESTS}"/conf/local.conf conf/local.conf
+if [ ! -f "conf/local.conf" ]; then
+    cp "${MANIFESTS}"/conf/local.conf conf/local.conf
+fi
 ln -sf "${MANIFESTS}"/conf/bblayers.conf conf/bblayers.conf
 ln -sf "${MANIFESTS}"/README.md README.md
 
