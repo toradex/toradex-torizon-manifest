@@ -10,9 +10,6 @@ meta-96boards:
 meta-freescale-3rdparty:
   url: "https://github.com/Freescale/meta-freescale-3rdparty"
 
-meta-st-cannes2:
-  url: "https://github.com/cpriouzeau/meta-st-cannes2"
-
 meta-freescale:
   url: "https://git.yoctoproject.org/git/meta-freescale"
 

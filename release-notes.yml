@@ -21,7 +21,7 @@
                 Runc-Docker updated to improve the terminal settings.
                 Default GCC changed from 7.1-Linaro to 7.2-OE.
         - name: OpenEmbedded-Core Layer
-          manifest_project: openembedded/openembedded-core
+          manifest_project: openembedded-core
           features:
             - heading: Layer Update
               summary: |
@@ -37,7 +37,7 @@
                 Usbutils updated to 009.
                 Go-dep updated to 0.3.2.
         - name: Meta OpenEmbedded Layer
-          manifest_project: openembedded/meta-openembedded
+          manifest_project: meta-openembedded
           features:
             - heading: Layer Update
               summary: |
@@ -46,7 +46,7 @@
                 Bridge-utils updated to v1.6.
                 Python-cffi updated to 1.11.4.
         - name: Meta Virtualization
-          manifest_project: git/meta-virtualization
+          manifest_project: meta-virtualization
           features:
             - heading: Layer Update
               summary: |

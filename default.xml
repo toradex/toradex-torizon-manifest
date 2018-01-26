@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote fetch="https://github.com" name="github"/>
-  <remote fetch="http://git.linaro.org" name="linaro"/>
+  <remote fetch="https://source.foundries.io/lmp-mirrors" name="lmp-mirrors"/>
   <remote fetch="https://git.foundries.io/development/microplatforms/linux" name="osf-lmp"/>
-  <remote fetch="http://git.yoctoproject.org" name="yocto"/>
 
-  <default remote="github" revision="master" sync-j="4"/>
+  <default remote="lmp-mirrors" revision="master" sync-j="4"/>
 
-  <project name="96boards/meta-96boards" path="layers/meta-96boards" revision="eee9e16eece8780ae44357f92664491174211a06"/>
-  <project name="Freescale/meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="fcc529237f9c934b42549a9bae70576a193eab0a"/>
+  <project name="meta-96boards" path="layers/meta-96boards" revision="eee9e16eece8780ae44357f92664491174211a06"/>
+  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="fcc529237f9c934b42549a9bae70576a193eab0a"/>
   <project name="core-containers" path="containers/core-containers" remote="osf-lmp" revision="62d1178666390e3e7e49a323dbc65468013b395f"/>
   <project name="extra-containers" path="containers/extra-containers" remote="osf-lmp" revision="a80304f9f9ea6ff12b34592c6e95e38994776d43"/>
   <project name="gateway-containers" path="containers/gateway-containers" remote="osf-lmp" revision="4861f08499f5873dae5246df8cf344114efe44cf"/>
-  <project name="git/meta-freescale" path="layers/meta-freescale" remote="yocto" revision="bf7fd9cfe0788fe2f819a4ae2cc7db8327fe161a"/>
-  <project name="git/meta-intel" path="layers/meta-intel" remote="yocto" revision="7969d8e442bdefd8036a334ca9d9ce133272399b"/>
-  <project name="git/meta-raspberrypi" path="layers/meta-raspberrypi" remote="yocto" revision="61c2a965a21cfc927b817dc517100d31c07ffa95"/>
-  <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="8d0aa86aa403ba818922f44f41e3c7bcc6ea90f1"/>
-  <project name="git/meta-yocto" path="layers/meta-yocto" remote="yocto" revision="0d44e59bfaa95162cf2133df1d08f6419314bb8e">
+  <project name="meta-freescale" path="layers/meta-freescale" revision="bf7fd9cfe0788fe2f819a4ae2cc7db8327fe161a"/>
+  <project name="meta-intel" path="layers/meta-intel" revision="7969d8e442bdefd8036a334ca9d9ce133272399b"/>
+  <project name="meta-raspberrypi" path="layers/meta-raspberrypi" revision="61c2a965a21cfc927b817dc517100d31c07ffa95"/>
+  <project name="meta-virtualization" path="layers/meta-virtualization" revision="8d0aa86aa403ba818922f44f41e3c7bcc6ea90f1"/>
+  <project name="meta-yocto" path="layers/meta-yocto" revision="0d44e59bfaa95162cf2133df1d08f6419314bb8e">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
   <project name="meta-osf" path="layers/meta-osf" remote="osf-lmp" revision="8d7b324e4814fc2b10d70242b9f1f85f5507b100"/>
-  <project name="ndechesne/meta-qcom" path="layers/meta-qcom" revision="5fbd011c7852d46399018647d09e3b581b1b637d"/>
-  <project name="openembedded/bitbake" path="bitbake" revision="a783bd7e457f183a279dbe5a4ef3d4c17bb4c18c"/>
-  <project name="openembedded/meta-linaro" path="layers/meta-linaro" remote="linaro" revision="259b8bfbb5dc13a4173f9e90bdf09f5aebea473e"/>
-  <project name="openembedded/meta-openembedded" path="layers/meta-openembedded" revision="9eb33e651aaf0067c32110977e8700aa16811c55"/>
-  <project name="openembedded/openembedded-core" path="layers/openembedded-core" revision="df894b523d74f8fd723d1c8fb03f55e46c6af0f5"/>
+  <project name="meta-qcom" path="layers/meta-qcom" revision="5fbd011c7852d46399018647d09e3b581b1b637d"/>
+  <project name="bitbake" path="bitbake" revision="a783bd7e457f183a279dbe5a4ef3d4c17bb4c18c"/>
+  <project name="meta-linaro" path="layers/meta-linaro" revision="259b8bfbb5dc13a4173f9e90bdf09f5aebea473e"/>
+  <project name="meta-openembedded" path="layers/meta-openembedded" revision="9eb33e651aaf0067c32110977e8700aa16811c55"/>
+  <project name="openembedded-core" path="layers/openembedded-core" revision="df894b523d74f8fd723d1c8fb03f55e46c6af0f5"/>
 </manifest>
