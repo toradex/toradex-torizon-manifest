@@ -71,6 +71,16 @@
               summary: |
                 Default EFI_PROVIDER changed to systemd-boot.
                 Thermald updated to 1.7.1.
+        - name: Meta RaspberryPi
+          manifest_project: meta-raspberrypi
+          features:
+            - heading: Layer Update
+              summary: |
+                BCM43430A1 firmware updated to the latest public revision.
+          bug_fixes:
+            - heading: broken wifi support
+              summary: |
+                Linux-firmware changed to use the correct override for bcm43430.
 
 - update: 0.8
   highlights:
