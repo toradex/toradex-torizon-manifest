@@ -56,6 +56,14 @@
             - heading: Layer Update
               summary: |
                 Fixes required by latest OE-Core update.
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                New machine configuration files for t1042d4rdb, t1042d4rdb-64b,
+                p2020rdb and mpc8548cds.
+                imx-codec, imx-parser and imx-vpuwrap updated to v4.3.2.
 
 - update: 0.8
   highlights:
