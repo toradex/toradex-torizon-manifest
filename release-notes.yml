@@ -44,6 +44,12 @@
                 - 2017-15671
                 - 2017-16997
                 - 2017-17426
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                Python-certifi updated to 2018.1.18.
 
 - update: 0.8
   highlights:
