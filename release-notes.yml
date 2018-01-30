@@ -1,3 +1,50 @@
+- update: 0.9
+  highlights:
+    - GCC updated to the latest 7.3 release.
+    - U-Boot updated to the 2018.01 release.
+  summary: |
+   Default GCC version was updated to the latest upstream 7.3 release.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        GCC updated to the 7.3 upstream release.
+      projects:
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Python packaging was restructured and replaced with autopackaging.
+                U-Boot updated to the 2018.01 release.
+                Bash updated to 4.4.12.
+                Gdbm updated to 1.14.1.
+                Iw updated to 4.14.
+                Systemd-bootchart updated to v233.
+                Python-setuptools updated to 38.4.0.
+                Nspr updated to 4.18.
+                Sqlite3 updated to 3.22.0.
+                Vte updated to 0.50.2.
+                Curl updated to 7.57.0.
+                Tzcode and tzdata updated to 2018c.
+                GCC updated to 7.3.
+                Hdparm updated to 9.53.
+                Gzip updated to 1.9.
+                Lsb updated to 5.0.
+                Kmod updated to 25.
+                Less updated to 529.
+                Libunwind updated to 1.2.1.
+                Linux-libc-headers updated to 4.14.13.
+                Man-pages updated to 4.14.
+                E2fsprogs updated to 1.43.8.
+          bug_fixes:
+            - heading: glibc
+              summary: |
+                Multiple issues.
+              cves:
+                - 2017-15671
+                - 2017-16997
+                - 2017-17426
+
 - update: 0.8
   highlights:
     - OSF Unified Linux Kernel updated to 4.14.15
