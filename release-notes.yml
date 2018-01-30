@@ -50,6 +50,12 @@
             - heading: Layer Update
               summary: |
                 Python-certifi updated to 2018.1.18.
+        - name: Meta Virtualization
+          manifest_project: meta-virtualization
+          features:
+            - heading: Layer Update
+              summary: |
+                Fixes required by latest OE-Core update.
 
 - update: 0.8
   highlights:
