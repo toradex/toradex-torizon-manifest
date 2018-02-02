@@ -81,6 +81,13 @@
             - heading: broken wifi support
               summary: |
                 Linux-firmware changed to use the correct override for bcm43430.
+        - name: Meta 96boards
+          manifest_project: meta-96boards
+          features:
+            - heading: Layer Update
+              summary: |
+                EDK2, ATF and OPP updated to the current upstream revision.
+                New machine configuration file for orangepi i96.
 
 - update: 0.8
   highlights:
