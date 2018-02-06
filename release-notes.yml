@@ -1,14 +1,28 @@
 - update: 0.9
   highlights:
+    - OSF Unified Linux Kernel updated to 4.14.17.
     - GCC updated to the latest 7.3 release.
     - U-Boot updated to the 2018.01 release.
+    - QEMU guest support added to intel-corei7-64.
   summary: |
+   OSF Unified Linux Kernel updated to the 4.14.17 stable release.
    Default GCC version was updated to the latest upstream 7.3 release.
   parts:
     - name: Linux microPlatform
       summary: |
         GCC updated to the 7.3 upstream release.
       projects:
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.14.17.
+                QEMU guest support added to intel-corei7-64.
+                Default EFI_PROVIDER for intel-corei7-64 changed to grub-efi.
+                Machine specific configuration moved from conf/local.conf to
+                lmp-machine-custom.bbclass.
+                Initial support for colibri-imx7.
         - name: OpenEmbedded-Core Layer
           manifest_project: openembedded-core
           features:
