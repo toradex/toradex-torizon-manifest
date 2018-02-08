@@ -1,3 +1,43 @@
+- update: "0.13"
+  highlights:
+    - Core layer updates.
+  summary: |
+   Core layer updates.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates.
+      projects:
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Musl updated to the latest upstream master.
+                Python 3 target and native recipes updated to 3.5.4.
+                Ncurses updated to 6.0+20171125.
+                Tar updated to 1.30.
+                Pigz updated to 2.4.
+                Wget updated to 1.19.4.
+                Rsync updated to 3.1.3.
+                Ninja updated to 1.8.2 (major release update).
+                RPM updated to 4.14.1.
+                Openssl updated to 1.0.2n.
+                Libnl updated to 3.4.0.
+                Boost updated to 1.66.0.
+                Iputils updated to 20161105.
+                Linux-libc-headers updated to v4.15.
+                Ccache updated to 3.3.5.
+                Libva updated to 2.0.0.
+                Strace updated to 4.20.
+          bug_fixes:
+            - heading: qemu
+              summary: |
+                VNC server implementation in QEMU was found to be vulnerable to
+                an unbounded memory allocation issue.
+              cves:
+                - 2017-15124
+
 - update: "0.12"
   highlights:
     - No changes have gone into the LMP since 0.11.
