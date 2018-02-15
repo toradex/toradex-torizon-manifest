@@ -20,6 +20,13 @@
                 Remove custom Linux Raspberry Pi logo.
                 EFI wic image now provides startup.nsh by default.
                 OSF Unified Linux Kernel updated to 4.14.19.
+        - name: Meta Intel
+          manifest_project: meta-intel
+          features:
+            - heading: Layer Update
+              summary: |
+                Intel-microcode reverted back to 20171117 as
+                recommended by Intel.
 
 - update: 0.9
   highlights:
