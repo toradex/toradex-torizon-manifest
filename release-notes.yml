@@ -43,6 +43,13 @@
             - heading: Layer Update
               summary: |
                 Fixes required by latest OE-Core update.
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                Python-ndg-httpsclient updated to 0.4.4.
+                Python 3 depends on python3-misc removed due missing _pydecimal.py.
 
 - update: "0.12"
   highlights:
