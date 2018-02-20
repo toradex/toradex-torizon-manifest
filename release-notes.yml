@@ -37,6 +37,12 @@
                 an unbounded memory allocation issue.
               cves:
                 - 2017-15124
+        - name: Meta Virtualization
+          manifest_project: meta-virtualization
+          features:
+            - heading: Layer Update
+              summary: |
+                Fixes required by latest OE-Core update.
 
 - update: "0.12"
   highlights:
