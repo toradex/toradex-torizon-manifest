@@ -50,6 +50,12 @@
               summary: |
                 Python-ndg-httpsclient updated to 0.4.4.
                 Python 3 depends on python3-misc removed due missing _pydecimal.py.
+        - name: Meta Yocto
+          manifest_project: meta-yocto
+          features:
+            - heading: Layer Update
+              summary: |
+                Fixes required by latest OE-Core update.
 
 - update: "0.12"
   highlights:
