@@ -56,6 +56,12 @@
             - heading: Layer Update
               summary: |
                 Fixes required by latest OE-Core update.
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                U-boot-fw-utils added to u-boot-fslc-fw-utils provides.
 
 - update: "0.12"
   highlights:
