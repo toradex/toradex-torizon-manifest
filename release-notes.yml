@@ -62,6 +62,13 @@
             - heading: Layer Update
               summary: |
                 U-boot-fw-utils added to u-boot-fslc-fw-utils provides.
+        - name: Meta Freescale 3rdparty
+          manifest_project: meta-freescale-3rdparty
+          features:
+            - heading: Layer Update
+              summary: |
+                broadcom-nvram-config changed to use nonarch_base_libdir
+                instead of /lib.
 
 - update: "0.12"
   highlights:
