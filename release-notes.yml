@@ -1,3 +1,108 @@
+- update: 0.9
+  highlights:
+    - OSF Unified Linux Kernel updated to 4.14.17.
+    - GCC updated to the latest 7.3 release.
+    - U-Boot updated to the 2018.01 release.
+    - QEMU guest support added to intel-corei7-64.
+  summary: |
+   OSF Unified Linux Kernel updated to the 4.14.17 stable release.
+   Default GCC version was updated to the latest upstream 7.3 release.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        GCC updated to the 7.3 upstream release.
+      projects:
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.14.17.
+                QEMU guest support added to intel-corei7-64.
+                Default EFI_PROVIDER for intel-corei7-64 changed to grub-efi.
+                Machine specific configuration moved from conf/local.conf to
+                lmp-machine-custom.bbclass.
+                Initial support for colibri-imx7.
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Python packaging was restructured and replaced with autopackaging.
+                U-Boot updated to the 2018.01 release.
+                Bash updated to 4.4.12.
+                Gdbm updated to 1.14.1.
+                Iw updated to 4.14.
+                Systemd-bootchart updated to v233.
+                Python-setuptools updated to 38.4.0.
+                Nspr updated to 4.18.
+                Sqlite3 updated to 3.22.0.
+                Vte updated to 0.50.2.
+                Curl updated to 7.57.0.
+                Tzcode and tzdata updated to 2018c.
+                GCC updated to 7.3.
+                Hdparm updated to 9.53.
+                Gzip updated to 1.9.
+                Lsb updated to 5.0.
+                Kmod updated to 25.
+                Less updated to 529.
+                Libunwind updated to 1.2.1.
+                Linux-libc-headers updated to 4.14.13.
+                Man-pages updated to 4.14.
+                E2fsprogs updated to 1.43.8.
+          bug_fixes:
+            - heading: glibc
+              summary: |
+                Multiple issues.
+              cves:
+                - 2017-15671
+                - 2017-16997
+                - 2017-17426
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                Python-certifi updated to 2018.1.18.
+        - name: Meta Virtualization
+          manifest_project: meta-virtualization
+          features:
+            - heading: Layer Update
+              summary: |
+                Fixes required by latest OE-Core update.
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                New machine configuration files for t1042d4rdb, t1042d4rdb-64b,
+                p2020rdb and mpc8548cds.
+                imx-codec, imx-parser and imx-vpuwrap updated to v4.3.2.
+        - name: Meta Intel
+          manifest_project: meta-intel
+          features:
+            - heading: Layer Update
+              summary: |
+                Default EFI_PROVIDER changed to systemd-boot.
+                Thermald updated to 1.7.1.
+        - name: Meta RaspberryPi
+          manifest_project: meta-raspberrypi
+          features:
+            - heading: Layer Update
+              summary: |
+                BCM43430A1 firmware updated to the latest public revision.
+          bug_fixes:
+            - heading: broken wifi support
+              summary: |
+                Linux-firmware changed to use the correct override for bcm43430.
+        - name: Meta 96boards
+          manifest_project: meta-96boards
+          features:
+            - heading: Layer Update
+              summary: |
+                EDK2, ATF and OPP updated to the current upstream revision.
+                New machine configuration file for orangepi i96.
+
 - update: 0.8
   highlights:
     - OSF Unified Linux Kernel updated to 4.14.15
