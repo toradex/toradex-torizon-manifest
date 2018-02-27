@@ -2,6 +2,7 @@
   highlights:
     - OSF Unified Linux Kernel updated to 4.14.19.
     - Root file system is now compatible with UsrMerge.
+    - Beaglebone machine name renamed to beaglebone-yocto.
   summary: |
    OSF Unified Linux Kernel updated to the 4.14.19 stable release.
    UsrMerge (https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/)
@@ -27,6 +28,13 @@
               summary: |
                 Intel-microcode reverted back to 20171117 as
                 recommended by Intel.
+        - name: Meta Yocto
+          manifest_project: meta-yocto
+          features:
+            - heading: Layer Update
+              summary: |
+                Beaglebone machine renamed to beaglebone-yocto in order to
+                avoid conflicts with meta-ti.
 
 - update: 0.9
   highlights:
