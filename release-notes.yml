@@ -1,3 +1,41 @@
+- update: 0.10
+  highlights:
+    - OSF Unified Linux Kernel updated to 4.14.19.
+    - Root file system is now compatible with UsrMerge.
+    - Beaglebone machine name renamed to beaglebone-yocto.
+  summary: |
+   OSF Unified Linux Kernel updated to the 4.14.19 stable release.
+   UsrMerge (https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/)
+   is now enabled by default in LMP.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        UsrMerge is now enabled by default in LMP.
+      projects:
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                Enable support for UsrMerge.
+                Remove custom Linux Raspberry Pi logo.
+                EFI wic image now provides startup.nsh by default.
+                OSF Unified Linux Kernel updated to 4.14.19.
+        - name: Meta Intel
+          manifest_project: meta-intel
+          features:
+            - heading: Layer Update
+              summary: |
+                Intel-microcode reverted back to 20171117 as
+                recommended by Intel.
+        - name: Meta Yocto
+          manifest_project: meta-yocto
+          features:
+            - heading: Layer Update
+              summary: |
+                Beaglebone machine renamed to beaglebone-yocto in order to
+                avoid conflicts with meta-ti.
+
 - update: 0.9
   highlights:
     - OSF Unified Linux Kernel updated to 4.14.17.
