@@ -1,8 +1,12 @@
+- update: "0.12"
+  highlights:
+    - No changes have gone into the LMP since 0.11.
+  summary: No changes have gone into the LMP since 0.11.
+
 - update: "0.11"
   highlights:
     - No changes have gone into the LMP since 0.10.
   summary: No changes have gone into the LMP since 0.10.
-
 
 - update: "0.10"
   highlights:
