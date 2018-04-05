@@ -1,13 +1,42 @@
 - update: "0.13"
   highlights:
-    - Core layer updates.
+    - OSF Unified Linux Kernel updated to 4.14.26.
+    - New layer Meta Updater added to LMP (provides SOTA support).
+    - U-Boot support for Dragonboard 410c and 820c.
+    - VMDK and VDI images are now available for the intel-corei7-64 target.
+    - Support for OTA software updates using OSTree and TUF.
+    - OTA compatibility with ATS Garage and ATS OTA Community Edition.
   summary: |
-   Core layer updates.
+   OSF Unified Linux Kernel updated to the 4.14.26 stable release.
+   Support for OTA software updates is now enabled by default in the Linux
+   microPlatform, supporting OSTree with TUF and compatible with the ATS
+   Garage and ATS OTA Community Edition services.
   parts:
     - name: Linux microPlatform
       summary: |
-        Core layer updates.
+        Core layer updates and support for OTA+ and OSTree.
       projects:
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.14.26.
+                New u-boot-script-toradex recipe added.
+                U-Boot-Compulab updated to the 2017.07-cl-som-imx7-1.1 release.
+                New u-boot-ostree-src recipe added.
+                Python3-docker updated to 2.7.0.
+                Python3-docker-compose updated to 1.19.0.
+                Docker-compose is now installed by default in lmp-gateway-image.
+                New lshw recipe added based on latest upstream git snapshot.
+            - heading: U-Boot support for DB410c and DB820c targets
+              summary: |
+                Default LMP image now ships with u-boot support for the DB410c
+                and DB820c targets (requirement for OTA+ support).
+            - heading: OSTree support
+              summary: |
+                Root filesystem is now OSTree-based. Please check
+                https://ostree.readthedocs.io for the upstream OSTree documentation.
         - name: OpenEmbedded-Core Layer
           manifest_project: openembedded-core
           features:
