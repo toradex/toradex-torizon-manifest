@@ -1,3 +1,20 @@
+- update: "0.14"
+  highlights:
+    - OSF Unified Linux Kernel updated to 4.14.33.
+  summary: |
+   OSF Unified Linux Kernel updated to the 4.14.33 stable release.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates.
+      projects:
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.14.33.
+
 - update: "0.13"
   highlights:
     - OSF Unified Linux Kernel updated to 4.14.26.
