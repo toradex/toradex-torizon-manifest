@@ -1,3 +1,89 @@
+- update: "0.15"
+  highlights:
+    - Binutils updated to the 2.30 release.
+    - Glibc updated to the 2.27 release.
+    - Systemd updated to the 237 release.
+  summary: |
+   Core layer updates based on the latest sumo changes.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates bringing it closer to the final sumo release.
+      projects:
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Binutils updated to 2.30.
+                Cmake updated to 3.10.3.
+                Curl updated to 7.58.0.
+                Git updated to 2.16.1.
+                Glib-2.0 updated to 2.54.3.
+                Glibc updated to 2.27.
+                Go updated to 1.9.4.
+                Go-dep updated to 0.4.1.
+                Iptables updated to 1.6.2.
+                Libpng updated to 1.6.34.
+                Libunistring updated to 0.9.9.
+                Linux-libc-headers updated to 4.15.7.
+                Llvm updated to 6.0.
+                Musl updated to 1.1.19.
+                Nspr updated to 4.19.
+                Nss updated to 3.35.
+                Openssl updated to 1.1.0h and 1.0.2o.
+                Patch updated to 2.7.6.
+                Pkgconf updated to 1.4.2.
+                Python3 updated to 3.5.5.
+                Python3-dbus updated to 1.2.6.
+                Python3-pip updated to 9.0.2.
+                Python3-pygobject updated to 3.28.1.
+                Python3-setuptools updated to 39.0.0.
+                Qemu updated to 2.11.1.
+                Slang updated to 2.3.2.
+                Sudo updated to 1.8.22.
+                Systemd updated to 237.
+                Vala updated to 0.38.8.
+                Time updated to 1.8.
+                Tzdata updated to 2018d.
+          bug_fixes:
+            - heading: busybox
+              summary: |
+                runCnt overflow in bunzip2.
+              cves:
+                - 2017-15873
+            - heading: dhcp
+              summary: |
+                Failure to properly clean up closed OMAPI connections can
+                exhaust available sockets.
+              cves:
+                - 2017-3144
+            - heading: libvorbis
+              summary: |
+                Multiple issues.
+              cves:
+                - 2018-5146
+                - 2017-14632
+                - 2017-14633
+            - heading: patch
+              summary: |
+                Multiple issues.
+              cves:
+                - 2018-1000156
+                - 2018-6951
+            - heading: python3
+              summary: |
+                Possible integer overflow in PyBytes_DecodeEscape.
+              cves:
+                - 2017-1000158
+            - heading: tiff
+              summary: |
+                Multiple issues.
+              cves:
+                - 2017-9935
+                - 2017-18013
+                - 2018-5784
+
 - update: "0.14"
   highlights:
     - OSF Unified Linux Kernel updated to 4.14.33.
