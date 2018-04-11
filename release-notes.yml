@@ -1,8 +1,113 @@
+- update: "0.13"
+  highlights:
+    - OSF Unified Linux Kernel updated to 4.14.26.
+    - New layer Meta Updater added to LMP (provides SOTA support).
+    - U-Boot support for Dragonboard 410c and 820c.
+    - VMDK and VDI images are now available for the intel-corei7-64 target.
+    - Support for OTA software updates using OSTree and TUF.
+    - OTA compatibility with ATS Garage and ATS OTA Community Edition.
+  summary: |
+   OSF Unified Linux Kernel updated to the 4.14.26 stable release.
+   Support for OTA software updates is now enabled by default in the Linux
+   microPlatform, supporting OSTree with TUF and compatible with the ATS
+   Garage and ATS OTA Community Edition services.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates and support for OTA+ and OSTree.
+      projects:
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.14.26.
+                New u-boot-script-toradex recipe added.
+                U-Boot-Compulab updated to the 2017.07-cl-som-imx7-1.1 release.
+                New u-boot-ostree-src recipe added.
+                Python3-docker updated to 2.7.0.
+                Python3-docker-compose updated to 1.19.0.
+                Docker-compose is now installed by default in lmp-gateway-image.
+                New lshw recipe added based on latest upstream git snapshot.
+            - heading: U-Boot support for DB410c and DB820c targets
+              summary: |
+                Default LMP image now ships with u-boot support for the DB410c
+                and DB820c targets (requirement for OTA+ support).
+            - heading: OSTree support
+              summary: |
+                Root filesystem is now OSTree-based. Please check
+                https://ostree.readthedocs.io for the upstream OSTree documentation.
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Musl updated to the latest upstream master.
+                Python 3 target and native recipes updated to 3.5.4.
+                Ncurses updated to 6.0+20171125.
+                Tar updated to 1.30.
+                Pigz updated to 2.4.
+                Wget updated to 1.19.4.
+                Rsync updated to 3.1.3.
+                Ninja updated to 1.8.2 (major release update).
+                RPM updated to 4.14.1.
+                Openssl updated to 1.0.2n.
+                Libnl updated to 3.4.0.
+                Boost updated to 1.66.0.
+                Iputils updated to 20161105.
+                Linux-libc-headers updated to v4.15.
+                Ccache updated to 3.3.5.
+                Libva updated to 2.0.0.
+                Strace updated to 4.20.
+          bug_fixes:
+            - heading: qemu
+              summary: |
+                VNC server implementation in QEMU was found to be vulnerable to
+                an unbounded memory allocation issue.
+              cves:
+                - 2017-15124
+        - name: Meta Virtualization
+          manifest_project: meta-virtualization
+          features:
+            - heading: Layer Update
+              summary: |
+                Fixes required by latest OE-Core update.
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                Python-ndg-httpsclient updated to 0.4.4.
+                Python 3 depends on python3-misc removed due missing _pydecimal.py.
+        - name: Meta Yocto
+          manifest_project: meta-yocto
+          features:
+            - heading: Layer Update
+              summary: |
+                Fixes required by latest OE-Core update.
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                U-boot-fw-utils added to u-boot-fslc-fw-utils provides.
+        - name: Meta Freescale 3rdparty
+          manifest_project: meta-freescale-3rdparty
+          features:
+            - heading: Layer Update
+              summary: |
+                broadcom-nvram-config changed to use nonarch_base_libdir
+                instead of /lib.
+
+- update: "0.12"
+  highlights:
+    - No changes have gone into the LMP since 0.11.
+  summary: No changes have gone into the LMP since 0.11.
+
 - update: "0.11"
   highlights:
     - No changes have gone into the LMP since 0.10.
   summary: No changes have gone into the LMP since 0.10.
-
 
 - update: "0.10"
   highlights:
