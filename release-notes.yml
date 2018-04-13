@@ -4,6 +4,9 @@
     - Glibc updated to the 2.27 release.
     - Systemd updated to the 237 release.
     - NetworkManager updated to the 1.10.6 release.
+    - Docker updated to the 18.03.0 release.
+    - Containerd updated to the 1.0.2 release.
+    - Runc updated to the 1.0.0-rc5 release.
   summary: |
    Core layer updates based on the latest sumo changes.
   parts:
@@ -93,6 +96,14 @@
                 Python-cffi updated to 1.11.4.
                 Python-cython updated to 0.28.
                 Python-ply updated to 3.11.
+        - name: Meta Virtualization
+          manifest_project: meta-virtualization
+          features:
+            - heading: Layer Update
+              summary: |
+                Docker updated to 18.03.0.
+                Containerd updated to v1.0.2.
+                Runc updated to 1.0.0-rc5.
 
 - update: "0.14"
   highlights:
