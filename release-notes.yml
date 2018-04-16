@@ -137,6 +137,16 @@
               summary: |
                 Firmware-qcom-dragonboard updated to r1034.2.1.
                 New machine configuration for Dragonboard 600c.
+        - name: Meta RaspberryPi
+          manifest_project: meta-raspberrypi
+          features:
+            - heading: Layer Update
+              summary: |
+                BCM43430A1 firmware updated to the latest public revision.
+                BCM4345C0.hcd added for Raspberry Pi 3B+.
+                Improved support for Raspberry Pi Zero W and 3B+.
+                Linux-firmware-raspdebian is now used for the Raspberry Pi
+                specific firmware packages.
 
 - update: "0.14"
   highlights:
