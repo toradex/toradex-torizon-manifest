@@ -130,6 +130,13 @@
                 Ixgbe updated to v5.3.6.
                 Ixgbevf updated to v4.3.4.
                 Systemd-boot bbappend updated to work with Systemd 237.
+        - name: Meta Qualcomm
+          manifest_project: meta-qcom
+          features:
+            - heading: Layer Update
+              summary: |
+                Firmware-qcom-dragonboard updated to r1034.2.1.
+                New machine configuration for Dragonboard 600c.
 
 - update: "0.14"
   highlights:
