@@ -104,6 +104,15 @@
                 Docker updated to 18.03.0.
                 Containerd updated to v1.0.2.
                 Runc updated to 1.0.0-rc5.
+        - name: Meta 96boards
+          manifest_project: meta-96boards
+          features:
+            - heading: Layer Update
+              summary: |
+                EDK2, ATF and OPP updated to the current upstream revision.
+                Updated partition table for HiKey, including a new l-loader
+                recovery binary.
+                96boards-tools updated to 0.12.
 
 - update: "0.14"
   highlights:
