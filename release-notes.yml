@@ -113,6 +113,14 @@
                 Updated partition table for HiKey, including a new l-loader
                 recovery binary.
                 96boards-tools updated to 0.12.
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                U-boot-fslc updated to a07698f.
+                New machine configuration for t4240rdb, t2080rdb, t1024rdb,
+                p5040ds, p4080ds, p3041ds, p2041rdb and p1020rdb.
 
 - update: "0.14"
   highlights:
