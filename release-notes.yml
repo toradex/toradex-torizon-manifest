@@ -121,6 +121,15 @@
                 U-boot-fslc updated to a07698f.
                 New machine configuration for t4240rdb, t2080rdb, t1024rdb,
                 p5040ds, p4080ds, p3041ds, p2041rdb and p1020rdb.
+        - name: Meta Intel
+          manifest_project: meta-intel
+          features:
+            - heading: Layer Update
+              summary: |
+                Intel-microcode updated to 20180312.
+                Ixgbe updated to v5.3.6.
+                Ixgbevf updated to v4.3.4.
+                Systemd-boot bbappend updated to work with Systemd 237.
 
 - update: "0.14"
   highlights:
