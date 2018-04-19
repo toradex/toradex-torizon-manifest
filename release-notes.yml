@@ -147,6 +147,12 @@
                 Improved support for Raspberry Pi Zero W and 3B+.
                 Linux-firmware-raspdebian is now used for the Raspberry Pi
                 specific firmware packages.
+        - name: Meta Updater Layer
+          manifest_project: meta-updater
+          features:
+            - heading: Layer Update
+              summary: |
+                Python dependency removed from OSTree.
 
 - update: "0.14"
   highlights:
