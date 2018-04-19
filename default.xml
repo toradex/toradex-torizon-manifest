@@ -22,6 +22,6 @@
   <project name="meta-qcom" path="layers/meta-qcom" revision="e7f5ed54026827152a3ece4173d5f8e942a99395"/>
   <project name="bitbake" path="bitbake" revision="a783bd7e457f183a279dbe5a4ef3d4c17bb4c18c"/>
   <project name="meta-linaro" path="layers/meta-linaro" revision="62f64d28505e6e8d32176a231155e9271f8a275b"/>
-  <project name="meta-openembedded" path="layers/meta-openembedded" revision="2f7de931885c1b9e63c4e4238f0f7ad1388e8b6d"/>
+  <project name="meta-openembedded" path="layers/meta-openembedded" revision="f0a664f2b7ac42fa8832ecc016ddf8b6260ee50e"/>
   <project name="openembedded-core" path="layers/openembedded-core" revision="1df5f2dff832528905ff6fcf1d324619fb3d307f"/>
 </manifest>

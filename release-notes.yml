@@ -3,6 +3,7 @@
     - Binutils updated to the 2.30 release.
     - Glibc updated to the 2.27 release.
     - Systemd updated to the 237 release.
+    - NetworkManager updated to the 1.10.6 release.
   summary: |
    Core layer updates based on the latest sumo changes.
   parts:
@@ -83,6 +84,15 @@
                 - 2017-9935
                 - 2017-18013
                 - 2018-5784
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                NetworkManager updated to 1.10.6.
+                Python-cffi updated to 1.11.4.
+                Python-cython updated to 0.28.
+                Python-ply updated to 3.11.
 
 - update: "0.14"
   highlights:
