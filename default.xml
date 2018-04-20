@@ -17,7 +17,7 @@
   <project name="meta-yocto" path="layers/meta-yocto" revision="db28e5c97895d2a25098aaac7f0a65d4f2a01866">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
-  <project name="meta-osf" path="layers/meta-osf" remote="osf-lmp" revision="d48de6a29ef5cafb2dee6f027bda6f1e1797ea04"/>
+  <project name="meta-osf" path="layers/meta-osf" remote="osf-lmp" revision="cb4f705a266cc2b14fa1d2365f9c9857cac1e010"/>
   <project name="meta-updater" path="layers/meta-updater" remote="osf-lmp" revision="858797a94889053a881c2668f4ac4b0870404b84"/>
   <project name="meta-qcom" path="layers/meta-qcom" revision="86ee1fa49d0faabc1cc00be2a160f3b48fdf5778"/>
   <project name="bitbake" path="bitbake" revision="103bbc6642261cd5da038ba2071621919ee01253"/>

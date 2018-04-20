@@ -153,6 +153,16 @@
             - heading: Layer Update
               summary: |
                 Python dependency removed from OSTree.
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                Distro version bumped to 2.5 (sumo based).
+                Added recipe for docker-init, used by docker.
+                Python3-docker updated to 3.2.1.
+                Python3-docker-compose updated to 1.21.0.
+                Python3-docker-pycreds updated to 0.2.2.
 
 - update: "0.14"
   highlights:
