@@ -1,3 +1,169 @@
+- update: "0.15"
+  highlights:
+    - Binutils updated to the 2.30 release.
+    - Glibc updated to the 2.27 release.
+    - Systemd updated to the 237 release.
+    - NetworkManager updated to the 1.10.6 release.
+    - Docker updated to the 18.03.0 release.
+    - Containerd updated to the 1.0.2 release.
+    - Runc updated to the 1.0.0-rc5 release.
+  summary: |
+   Core layer updates based on the latest sumo changes.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates bringing it closer to the final sumo release.
+      projects:
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Binutils updated to 2.30.
+                Cmake updated to 3.10.3.
+                Curl updated to 7.58.0.
+                Git updated to 2.16.1.
+                Glib-2.0 updated to 2.54.3.
+                Glibc updated to 2.27.
+                Go updated to 1.9.4.
+                Go-dep updated to 0.4.1.
+                Iptables updated to 1.6.2.
+                Libpng updated to 1.6.34.
+                Libunistring updated to 0.9.9.
+                Linux-libc-headers updated to 4.15.7.
+                Llvm updated to 6.0.
+                Musl updated to 1.1.19.
+                Nspr updated to 4.19.
+                Nss updated to 3.35.
+                Openssl updated to 1.1.0h and 1.0.2o.
+                Patch updated to 2.7.6.
+                Pkgconf updated to 1.4.2.
+                Python3 updated to 3.5.5.
+                Python3-dbus updated to 1.2.6.
+                Python3-pip updated to 9.0.2.
+                Python3-pygobject updated to 3.28.1.
+                Python3-setuptools updated to 39.0.0.
+                Qemu updated to 2.11.1.
+                Slang updated to 2.3.2.
+                Sudo updated to 1.8.22.
+                Systemd updated to 237.
+                Vala updated to 0.38.8.
+                Time updated to 1.8.
+                Tzdata updated to 2018d.
+          bug_fixes:
+            - heading: busybox
+              summary: |
+                runCnt overflow in bunzip2.
+              cves:
+                - 2017-15873
+            - heading: dhcp
+              summary: |
+                Failure to properly clean up closed OMAPI connections can
+                exhaust available sockets.
+              cves:
+                - 2017-3144
+            - heading: libvorbis
+              summary: |
+                Multiple issues.
+              cves:
+                - 2018-5146
+                - 2017-14632
+                - 2017-14633
+            - heading: patch
+              summary: |
+                Multiple issues.
+              cves:
+                - 2018-1000156
+                - 2018-6951
+            - heading: python3
+              summary: |
+                Possible integer overflow in PyBytes_DecodeEscape.
+              cves:
+                - 2017-1000158
+            - heading: tiff
+              summary: |
+                Multiple issues.
+              cves:
+                - 2017-9935
+                - 2017-18013
+                - 2018-5784
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                NetworkManager updated to 1.10.6.
+                Python-cffi updated to 1.11.4.
+                Python-cython updated to 0.28.
+                Python-ply updated to 3.11.
+        - name: Meta Virtualization
+          manifest_project: meta-virtualization
+          features:
+            - heading: Layer Update
+              summary: |
+                Docker updated to 18.03.0.
+                Containerd updated to v1.0.2.
+                Runc updated to 1.0.0-rc5.
+        - name: Meta 96boards
+          manifest_project: meta-96boards
+          features:
+            - heading: Layer Update
+              summary: |
+                EDK2, ATF and OPP updated to the current upstream revision.
+                Updated partition table for HiKey, including a new l-loader
+                recovery binary.
+                96boards-tools updated to 0.12.
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                U-boot-fslc updated to a07698f.
+                New machine configuration for t4240rdb, t2080rdb, t1024rdb,
+                p5040ds, p4080ds, p3041ds, p2041rdb and p1020rdb.
+        - name: Meta Intel
+          manifest_project: meta-intel
+          features:
+            - heading: Layer Update
+              summary: |
+                Intel-microcode updated to 20180312.
+                Ixgbe updated to v5.3.6.
+                Ixgbevf updated to v4.3.4.
+                Systemd-boot bbappend updated to work with Systemd 237.
+        - name: Meta Qualcomm
+          manifest_project: meta-qcom
+          features:
+            - heading: Layer Update
+              summary: |
+                Firmware-qcom-dragonboard updated to r1034.2.1.
+                New machine configuration for Dragonboard 600c.
+        - name: Meta RaspberryPi
+          manifest_project: meta-raspberrypi
+          features:
+            - heading: Layer Update
+              summary: |
+                BCM43430A1 firmware updated to the latest public revision.
+                BCM4345C0.hcd added for Raspberry Pi 3B+.
+                Improved support for Raspberry Pi Zero W and 3B+.
+                Linux-firmware-raspdebian is now used for the Raspberry Pi
+                specific firmware packages.
+        - name: Meta Updater Layer
+          manifest_project: meta-updater
+          features:
+            - heading: Layer Update
+              summary: |
+                Python dependency removed from OSTree.
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                Distro version bumped to 2.5 (sumo based).
+                Added recipe for docker-init, used by docker.
+                Python3-docker updated to 3.2.1.
+                Python3-docker-compose updated to 1.21.0.
+                Python3-docker-pycreds updated to 0.2.2.
+
 - update: "0.14"
   highlights:
     - OSF Unified Linux Kernel updated to 4.14.33.
