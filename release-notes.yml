@@ -1,3 +1,25 @@
+- update: "0.16"
+  highlights:
+    - OSF Unified Linux Kernel updated to 4.16.6.
+    - Support for Raspberry 0 WiFi and Raspberry Pi 3 B+.
+    - Support for Hummingboard 2 SOM version 1.5.
+  summary: |
+   OSF Unified Linux Kernel updated to the 4.16.6 stable release.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates.
+      projects:
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.16.6.
+                U-Boot-Toradex changed to disable secure mode by default.
+                Support for Raspberry 0 WiFi and Raspberry Pi 3 B+.
+                Support for Hummingboard 2 SOM version 1.5.
+
 - update: "0.15"
   highlights:
     - Binutils updated to the 2.30 release.
