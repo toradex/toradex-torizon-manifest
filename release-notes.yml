@@ -28,6 +28,15 @@
               summary: |
                 Added optee-examples bitbake recipe, which builds the OPTEE
                 examples trusted applications.
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                Yp-tools updated to 4.2.3.
+                Added wpan-tools recipe.
+                Wireshark updated to 2.4.6.
+                Mbedtls updated to 2.8.0.
 
 - update: "0.17"
   highlights:
