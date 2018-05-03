@@ -21,6 +21,13 @@
               summary: |
                 New machine configuration for ls1043ardb-be, ls1046ardb-be,
                 ls1088ardb-be, ls2088ardb-be.
+        - name: Meta Linaro
+          manifest_project: meta-linaro
+          features:
+            - heading: Layer Update
+              summary: |
+                Added optee-examples bitbake recipe, which builds the OPTEE
+                examples trusted applications.
 
 - update: "0.17"
   highlights:
