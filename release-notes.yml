@@ -37,6 +37,12 @@
                 Added wpan-tools recipe.
                 Wireshark updated to 2.4.6.
                 Mbedtls updated to 2.8.0.
+        - name: Meta Qualcomm
+          manifest_project: meta-qcom
+          features:
+            - heading: Layer Update
+              summary: |
+                Updated qmic, qrtr and rmtfs to the latest version available.
 
 - update: "0.17"
   highlights:
