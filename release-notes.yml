@@ -1,3 +1,20 @@
+- update: "0.18"
+  highlights:
+    - OSF Unified Linux Kernel updated to 4.16.7.
+  summary: |
+   OSF Unified Linux Kernel updated to the 4.16.7 stable release.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates.
+      projects:
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.16.7.
+
 - update: "0.17"
   highlights:
     - No changes have gone into the LMP since 0.16.
