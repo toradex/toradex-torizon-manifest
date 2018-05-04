@@ -23,5 +23,5 @@
   <project name="bitbake" path="bitbake" revision="103bbc6642261cd5da038ba2071621919ee01253"/>
   <project name="meta-linaro" path="layers/meta-linaro" revision="9deed4cce6d4fe040228a279fea6697d7a9ccdfe"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" revision="663bc6f0160adb570c3a7d0b64d1f7f60cb2269e"/>
-  <project name="openembedded-core" path="layers/openembedded-core" revision="1df5f2dff832528905ff6fcf1d324619fb3d307f"/>
+  <project name="openembedded-core" path="layers/openembedded-core" revision="1b03cdf290c3c8b7f903aef696b0e1bfe763cbe0"/>
 </manifest>
