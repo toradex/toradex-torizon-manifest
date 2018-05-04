@@ -18,7 +18,7 @@
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
   <project name="meta-osf" path="layers/meta-osf" remote="osf-lmp" revision="fcd79d6db63c2ea76011e96f6f924e83df401fe2"/>
-  <project name="meta-updater" path="layers/meta-updater" remote="osf-lmp" revision="858797a94889053a881c2668f4ac4b0870404b84"/>
+  <project name="meta-updater" path="layers/meta-updater" remote="osf-lmp" revision="7020539eeec796fd26773549638b2538b6748250"/>
   <project name="meta-qcom" path="layers/meta-qcom" revision="47baa2f27345f56fc71cc4e7c864eb32eefbde8b"/>
   <project name="bitbake" path="bitbake" revision="103bbc6642261cd5da038ba2071621919ee01253"/>
   <project name="meta-linaro" path="layers/meta-linaro" revision="9deed4cce6d4fe040228a279fea6697d7a9ccdfe"/>

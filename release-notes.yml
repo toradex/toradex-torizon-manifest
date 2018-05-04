@@ -50,6 +50,17 @@
               summary: |
                 rpi-config extended to cover more commonly used config
                 variables.
+        - name: Meta Updater Layer
+          manifest_project: meta-updater
+          features:
+            - heading: Layer Update
+              summary: |
+                Aktualizr now validates /var/sota file access permission before
+                initializing the service.
+                Aktualizr can now publish the target network information to the
+                OTA+ server.
+                Garage-sign version now depends on what gets provided by the
+                remote server available in the sota credentials file.
 
 - update: "0.17"
   highlights:
