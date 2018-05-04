@@ -12,7 +12,7 @@
   <project name="gateway-containers" path="containers/gateway-containers" remote="osf-lmp" revision="87f961b280607b22630be4300be83c49e221d06f"/>
   <project name="meta-freescale" path="layers/meta-freescale" revision="827bda6303c9d637efb4b94727b67e1857760171"/>
   <project name="meta-intel" path="layers/meta-intel" revision="a82a0874d2149d720c9a39f333a1688d5bbe7a7c"/>
-  <project name="meta-raspberrypi" path="layers/meta-raspberrypi" revision="5641ac3730502980353e9dfb187d9c5a08a99e9f"/>
+  <project name="meta-raspberrypi" path="layers/meta-raspberrypi" revision="693f36dded2f29fd77720f7b2e7c88ea76554466"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" revision="500e5d2ad58f78d3aa5132081123955b6681bb8c"/>
   <project name="meta-yocto" path="layers/meta-yocto" revision="db28e5c97895d2a25098aaac7f0a65d4f2a01866">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>

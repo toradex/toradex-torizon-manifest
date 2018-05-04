@@ -43,6 +43,13 @@
             - heading: Layer Update
               summary: |
                 Updated qmic, qrtr and rmtfs to the latest version available.
+        - name: Meta RaspberryPi
+          manifest_project: meta-raspberrypi
+          features:
+            - heading: Layer Update
+              summary: |
+                rpi-config extended to cover more commonly used config
+                variables.
 
 - update: "0.17"
   highlights:
