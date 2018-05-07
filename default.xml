@@ -20,6 +20,7 @@
   <project name="meta-osf" path="layers/meta-osf" remote="osf-lmp" revision="55694b62f54bfa61bec204d98a527d2bbb2450eb"/>
   <project name="meta-updater" path="layers/meta-updater" remote="osf-lmp" revision="7020539eeec796fd26773549638b2538b6748250"/>
   <project name="meta-qcom" path="layers/meta-qcom" revision="47baa2f27345f56fc71cc4e7c864eb32eefbde8b"/>
+  <project name="meta-riscv" path="layers/meta-riscv" revision="e07da3d6769082286541cbcd863b1778c38a2d86"/>
   <project name="bitbake" path="bitbake" revision="103bbc6642261cd5da038ba2071621919ee01253"/>
   <project name="meta-linaro" path="layers/meta-linaro" revision="9deed4cce6d4fe040228a279fea6697d7a9ccdfe"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" revision="663bc6f0160adb570c3a7d0b64d1f7f60cb2269e"/>
