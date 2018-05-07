@@ -40,6 +40,9 @@ openembedded-core:
 meta-linaro:
   url: "https://git.linaro.org/openembedded/meta-linaro"
 
+meta-riscv:
+  url: "https://github.com/riscv/meta-riscv"
+
 # These are repositories needed to produce the OTA community edition server/client
 ota-community-edition:
   url: "https://github.com/advancedtelematic/ota-community-edition"
