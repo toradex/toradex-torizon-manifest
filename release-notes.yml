@@ -1,3 +1,8 @@
+- update: "0.17"
+  highlights:
+    - No changes have gone into the LMP since 0.16.
+  summary: No changes have gone into the LMP since 0.16.
+
 - update: "0.16"
   highlights:
     - OSF Unified Linux Kernel updated to 4.16.6.
