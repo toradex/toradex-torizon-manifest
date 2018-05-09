@@ -1,8 +1,8 @@
 - update: "0.18"
   highlights:
-    - OSF Unified Linux Kernel updated to 4.16.7.
+    - OSF Unified Linux Kernel updated to 4.16.8.
   summary: |
-   OSF Unified Linux Kernel updated to the 4.16.7 stable release.
+   OSF Unified Linux Kernel updated to the 4.16.8 stable release.
   parts:
     - name: Linux microPlatform
       summary: |
@@ -13,7 +13,7 @@
           features:
             - heading: Layer Update
               summary: |
-                OSF Unified Linux Kernel updated to 4.16.7.
+                OSF Unified Linux Kernel updated to 4.16.8.
         - name: Meta Freescale
           manifest_project: meta-freescale
           features:
