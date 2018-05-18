@@ -1,3 +1,72 @@
+- update: "0.18"
+  highlights:
+    - OSF Unified Linux Kernel updated to 4.16.8.
+  summary: |
+   OSF Unified Linux Kernel updated to the 4.16.8 stable release.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates.
+      projects:
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.16.8.
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                New machine configuration for ls1043ardb-be, ls1046ardb-be,
+                ls1088ardb-be, ls2088ardb-be.
+        - name: Meta Linaro
+          manifest_project: meta-linaro
+          features:
+            - heading: Layer Update
+              summary: |
+                Added optee-examples bitbake recipe, which builds the OPTEE
+                examples trusted applications.
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                Yp-tools updated to 4.2.3.
+                Added wpan-tools recipe.
+                Wireshark updated to 2.4.6.
+                Mbedtls updated to 2.8.0.
+        - name: Meta Qualcomm
+          manifest_project: meta-qcom
+          features:
+            - heading: Layer Update
+              summary: |
+                Updated qmic, qrtr and rmtfs to the latest version available.
+        - name: Meta RaspberryPi
+          manifest_project: meta-raspberrypi
+          features:
+            - heading: Layer Update
+              summary: |
+                rpi-config extended to cover more commonly used config
+                variables.
+        - name: Meta Updater Layer
+          manifest_project: meta-updater
+          features:
+            - heading: Layer Update
+              summary: |
+                Aktualizr now validates /var/sota file access permission before
+                initializing the service.
+                Aktualizr can now publish the target network information to the
+                OTA+ server.
+                Garage-sign version now depends on what gets provided by the
+                remote server available in the sota credentials file.
+
+- update: "0.17"
+  highlights:
+    - No changes have gone into the LMP since 0.16.
+  summary: No changes have gone into the LMP since 0.16.
+
 - update: "0.16"
   highlights:
     - OSF Unified Linux Kernel updated to 4.16.6.

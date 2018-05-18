@@ -8,19 +8,19 @@
   <project name="core-containers" path="containers/core-containers" remote="subscriber-microplatforms" revision="decce9f0e42cb9d20f1799f394efdf715ba72f21" />
   <project name="extra-containers" path="containers/extra-containers" remote="subscriber-microplatforms" revision="692eb049814f9b6282a30f8f606f1d4e1790075b" />
   <project name="gateway-containers" path="containers/gateway-containers" remote="subscriber-microplatforms" revision="87f961b280607b22630be4300be83c49e221d06f" />
-  <project name="meta-96boards" path="layers/meta-96boards" revision="3fb5700068e99e1453eb1a5d211056eaa007e799" />
-  <project name="meta-freescale" path="layers/meta-freescale" revision="a1901571aebad6d4d9433693d85a707eae9191f0" />
+  <project name="meta-96boards" path="layers/meta-96boards" revision="1d7ff4dd4b2126a74849ef62d2038ecca3851de3" />
+  <project name="meta-freescale" path="layers/meta-freescale" revision="827bda6303c9d637efb4b94727b67e1857760171" />
   <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="44ce402484c90d6762194fbbf1d1a834aefe5f87" />
-  <project name="meta-intel" path="layers/meta-intel" revision="bc31dbbd404d8fda58ea770422dbaf11de40ebee" />
-  <project name="meta-linaro" path="layers/meta-linaro" revision="15072734ffd7f3dfdf58b988504afe620505b983" />
-  <project name="meta-openembedded" path="layers/meta-openembedded" revision="f0a664f2b7ac42fa8832ecc016ddf8b6260ee50e" />
-  <project name="meta-osf" path="layers/meta-osf" remote="subscriber-microplatforms" revision="39f1e904d3bee9661d00f788bfdab08b89e2eab9" />
-  <project name="meta-qcom" path="layers/meta-qcom" revision="86ee1fa49d0faabc1cc00be2a160f3b48fdf5778" />
-  <project name="meta-raspberrypi" path="layers/meta-raspberrypi" revision="5641ac3730502980353e9dfb187d9c5a08a99e9f" />
-  <project name="meta-updater" path="layers/meta-updater" remote="subscriber-microplatforms" revision="858797a94889053a881c2668f4ac4b0870404b84" />
-  <project name="meta-virtualization" path="layers/meta-virtualization" revision="500e5d2ad58f78d3aa5132081123955b6681bb8c" />
-  <project name="meta-yocto" path="layers/meta-yocto" revision="db28e5c97895d2a25098aaac7f0a65d4f2a01866">
+  <project name="meta-intel" path="layers/meta-intel" revision="a82a0874d2149d720c9a39f333a1688d5bbe7a7c" />
+  <project name="meta-linaro" path="layers/meta-linaro" revision="9deed4cce6d4fe040228a279fea6697d7a9ccdfe" />
+  <project name="meta-openembedded" path="layers/meta-openembedded" revision="663bc6f0160adb570c3a7d0b64d1f7f60cb2269e" />
+  <project name="meta-osf" path="layers/meta-osf" remote="subscriber-microplatforms" revision="55694b62f54bfa61bec204d98a527d2bbb2450eb" />
+  <project name="meta-qcom" path="layers/meta-qcom" revision="47baa2f27345f56fc71cc4e7c864eb32eefbde8b" />
+  <project name="meta-raspberrypi" path="layers/meta-raspberrypi" revision="693f36dded2f29fd77720f7b2e7c88ea76554466" />
+  <project name="meta-updater" path="layers/meta-updater" remote="subscriber-microplatforms" revision="7020539eeec796fd26773549638b2538b6748250" />
+  <project name="meta-virtualization" path="layers/meta-virtualization" revision="fda48193e60b22471dd962682faab33e4e721d72" />
+  <project name="meta-yocto" path="layers/meta-yocto" revision="eb759d24a69da5d649386a333461f4f226920f0d">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment" />
   </project>
-  <project name="openembedded-core" path="layers/openembedded-core" revision="1df5f2dff832528905ff6fcf1d324619fb3d307f" />
+  <project name="openembedded-core" path="layers/openembedded-core" revision="1b03cdf290c3c8b7f903aef696b0e1bfe763cbe0" />
 </manifest>
