@@ -1,6 +1,6 @@
 - update: "0.20"
   highlights:
-    - Core Layer Updates
+    - U-Boot updated to the 2018.05 release.
   summary: |
    Core Layer Updates.
   parts:
@@ -8,6 +8,65 @@
       summary: |
         Core layer updates.
       projects:
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Autoconf-archive updated to 2018.03.13.
+                Bash updated to 4.4.18.
+                Bash-completion updated to 2.8.
+                Bluez5 updated to 5.49.
+                Boost updated to 1.67.0.
+                Curl updated to 7.59.0.
+                Dbus updated to 1.12.8.
+                Dbus-glib updated to 0.110.
+                Distcc updated to 3.3.
+                Dropbear updated to 2018.76.
+                Gawk updated to 4.2.1.
+                Gdb updated to 8.1.
+                Glib-2.0 updated to 2.56.1.
+                Gnutls updated to 3.6.2.
+                Go 1.10.x updated to 1.10.2.
+                Go 1.9.x updated to 1.9.6.
+                Gobject-introspection updated to 1.56.1.
+                Hdparm updated to 9.55.
+                Icu updated to 61.1.
+                Iproute2 updated to 4.15.0.
+                Less updated to 530.
+                Libaio updated to 0.3.111.
+                Libgpg-error updated to 1.31.
+                Libidn updated to 1.34.
+                Libsolv updated to 0.6.34.
+                Libusb1 updated to 1.0.22.
+                Libxml2 updated to 2.9.8.
+                Logrotate updated to 3.14.0.
+                Ncurses updated to 6.1.
+                Python3-pip updated to 9.0.3.
+                Python3-setuptools updated to 39.0.1.
+                Sqlite3 updated to 3.23.1.
+                Strace updated to 4.22.
+                Sudo updated to 1.8.23.
+                Time updated to 1.9.
+                Tzcode-native updated to 2018e.
+                Tzdata updated to 2018e.
+                U-Boot updated to the 2018.05 release.
+                Util-linux updated to 2.32.
+                Util-macros updated to 1.19.2.
+                Vala updated to 0.40.4.
+          bug_fixes:
+            - heading: qemu
+              summary: |
+                During Qemu guest migration, a destination process invokes ps2
+                post_load function. In that, if rptr and count values were
+                invalid, it could lead to OOB access or infinite loop issue.
+              cves:
+                - 2017-16845
+            - heading: util-linux
+              summary: |
+                Multiple issues.
+              cves:
+                - 2018-7738
         - name: Meta Updater Layer
           manifest_project: meta-updater
           features:
