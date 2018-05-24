@@ -1,3 +1,21 @@
+- update: "0.20"
+  highlights:
+    - Core Layer Updates
+  summary: |
+   Core Layer Updates.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates.
+      projects:
+        - name: Meta Updater Layer
+          manifest_project: meta-updater
+          features:
+            - heading: Layer Update
+              summary: |
+                OSTree recipe updated to generate additional packages and
+                improve the runtime dependency list.
+
 - update: "0.19"
   highlights:
     - No changes have gone into the LMP since 0.18.
