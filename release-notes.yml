@@ -78,6 +78,13 @@
                 Htop updated to 2.1.0.
                 Python3-cython updated to 0.28.2.
                 Python3-Websockets updated to 4.0.1.
+        - name: Meta Intel
+          manifest_project: meta-intel
+          features:
+            - heading: Layer Update
+              summary: |
+                Ixgbe updated to v5.3.7.
+                Ixgbevf updated to v4.3.5.
         - name: Meta Updater Layer
           manifest_project: meta-updater
           features:
