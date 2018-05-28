@@ -101,6 +101,14 @@
                 t2080rdb-64b and t4240rdb-64b.
                 Added utp-com recipe.
                 Imx-uuc updated to the latest revision.
+        - name: Meta RaspberryPi
+          manifest_project: meta-raspberrypi
+          features:
+            - heading: Layer Update
+              summary: |
+                Firmware updated to 20180417.
+                Rpi-config now does not force device tree selection for
+                raspberrypi3-64.
         - name: Meta Updater Layer
           manifest_project: meta-updater
           features:
