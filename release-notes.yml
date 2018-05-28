@@ -67,6 +67,17 @@
                 Multiple issues.
               cves:
                 - 2018-7738
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                New recipe broadcom-bt-firmware added for Broadcom Bluetooth
+                firmwares.
+                Gpsd updated to 3.17.
+                Htop updated to 2.1.0.
+                Python3-cython updated to 0.28.2.
+                Python3-Websockets updated to 4.0.1.
         - name: Meta Updater Layer
           manifest_project: meta-updater
           features:
