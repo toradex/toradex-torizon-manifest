@@ -92,6 +92,15 @@
             - heading: Layer Update
               summary: |
                 Grub2 now based on the upstream grub-efi 2.02 recipe.
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                New machine configuration for p5040ds-64b, t1024rdb-64b,
+                t2080rdb-64b and t4240rdb-64b.
+                Added utp-com recipe.
+                Imx-uuc updated to the latest revision.
         - name: Meta Updater Layer
           manifest_project: meta-updater
           features:
