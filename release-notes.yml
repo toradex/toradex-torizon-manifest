@@ -1,6 +1,7 @@
 - update: "0.20"
   highlights:
     - U-Boot updated to the 2018.05 release.
+    - Hikey now uses the upstream Grub 2.02 EFI recipe.
   summary: |
    Core Layer Updates.
   parts:
@@ -85,6 +86,12 @@
               summary: |
                 Ixgbe updated to v5.3.7.
                 Ixgbevf updated to v4.3.5.
+        - name: Meta 96boards
+          manifest_project: meta-96boards
+          features:
+            - heading: Layer Update
+              summary: |
+                Grub2 now based on the upstream grub-efi 2.02 recipe.
         - name: Meta Updater Layer
           manifest_project: meta-updater
           features:
