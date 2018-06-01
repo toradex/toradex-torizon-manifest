@@ -1,9 +1,16 @@
 - update: "0.20"
   highlights:
+    - OSF Unified Linux Kernel updated to 4.16.12.
     - U-Boot updated to the 2018.05 release.
     - Hikey now uses the upstream Grub 2.02 EFI recipe.
+    - New layer Meta RISC-V added to LMP (RISC-V BSP support).
+    - Initial support for QEMU RISC-V 64 and SiFive Freedom Unleashed U540.
   summary: |
-   Core Layer Updates.
+   OSF Unified Linux Kernel updated to the 4.16.12 stable release.
+   Initial support for QEMU RISC-V 64 and SiFive Freedom Unleashed U540 targets.
+   New image lmp-mini-image for minimal OTA+ compatible images, currently used
+   by RISC-V targets due lack of Golang support.
+   Core layer updates based on the latest changes for the Yocto Thud (2.6) release.
   parts:
     - name: Linux microPlatform
       summary: |
@@ -109,6 +116,23 @@
                 Firmware updated to 20180417.
                 Rpi-config now does not force device tree selection for
                 raspberrypi3-64.
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.16.12.
+                Support for RISC-V qemuriscv64 and freedom-u540.
+                Removal of alsa, irda, pcmcia, nfc and pulseaudio from distro
+                features, as they should be provided via containers.
+                Added new lmp-mini-image for minimal OTA+ compatible images,
+                currently used by RISC-V targets due lack of Golang support.
+          bug_fixes:
+            - heading: linux-osf
+              summary: |
+                Kernel update to the 4.16.x series broke overlay support for
+                Raspberry PI 3 64 targets, which is now fixed as part of the
+                4.16.12 update (device-tree not exporting __symbols__).
         - name: Meta Updater Layer
           manifest_project: meta-updater
           features:
