@@ -4,23 +4,24 @@
   
   <default remote="lmp-mirrors" revision="master" sync-j="4" />
   
-  <project name="bitbake" revision="103bbc6642261cd5da038ba2071621919ee01253" />
+  <project name="bitbake" revision="bd9a1b063633af2936ba1dd87b19202424900151" />
   <project name="core-containers" path="containers/core-containers" remote="subscriber-microplatforms" revision="decce9f0e42cb9d20f1799f394efdf715ba72f21" />
   <project name="extra-containers" path="containers/extra-containers" remote="subscriber-microplatforms" revision="692eb049814f9b6282a30f8f606f1d4e1790075b" />
   <project name="gateway-containers" path="containers/gateway-containers" remote="subscriber-microplatforms" revision="87f961b280607b22630be4300be83c49e221d06f" />
-  <project name="meta-96boards" path="layers/meta-96boards" revision="1d7ff4dd4b2126a74849ef62d2038ecca3851de3" />
-  <project name="meta-freescale" path="layers/meta-freescale" revision="827bda6303c9d637efb4b94727b67e1857760171" />
-  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="44ce402484c90d6762194fbbf1d1a834aefe5f87" />
-  <project name="meta-intel" path="layers/meta-intel" revision="a82a0874d2149d720c9a39f333a1688d5bbe7a7c" />
-  <project name="meta-linaro" path="layers/meta-linaro" revision="9deed4cce6d4fe040228a279fea6697d7a9ccdfe" />
-  <project name="meta-openembedded" path="layers/meta-openembedded" revision="663bc6f0160adb570c3a7d0b64d1f7f60cb2269e" />
-  <project name="meta-osf" path="layers/meta-osf" remote="subscriber-microplatforms" revision="55694b62f54bfa61bec204d98a527d2bbb2450eb" />
-  <project name="meta-qcom" path="layers/meta-qcom" revision="47baa2f27345f56fc71cc4e7c864eb32eefbde8b" />
-  <project name="meta-raspberrypi" path="layers/meta-raspberrypi" revision="693f36dded2f29fd77720f7b2e7c88ea76554466" />
-  <project name="meta-updater" path="layers/meta-updater" remote="subscriber-microplatforms" revision="7020539eeec796fd26773549638b2538b6748250" />
-  <project name="meta-virtualization" path="layers/meta-virtualization" revision="fda48193e60b22471dd962682faab33e4e721d72" />
-  <project name="meta-yocto" path="layers/meta-yocto" revision="eb759d24a69da5d649386a333461f4f226920f0d">
+  <project name="meta-96boards" path="layers/meta-96boards" revision="200a7561c57483876a146a249974cfb8e437a05b" />
+  <project name="meta-freescale" path="layers/meta-freescale" revision="00d3c227d0ef8ca851faa638e7eb0da0f6c40608" />
+  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="fa55a2527cc0f6b34f99bba4d5437fa5ea1feba1" />
+  <project name="meta-intel" path="layers/meta-intel" revision="ef94155d9e68a91805ab0a45fcce2a136788f017" />
+  <project name="meta-linaro" path="layers/meta-linaro" revision="38975f777d73258c285ffff61e97b2478763a9a4" />
+  <project name="meta-openembedded" path="layers/meta-openembedded" revision="bb57bac845f3cd1634862fa9868bc8e294ba74a9" />
+  <project name="meta-osf" path="layers/meta-osf" remote="subscriber-microplatforms" revision="e2a39992532a756af0f6e1acd87432fe7ed7736b" />
+  <project name="meta-qcom" path="layers/meta-qcom" revision="273ab5ae1206ac16fde84d6ab556cde2f78bbd6e" />
+  <project name="meta-raspberrypi" path="layers/meta-raspberrypi" revision="de597abc3b9447611951469ad1ad18d5068ff074" />
+  <project name="meta-riscv" path="layers/meta-riscv" revision="e07da3d6769082286541cbcd863b1778c38a2d86" />
+  <project name="meta-updater" path="layers/meta-updater" remote="subscriber-microplatforms" revision="eab4b32535bfa4a72119f805074d0ea26080effc" />
+  <project name="meta-virtualization" path="layers/meta-virtualization" revision="33eb70520aca4312b1767746a8d2dfeb8db7579b" />
+  <project name="meta-yocto" path="layers/meta-yocto" revision="c6cfed5e9fba40d106b5b825f119bd47f59a810d">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment" />
   </project>
-  <project name="openembedded-core" path="layers/openembedded-core" revision="1b03cdf290c3c8b7f903aef696b0e1bfe763cbe0" />
+  <project name="openembedded-core" path="layers/openembedded-core" revision="a2b4552b96c49dbdc9aef4b64820c3ff16dc5bb6" />
 </manifest>

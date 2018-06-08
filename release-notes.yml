@@ -1,3 +1,151 @@
+- update: "0.20"
+  highlights:
+    - OSF Unified Linux Kernel updated to 4.16.12.
+    - U-Boot updated to the 2018.05 release.
+    - Hikey now uses the upstream Grub 2.02 EFI recipe.
+    - New layer Meta RISC-V added to LMP (RISC-V BSP support).
+    - Initial support for QEMU RISC-V 64 and SiFive Freedom Unleashed U540.
+  summary: |
+   OSF Unified Linux Kernel updated to the 4.16.12 stable release.
+   Initial support for QEMU RISC-V 64 and SiFive Freedom Unleashed U540 targets.
+   New image lmp-mini-image for minimal OTA+ compatible images, currently used
+   by RISC-V targets due lack of Golang support.
+   Core layer updates based on the latest changes for the Yocto Thud (2.6) release.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates.
+      projects:
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Autoconf-archive updated to 2018.03.13.
+                Bash updated to 4.4.18.
+                Bash-completion updated to 2.8.
+                Bluez5 updated to 5.49.
+                Boost updated to 1.67.0.
+                Curl updated to 7.59.0.
+                Dbus updated to 1.12.8.
+                Dbus-glib updated to 0.110.
+                Distcc updated to 3.3.
+                Dropbear updated to 2018.76.
+                Gawk updated to 4.2.1.
+                Gdb updated to 8.1.
+                Glib-2.0 updated to 2.56.1.
+                Gnutls updated to 3.6.2.
+                Go 1.10.x updated to 1.10.2.
+                Go 1.9.x updated to 1.9.6.
+                Gobject-introspection updated to 1.56.1.
+                Hdparm updated to 9.55.
+                Icu updated to 61.1.
+                Iproute2 updated to 4.15.0.
+                Less updated to 530.
+                Libaio updated to 0.3.111.
+                Libgpg-error updated to 1.31.
+                Libidn updated to 1.34.
+                Libsolv updated to 0.6.34.
+                Libusb1 updated to 1.0.22.
+                Libxml2 updated to 2.9.8.
+                Logrotate updated to 3.14.0.
+                Ncurses updated to 6.1.
+                Python3-pip updated to 9.0.3.
+                Python3-setuptools updated to 39.0.1.
+                Sqlite3 updated to 3.23.1.
+                Strace updated to 4.22.
+                Sudo updated to 1.8.23.
+                Time updated to 1.9.
+                Tzcode-native updated to 2018e.
+                Tzdata updated to 2018e.
+                U-Boot updated to the 2018.05 release.
+                Util-linux updated to 2.32.
+                Util-macros updated to 1.19.2.
+                Vala updated to 0.40.4.
+          bug_fixes:
+            - heading: qemu
+              summary: |
+                During Qemu guest migration, a destination process invokes ps2
+                post_load function. In that, if rptr and count values were
+                invalid, it could lead to OOB access or infinite loop issue.
+              cves:
+                - 2017-16845
+            - heading: util-linux
+              summary: |
+                Multiple issues.
+              cves:
+                - 2018-7738
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                New recipe broadcom-bt-firmware added for Broadcom Bluetooth
+                firmwares.
+                Gpsd updated to 3.17.
+                Htop updated to 2.1.0.
+                Python3-cython updated to 0.28.2.
+                Python3-Websockets updated to 4.0.1.
+        - name: Meta Intel
+          manifest_project: meta-intel
+          features:
+            - heading: Layer Update
+              summary: |
+                Ixgbe updated to v5.3.7.
+                Ixgbevf updated to v4.3.5.
+        - name: Meta 96boards
+          manifest_project: meta-96boards
+          features:
+            - heading: Layer Update
+              summary: |
+                Grub2 now based on the upstream grub-efi 2.02 recipe.
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                New machine configuration for p5040ds-64b, t1024rdb-64b,
+                t2080rdb-64b and t4240rdb-64b.
+                Added utp-com recipe.
+                Imx-uuc updated to the latest revision.
+        - name: Meta RaspberryPi
+          manifest_project: meta-raspberrypi
+          features:
+            - heading: Layer Update
+              summary: |
+                Firmware updated to 20180417.
+                Rpi-config now does not force device tree selection for
+                raspberrypi3-64.
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.16.12.
+                Support for RISC-V qemuriscv64 and freedom-u540.
+                Removal of alsa, irda, pcmcia, nfc and pulseaudio from distro
+                features, as they should be provided via containers.
+                Added new lmp-mini-image for minimal OTA+ compatible images,
+                currently used by RISC-V targets due lack of Golang support.
+          bug_fixes:
+            - heading: linux-osf
+              summary: |
+                Kernel update to the 4.16.x series broke overlay support for
+                Raspberry PI 3 64 targets, which is now fixed as part of the
+                4.16.12 update (device-tree not exporting __symbols__).
+        - name: Meta Updater Layer
+          manifest_project: meta-updater
+          features:
+            - heading: Layer Update
+              summary: |
+                OSTree recipe updated to generate additional packages and
+                improve the runtime dependency list.
+
+- update: "0.19"
+  highlights:
+    - No changes have gone into the LMP since 0.18.
+  summary: No changes have gone into the LMP since 0.18.
+
 - update: "0.18"
   highlights:
     - OSF Unified Linux Kernel updated to 4.16.8.
