@@ -1,3 +1,25 @@
+- update: "0.21"
+  highlights:
+    - U-Boot-Fslc updated to the 2018.05-based release.
+  summary: |
+   Core Layer Updates.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates.
+      projects:
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                U-boot-fslc updated to the 2018.05-based release.
+                New i.MX fork for gstreamer1.0, gstreamer1.0-plugins-base,
+                gstreamer1.0-plugins-good and gstreamer1.0-plugins-bad.
+                Imx-codec, imx-parser, imx-vpuwrap and imx-gst1.0-plugin
+                updated to v4.3.4.
+                Imx-usb-loader updated to the e539461 revision.
+
 - update: "0.20"
   highlights:
     - OSF Unified Linux Kernel updated to 4.16.12.
