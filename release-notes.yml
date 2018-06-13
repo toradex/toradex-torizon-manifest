@@ -33,6 +33,12 @@
               summary: |
                 New WKS file enabling grub-efi bootloader.
                 Thermald updated to 1.7.2.
+        - name: Meta Qualcomm
+          manifest_project: meta-qcom
+          features:
+            - heading: Layer Update
+              summary: |
+                Updated bootr and bootrr to the latest revision available.
 
 - update: "0.20"
   highlights:
