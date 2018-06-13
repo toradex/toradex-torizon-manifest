@@ -39,6 +39,12 @@
             - heading: Layer Update
               summary: |
                 Updated bootr and bootrr to the latest revision available.
+        - name: Meta RaspberryPi
+          manifest_project: meta-raspberrypi
+          features:
+            - heading: Layer Update
+              summary: |
+                Support for the at86rf233 device tree overlay.
 
 - update: "0.20"
   highlights:
