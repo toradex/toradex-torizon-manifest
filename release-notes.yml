@@ -19,6 +19,13 @@
                 Imx-codec, imx-parser, imx-vpuwrap and imx-gst1.0-plugin
                 updated to v4.3.4.
                 Imx-usb-loader updated to the e539461 revision.
+        - name: Meta Freescale 3rdparty
+          manifest_project: meta-freescale-3rdparty
+          features:
+            - heading: Layer Update
+              summary: |
+                Device tree name updated for imx7d-pico.
+                Updated u-boot configuration for imx7s-warp.
 
 - update: "0.20"
   highlights:
