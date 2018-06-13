@@ -26,6 +26,13 @@
               summary: |
                 Device tree name updated for imx7d-pico.
                 Updated u-boot configuration for imx7s-warp.
+        - name: Meta Intel
+          manifest_project: meta-intel
+          features:
+            - heading: Layer Update
+              summary: |
+                New WKS file enabling grub-efi bootloader.
+                Thermald updated to 1.7.2.
 
 - update: "0.20"
   highlights:
