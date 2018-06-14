@@ -45,6 +45,14 @@
             - heading: Layer Update
               summary: |
                 Support for the at86rf233 device tree overlay.
+        - name: Meta Virtualization
+          manifest_project: meta-virtualization
+          features:
+            - heading: Layer Update
+              summary: |
+                Lxc updated to 3.0.1.
+                Libvirt updated to v4.3.0.
+                Added tini 0.18.0 recipe to provide docker-init.
 
 - update: "0.20"
   highlights:
