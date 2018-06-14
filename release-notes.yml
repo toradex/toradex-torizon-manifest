@@ -53,6 +53,14 @@
                 Lxc updated to 3.0.1.
                 Libvirt updated to v4.3.0.
                 Added tini 0.18.0 recipe to provide docker-init.
+        - name: Meta Updater Layer
+          manifest_project: meta-updater
+          features:
+            - heading: Layer Update
+              summary: |
+                HTTP basic auth added to the garage-sign task.
+                Aktualizr updated to the latest revision available,
+                including support to log the ostree update process.
 
 - update: "0.20"
   highlights:
