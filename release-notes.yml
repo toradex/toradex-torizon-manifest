@@ -1,8 +1,11 @@
 - update: "0.21"
   highlights:
+    - OSF Unified Linux Kernel updated to 4.16.15.
     - U-Boot-Fslc updated to the 2018.05-based release.
   summary: |
-   Core Layer Updates.
+   OSF Unified Linux Kernel updated to the 4.16.15 stable release.
+   U-Boot-Fslc updated to the 2018.05-based release.
+   Core layer updates based on the latest Yocto master changes.
   parts:
     - name: Linux microPlatform
       summary: |
@@ -61,6 +64,20 @@
                 HTTP basic auth added to the garage-sign task.
                 Aktualizr updated to the latest revision available,
                 including support to log the ostree update process.
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.16.15.
+                Added lmp-device-register recipe, used to register an LMP
+                device with OSF OTA+.
+                Haveged included in lmp-mini-image and lmp-gateway-image
+                to remedy low-entropy during boot.
+                Fbdev MXS driver removed from linux-osf in favor of the
+                drm driver.
+                Python3-requests removed from lmp-mini-image as device
+                registration is now done via lmp-device-register.
 
 - update: "0.20"
   highlights:
