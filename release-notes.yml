@@ -31,6 +31,18 @@
                 OpenSSH updated to 7.7p1.
                 Qemu updated to 2.12.0.
                 Wget updated to 1.19.5.
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                Added lshw B.02.18 recipe.
+                Fwts updated to V18.05.00.
+                Htop updated to 2.2.0.
+                Jansson updated to 2.11.
+                Libsodium updated to 1.0.16.
+                Mbedtls updated to 2.9.0.
+                Nodejs updated to 8.11.2.
 
 - update: "0.21"
   highlights:

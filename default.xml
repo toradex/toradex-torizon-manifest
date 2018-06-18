@@ -23,6 +23,6 @@
   <project name="meta-riscv" path="layers/meta-riscv" revision="e07da3d6769082286541cbcd863b1778c38a2d86"/>
   <project name="bitbake" path="bitbake" revision="055865047c63b9c3b213b47a1884924ce0adeda0"/>
   <project name="meta-linaro" path="layers/meta-linaro" revision="b546dd83664679a88a7c7af6d329fd6b3487a110"/>
-  <project name="meta-openembedded" path="layers/meta-openembedded" revision="bb57bac845f3cd1634862fa9868bc8e294ba74a9"/>
+  <project name="meta-openembedded" path="layers/meta-openembedded" revision="52904e753532d095b14972fa03a25e7e24696159"/>
   <project name="openembedded-core" path="layers/openembedded-core" revision="ee054e12f6d4c4cbda66ebbc7d09ecad964a84d1"/>
 </manifest>
