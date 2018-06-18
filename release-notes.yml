@@ -1,3 +1,84 @@
+- update: "0.21"
+  highlights:
+    - OSF Unified Linux Kernel updated to 4.16.15.
+    - U-Boot-Fslc updated to the 2018.05-based release.
+  summary: |
+   OSF Unified Linux Kernel updated to the 4.16.15 stable release.
+   U-Boot-Fslc updated to the 2018.05-based release.
+   Core layer updates based on the latest Yocto master changes.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates.
+      projects:
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                U-boot-fslc updated to the 2018.05-based release.
+                New i.MX fork for gstreamer1.0, gstreamer1.0-plugins-base,
+                gstreamer1.0-plugins-good and gstreamer1.0-plugins-bad.
+                Imx-codec, imx-parser, imx-vpuwrap and imx-gst1.0-plugin
+                updated to v4.3.4.
+                Imx-usb-loader updated to the e539461 revision.
+        - name: Meta Freescale 3rdparty
+          manifest_project: meta-freescale-3rdparty
+          features:
+            - heading: Layer Update
+              summary: |
+                Device tree name updated for imx7d-pico.
+                Updated u-boot configuration for imx7s-warp.
+        - name: Meta Intel
+          manifest_project: meta-intel
+          features:
+            - heading: Layer Update
+              summary: |
+                New WKS file enabling grub-efi bootloader.
+                Thermald updated to 1.7.2.
+        - name: Meta Qualcomm
+          manifest_project: meta-qcom
+          features:
+            - heading: Layer Update
+              summary: |
+                Updated bootr and bootrr to the latest revision available.
+        - name: Meta RaspberryPi
+          manifest_project: meta-raspberrypi
+          features:
+            - heading: Layer Update
+              summary: |
+                Support for the at86rf233 device tree overlay.
+        - name: Meta Virtualization
+          manifest_project: meta-virtualization
+          features:
+            - heading: Layer Update
+              summary: |
+                Lxc updated to 3.0.1.
+                Libvirt updated to v4.3.0.
+                Added tini 0.18.0 recipe to provide docker-init.
+        - name: Meta Updater Layer
+          manifest_project: meta-updater
+          features:
+            - heading: Layer Update
+              summary: |
+                HTTP basic auth added to the garage-sign task.
+                Aktualizr updated to the latest revision available,
+                including support to log the ostree update process.
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                OSF Unified Linux Kernel updated to 4.16.15.
+                Added lmp-device-register recipe, used to register an LMP
+                device with OSF OTA+.
+                Haveged included in lmp-mini-image and lmp-gateway-image
+                to remedy low-entropy during boot.
+                Fbdev MXS driver removed from linux-osf in favor of the
+                drm driver.
+                Python3-requests removed from lmp-mini-image as device
+                registration is now done via lmp-device-register.
+
 - update: "0.20"
   highlights:
     - OSF Unified Linux Kernel updated to 4.16.12.
