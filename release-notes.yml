@@ -43,6 +43,13 @@
                 Libsodium updated to 1.0.16.
                 Mbedtls updated to 2.9.0.
                 Nodejs updated to 8.11.2.
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                Python3-docker updated to 3.4.0.
+                Python3-docker-pycreds updated to 0.3.0.
 
 - update: "0.21"
   highlights:
