@@ -14,7 +14,7 @@
   <project name="meta-intel" path="layers/meta-intel" revision="a998af62d9ad9a559f821babc5adfa0bf8072388"/>
   <project name="meta-raspberrypi" path="layers/meta-raspberrypi" revision="b2da4618b0ac2ad7dbc26387cad4c03796f8a06e"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" revision="43e4cd760f2ff1d4bca1ae18bac052db41716989"/>
-  <project name="meta-yocto" path="layers/meta-yocto" revision="737702c175691db679d513a05b1800a14da35c74">
+  <project name="meta-yocto" path="layers/meta-yocto" revision="a503919e72fad9556ab0f51a78b92ef3e0075e97">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
   <project name="meta-osf" path="layers/meta-osf" remote="osf-lmp" revision="99486d0c3af5dcb8363b635dc689b2bef3c333bd"/>
