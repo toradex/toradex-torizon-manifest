@@ -35,6 +35,13 @@
               cves:
                 - 2017-18269
                 - 2018-11236
+        - name: Meta RISC-V
+          manifest_project: meta-riscv
+          features:
+            - heading: Layer Update
+              summary: |
+                PIE disable as glibc still needs work.
+                Qemu-riscv updated to the master branch.
 
 - update: "0.22"
   highlights:
