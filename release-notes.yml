@@ -1,12 +1,14 @@
 - update: "0.23"
   highlights:
+    - OSF Unified Linux Kernel updated to 4.16.18.
     - GCC updated to the latest 8.1 release.
   summary: |
+   OSF Unified Linux Kernel updated to the 4.16.18 stable release.
    Default GCC version was updated to the latest upstream 8.1 release.
   parts:
     - name: Linux microPlatform
       summary: |
-        Core layer updates.
+        GCC updated to the 8.1 upstream release.
       projects:
         - name: OpenEmbedded-Core Layer
           manifest_project: openembedded-core
@@ -42,6 +44,15 @@
               summary: |
                 PIE disable as glibc still needs work.
                 Qemu-riscv updated to the master branch.
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                Lmp-device-register updated to the latest git revision.
+                OSF Unified Linux Kernel updated to 4.16.18.
+                Uart serial only enabled on raspberrypi3 if ENABLE_UART is set.
+                U-boot-toradex now uses distro boot on internal eMMC.
 
 - update: "0.22"
   highlights:
