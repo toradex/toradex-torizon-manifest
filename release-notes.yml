@@ -1,3 +1,59 @@
+- update: "0.23"
+  highlights:
+    - OSF Unified Linux Kernel updated to 4.16.18.
+    - GCC updated to the latest 8.1 release.
+  summary: |
+   OSF Unified Linux Kernel updated to the 4.16.18 stable release.
+   Default GCC version was updated to the latest upstream 8.1 release.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        GCC updated to the 8.1 upstream release.
+      projects:
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Acpid updated to 2.0.29.
+                Bluez5 updated to 5.50.
+                Cronie updated to 1.5.2.
+                GCC updated to 7.3.
+                Gstreamer1.0 updated to 1.14.1.
+                Mc updated to 4.8.21.
+                Musl updated to the latest upstream master.
+                Yocto-uninative updated to 2.1.
+          bug_fixes:
+            - heading: cpio
+              summary: |
+                The cpio_safer_name_suffix function in util.c in cpio 2.11
+                allows remote attackers to cause a denial of service
+                (out-of-bounds write) via a crafted cpio file.
+              cves:
+                - 2016-2037
+            - heading: glibc
+              summary: |
+                Multiple issues.
+              cves:
+                - 2017-18269
+                - 2018-11236
+        - name: Meta RISC-V
+          manifest_project: meta-riscv
+          features:
+            - heading: Layer Update
+              summary: |
+                PIE disable as glibc still needs work.
+                Qemu-riscv updated to the master branch.
+        - name: Meta OSF Layer
+          manifest_project: meta-osf
+          features:
+            - heading: Layer Update
+              summary: |
+                Lmp-device-register updated to the latest git revision.
+                OSF Unified Linux Kernel updated to 4.16.18.
+                Uart serial only enabled on raspberrypi3 if ENABLE_UART is set.
+                U-boot-toradex now uses distro boot on internal eMMC.
+
 - update: "0.22"
   highlights:
     - Core Layer Updates
