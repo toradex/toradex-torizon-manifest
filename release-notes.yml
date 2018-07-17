@@ -1,3 +1,12 @@
+- update: "0.24"
+  highlights:
+    - lmp-device-register updated to use app.foundries.io.
+    - Updated sources of published containers.
+  summary: |
+   No significant changes have gone into this update. The previous update
+   included updates to containers and the sources weren't published. The
+   URL used for authentication in lmp-device-register was updated.
+
 - update: "0.23"
   highlights:
     - OSF Unified Linux Kernel updated to 4.16.18.
