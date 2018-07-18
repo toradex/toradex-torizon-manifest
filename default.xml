@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote fetch="https://source.foundries.io/lmp-mirrors" name="lmp-mirrors"/>
-  <remote fetch="https://git.foundries.io/development/microplatforms/linux" name="osf-lmp"/>
+  <remote fetch="https://git.foundries.io/development/microplatforms/linux" name="fio-lmp"/>
 
   <default remote="lmp-mirrors" revision="master" sync-j="4"/>
 
   <project name="meta-96boards" path="layers/meta-96boards" revision="4ae66a929193debed135b953a4227ab66595958c"/>
   <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="9ff6e1996201a24114dfdc1f0faa0ea6031a4c2e"/>
-  <project name="core-containers" path="containers/core-containers" remote="osf-lmp" revision="c1210bf5971f37b162156d95b92eacdfdd0e3e30"/>
-  <project name="extra-containers" path="containers/extra-containers" remote="osf-lmp" revision="8ed7fc11e4e4ff8825174a725bc5b956f5e202a6"/>
-  <project name="gateway-containers" path="containers/gateway-containers" remote="osf-lmp" revision="fd33a0729cc1825421310f69171268f743b16abb"/>
+  <project name="core-containers" path="containers/core-containers" remote="fio-lmp" revision="c1210bf5971f37b162156d95b92eacdfdd0e3e30"/>
+  <project name="extra-containers" path="containers/extra-containers" remote="fio-lmp" revision="8ed7fc11e4e4ff8825174a725bc5b956f5e202a6"/>
+  <project name="gateway-containers" path="containers/gateway-containers" remote="fio-lmp" revision="fd33a0729cc1825421310f69171268f743b16abb"/>
   <project name="meta-freescale" path="layers/meta-freescale" revision="74736187bf7cbf8a92d75e0f05822a98b5f266f8"/>
   <project name="meta-intel" path="layers/meta-intel" revision="a998af62d9ad9a559f821babc5adfa0bf8072388"/>
   <project name="meta-raspberrypi" path="layers/meta-raspberrypi" revision="b2da4618b0ac2ad7dbc26387cad4c03796f8a06e"/>
@@ -17,8 +17,8 @@
   <project name="meta-yocto" path="layers/meta-yocto" revision="a503919e72fad9556ab0f51a78b92ef3e0075e97">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
-  <project name="meta-lmp" path="layers/meta-lmp" remote="osf-lmp" revision="921028c7c2087d556417ee556b5ecb9b0a0bd700"/>
-  <project name="meta-updater" path="layers/meta-updater" remote="osf-lmp" revision="29dd5029731d02f323adb760cc3b169feb66d475"/>
+  <project name="meta-lmp" path="layers/meta-lmp" remote="fio-lmp" revision="921028c7c2087d556417ee556b5ecb9b0a0bd700"/>
+  <project name="meta-updater" path="layers/meta-updater" remote="fio-lmp" revision="29dd5029731d02f323adb760cc3b169feb66d475"/>
   <project name="meta-qcom" path="layers/meta-qcom" revision="873bc7e800fe994c6aa951e4cabafe3b078ef555"/>
   <project name="meta-riscv" path="layers/meta-riscv" revision="89c77d9ddb9868f9f4716fcf0ee27191a7d12aa5"/>
   <project name="bitbake" path="bitbake" revision="8efa7826a61501589afa33eb698c0ab3a622bf2e"/>
