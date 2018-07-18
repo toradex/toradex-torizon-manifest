@@ -1,3 +1,25 @@
+- update: "0.25"
+  highlights:
+    - Linux microPlatform meta-osf layer was renamed to meta-lmp
+    - Linux-osf recipe (unified kernel) was renamed to linux-lmp
+    - New layer Meta rtlwifi added to LMP (OOT Realtek WiFi Linux drivers)
+  summary: |
+   Linux microPlatform meta-osf layer was renamed to meta-lmp.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Linux microPlatform meta-osf layer was renamed to meta-lmp.
+        Linux-osf recipe was renamed to linux-lmp.
+      projects:
+        - name: Meta LMP Layer
+          manifest_project: meta-lmp
+          features:
+            - heading: Layer Update
+              summary: |
+                Initramfs-ostree-osf-image was renamed to initramfs-ostree-lmp-image.
+                Linux-osf recipe was renamed to linux-lmp.
+                OSF_LMP_GIT variables were renamed to FIO_LMP_GIT.
+
 - update: "0.24"
   highlights:
     - lmp-device-register updated to use app.foundries.io.
