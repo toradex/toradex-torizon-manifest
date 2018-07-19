@@ -21,6 +21,7 @@
   <project name="meta-updater" path="layers/meta-updater" remote="fio-lmp" revision="29dd5029731d02f323adb760cc3b169feb66d475"/>
   <project name="meta-qcom" path="layers/meta-qcom" revision="873bc7e800fe994c6aa951e4cabafe3b078ef555"/>
   <project name="meta-riscv" path="layers/meta-riscv" revision="89c77d9ddb9868f9f4716fcf0ee27191a7d12aa5"/>
+  <project name="meta-rtlwifi" path="layers/meta-rtlwifi" revision="9a5f962cb1822c6b4e9e9d13c30c29eb9e0988bd"/>
   <project name="bitbake" path="bitbake" revision="8efa7826a61501589afa33eb698c0ab3a622bf2e"/>
   <project name="meta-linaro" path="layers/meta-linaro" revision="fca140e5e15831e31bb4d3916d191b4b3176fc5c"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" revision="a7c45eb0375eb4000aaa3cd752b697042cab0bf1"/>
