@@ -102,6 +102,13 @@
                 Python3-setuptools-scm updated to 2.1.0.
                 Python3-urllib3 updated to 1.23.
                 Vim updated to 8.1.0172.
+        - name: Meta Intel
+          manifest_project: meta-intel
+          features:
+            - heading: Layer Update
+              summary: |
+                Intel-microcode updated to 20180703.
+                Iucode-tool updated to 2.3.1.
         - name: Meta LMP Layer
           manifest_project: meta-lmp
           features:
