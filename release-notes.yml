@@ -5,6 +5,7 @@
     - New layer Meta rtlwifi added to LMP (OOT Realtek WiFi Linux drivers)
     - Systemd updated to the 239 release.
     - U-Boot updated to the 2018.07 release.
+    - NetworkManager updated to the 1.10.10 release.
   summary: |
    Linux microPlatform meta-osf layer was renamed to meta-lmp.
   parts:
@@ -75,6 +76,32 @@
                 service (buffer over-read) or information disclosure.
               cves:
                 - 2017-8872
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                Dnsmasq updated to 2.79.
+                Libndp updated to 1.7.
+                Mozjs updated to 52.8.1.
+                NetworkManager updated to 1.10.10.
+                Polkit updated to 0.115.
+                Python3-certifi updated to 2018.4.16.
+                Python3-cryptography updated to 2.2.2.
+                Python3-cython updated to 0.28.4.
+                Python3-dbus updated to 1.2.8.
+                Python3-idna updated to 2.7.
+                Python3-ndg-httpsclient updated to 0.5.0.
+                Python3-pip updated to 10.0.1.
+                Python3-pyasn1 updated to 0.4.3.
+                Python3-pygobject updated to 3.28.3.
+                Python3-pyopenssl updated to 18.0.0.
+                Python3-pytest-runner updated to 4.2.
+                Python3-pyyaml updated to 3.13.
+                Python3-requests updated to 2.19.1.
+                Python3-setuptools-scm updated to 2.1.0.
+                Python3-urllib3 updated to 1.23.
+                Vim updated to 8.1.0172.
         - name: Meta LMP Layer
           manifest_project: meta-lmp
           features:
