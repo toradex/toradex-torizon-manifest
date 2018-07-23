@@ -5,6 +5,7 @@
     - New layer Meta rtlwifi added to LMP (OOT Realtek WiFi Linux drivers)
     - Systemd updated to the 239 release.
     - U-Boot updated to the 2018.07 release.
+    - U-Boot-Fslc updated to the 2018.07-based release.
     - NetworkManager updated to the 1.10.10 release.
   summary: |
    Linux microPlatform meta-osf layer was renamed to meta-lmp.
@@ -124,6 +125,13 @@
               summary: |
                 SSP and Fortify flags disabled for riscv64.
                 Gdb updated to the latest RISC-V fork.
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                U-boot-fslc updated to the 2018.07-based release.
+                Firmware-imx updated to 7.5.
         - name: Meta LMP Layer
           manifest_project: meta-lmp
           features:
