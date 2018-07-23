@@ -109,6 +109,14 @@
               summary: |
                 Intel-microcode updated to 20180703.
                 Iucode-tool updated to 2.3.1.
+        - name: Meta RaspberryPi
+          manifest_project: meta-raspberrypi
+          features:
+            - heading: Layer Update
+              summary: |
+                CM3 dtb included as part of raspberrypi3-64.
+                Firmware updated to 20180619.
+                Userland updated to 20180702.
         - name: Meta LMP Layer
           manifest_project: meta-lmp
           features:
