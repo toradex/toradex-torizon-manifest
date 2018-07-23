@@ -20,7 +20,7 @@
   <project name="meta-lmp" path="layers/meta-lmp" remote="fio-lmp" revision="c5fb0970d8e5cda6af9320b37a03f52435415745"/>
   <project name="meta-updater" path="layers/meta-updater" remote="fio-lmp" revision="29dd5029731d02f323adb760cc3b169feb66d475"/>
   <project name="meta-qcom" path="layers/meta-qcom" revision="873bc7e800fe994c6aa951e4cabafe3b078ef555"/>
-  <project name="meta-riscv" path="layers/meta-riscv" revision="89c77d9ddb9868f9f4716fcf0ee27191a7d12aa5"/>
+  <project name="meta-riscv" path="layers/meta-riscv" revision="a4a81b0abca15016229b6f893b498d15f94afc19"/>
   <project name="meta-rtlwifi" path="layers/meta-rtlwifi" revision="9a5f962cb1822c6b4e9e9d13c30c29eb9e0988bd"/>
   <project name="bitbake" path="bitbake" revision="1620dbc48ffb2a882371cf9174a7b12648befc8a"/>
   <project name="meta-linaro" path="layers/meta-linaro" revision="fca140e5e15831e31bb4d3916d191b4b3176fc5c"/>

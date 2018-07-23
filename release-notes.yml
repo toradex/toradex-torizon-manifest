@@ -117,6 +117,13 @@
                 CM3 dtb included as part of raspberrypi3-64.
                 Firmware updated to 20180619.
                 Userland updated to 20180702.
+        - name: Meta RISC-V
+          manifest_project: meta-riscv
+          features:
+            - heading: Layer Update
+              summary: |
+                SSP and Fortify flags disabled for riscv64.
+                Gdb updated to the latest RISC-V fork.
         - name: Meta LMP Layer
           manifest_project: meta-lmp
           features:
