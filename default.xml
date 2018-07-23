@@ -5,7 +5,7 @@
 
   <default remote="lmp-mirrors" revision="master" sync-j="4"/>
 
-  <project name="meta-96boards" path="layers/meta-96boards" revision="4ae66a929193debed135b953a4227ab66595958c"/>
+  <project name="meta-96boards" path="layers/meta-96boards" revision="7052aa126cd59cbcb3f358cdf8ab8fbc9ffa4f15"/>
   <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="9ff6e1996201a24114dfdc1f0faa0ea6031a4c2e"/>
   <project name="core-containers" path="containers/core-containers" remote="fio-lmp" revision="c1210bf5971f37b162156d95b92eacdfdd0e3e30"/>
   <project name="extra-containers" path="containers/extra-containers" remote="fio-lmp" revision="8ed7fc11e4e4ff8825174a725bc5b956f5e202a6"/>
