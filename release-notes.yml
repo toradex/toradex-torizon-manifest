@@ -132,6 +132,13 @@
               summary: |
                 U-boot-fslc updated to the 2018.07-based release.
                 Firmware-imx updated to 7.5.
+        - name: Meta Freescale 3rdparty
+          manifest_project: meta-freescale-3rdparty
+          features:
+            - heading: Layer Update
+              summary: |
+                U-boot-toradex updated to the latest git revision.
+                New machine configuration for colibri-imx6ull.
         - name: Meta LMP Layer
           manifest_project: meta-lmp
           features:
