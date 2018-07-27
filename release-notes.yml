@@ -9,6 +9,7 @@
     - NetworkManager updated to the 1.10.10 release.
   summary: |
    Linux microPlatform meta-osf layer was renamed to meta-lmp.
+   Core layer updates based on the latest OE/Yocto master changes.
   parts:
     - name: Linux microPlatform
       summary: |
@@ -147,6 +148,9 @@
                 Initramfs-ostree-osf-image was renamed to initramfs-ostree-lmp-image.
                 Linux-osf recipe was renamed to linux-lmp.
                 OSF_LMP_GIT variables were renamed to FIO_LMP_GIT.
+                Python3-docker updated to 3.4.1.
+                Python3-docker-compose updated to 1.22.0.
+                U-boot-compulab updated to the Compulab 1.5 release.
 
 - update: "0.24"
   highlights:

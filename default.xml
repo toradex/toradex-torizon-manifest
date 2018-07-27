@@ -17,7 +17,7 @@
   <project name="meta-yocto" path="layers/meta-yocto" revision="1ed60bfb46569a8b8c29f24187390ba79686486a">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
-  <project name="meta-lmp" path="layers/meta-lmp" remote="fio-lmp" revision="c5fb0970d8e5cda6af9320b37a03f52435415745"/>
+  <project name="meta-lmp" path="layers/meta-lmp" remote="fio-lmp" revision="e014d8b350dc7f11103324b5990e4980449b9a2f"/>
   <project name="meta-updater" path="layers/meta-updater" remote="fio-lmp" revision="29dd5029731d02f323adb760cc3b169feb66d475"/>
   <project name="meta-qcom" path="layers/meta-qcom" revision="6db9773faef2c2d8b3995748e360d3b6cf0029c4"/>
   <project name="meta-riscv" path="layers/meta-riscv" revision="a4a81b0abca15016229b6f893b498d15f94afc19"/>
