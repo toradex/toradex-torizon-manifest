@@ -43,6 +43,9 @@ meta-linaro:
 meta-riscv:
   url: "https://github.com/riscv/meta-riscv"
 
+meta-rtlwifi:
+  url: "https://github.com/EmbeddedAndroid/meta-rtlwifi.git"
+
 # These are repositories needed to produce the OTA community edition server/client
 ota-community-edition:
   url: "https://github.com/advancedtelematic/ota-community-edition"

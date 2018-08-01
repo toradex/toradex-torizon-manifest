@@ -1,3 +1,157 @@
+- update: "0.25"
+  highlights:
+    - Linux microPlatform meta-osf layer was renamed to meta-lmp
+    - Linux-osf recipe (unified kernel) was renamed to linux-lmp
+    - New layer Meta rtlwifi added to LMP (OOT Realtek WiFi Linux drivers)
+    - Systemd updated to the 239 release.
+    - U-Boot updated to the 2018.07 release.
+    - U-Boot-Fslc updated to the 2018.07-based release.
+    - NetworkManager updated to the 1.10.10 release.
+  summary: |
+   Linux microPlatform meta-osf layer was renamed to meta-lmp.
+   Core layer updates based on the latest OE/Yocto master changes.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Linux microPlatform meta-osf layer was renamed to meta-lmp.
+        Linux-osf recipe was renamed to linux-lmp.
+      projects:
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Automake updated to 1.16.1.
+                Bc updated to 1.07.1.
+                Ccache updated to 3.4.2.
+                Cmake updated to 3.11.4.
+                Curl updated to 7.61.0.
+                Debianutils updated to 4.8.6.
+                Dhcp updated to 4.4.1.
+                E2fsprogs updated to 1.44.2.
+                Elfutils updated to 0.172.
+                Ethtool updated 4.17.
+                File updated to 5.33.
+                Git updated to 2.18.0.
+                Go-1.10 updated to 1.10.3.
+                Go-1.9 updated to 1.9.7.
+                Gpgme updated to 1.11.1.
+                Iproute2 updated to 4.17.
+                Libgcrypt updated to 1.8.3.
+                Libgpg-error updated to 1.32.
+                Libunistring updated to 0.9.10.
+                Libyaml updated to 0.2.1.
+                Linux-firmware updated to the d114732 revision.
+                Ncurses updated to 6.1+20180630.
+                Nfs-utils updated to 2.3.1.
+                Nss updated to 3.38.
+                Pciutils updated to 3.6.1.
+                Procps updated to 3.3.15.
+                Psmisc updated to 23.1.
+                Python3-dbus updated to 1.2.8.
+                Python3-pip updated to 10.0.1.
+                Python3-pygobject updated to 3.28.3.
+                Python3-setuptools updated to 40.0.0
+                Shared-mime-info updated to 1.10.
+                Strace updated to 4.23.
+                Systemd updated to 239.
+                U-Boot updated to the 2018.07 release.
+                Xz updated to 5.2.4.
+          bug_fixes:
+            - heading: qemu
+              summary: |
+                Heap buffer overflow.
+              cves:
+                - 2018-11806
+            - heading: glibc
+              summary: |
+                Buffer overflow in the __mempcpy_avx512_no_vzeroupper
+                function when particular conditions are met. An attacker
+                could use this vulnerability to cause a denial of service
+                or potentially execute code.
+              cves:
+                - 2018-11237
+            - heading: libxml2
+              summary: |
+                The htmlParseTryOrFinish function in HTMLparser.c in
+                libxml2 2.9.4 allows attackers to cause a denial of
+                service (buffer over-read) or information disclosure.
+              cves:
+                - 2017-8872
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                Dnsmasq updated to 2.79.
+                Libndp updated to 1.7.
+                Mozjs updated to 52.8.1.
+                NetworkManager updated to 1.10.10.
+                Polkit updated to 0.115.
+                Python3-certifi updated to 2018.4.16.
+                Python3-cryptography updated to 2.2.2.
+                Python3-cython updated to 0.28.4.
+                Python3-dbus updated to 1.2.8.
+                Python3-idna updated to 2.7.
+                Python3-ndg-httpsclient updated to 0.5.0.
+                Python3-pip updated to 10.0.1.
+                Python3-pyasn1 updated to 0.4.3.
+                Python3-pygobject updated to 3.28.3.
+                Python3-pyopenssl updated to 18.0.0.
+                Python3-pytest-runner updated to 4.2.
+                Python3-pyyaml updated to 3.13.
+                Python3-requests updated to 2.19.1.
+                Python3-setuptools-scm updated to 2.1.0.
+                Python3-urllib3 updated to 1.23.
+                Vim updated to 8.1.0172.
+        - name: Meta Intel
+          manifest_project: meta-intel
+          features:
+            - heading: Layer Update
+              summary: |
+                Intel-microcode updated to 20180703.
+                Iucode-tool updated to 2.3.1.
+        - name: Meta RaspberryPi
+          manifest_project: meta-raspberrypi
+          features:
+            - heading: Layer Update
+              summary: |
+                CM3 dtb included as part of raspberrypi3-64.
+                Firmware updated to 20180619.
+                Userland updated to 20180702.
+        - name: Meta RISC-V
+          manifest_project: meta-riscv
+          features:
+            - heading: Layer Update
+              summary: |
+                SSP and Fortify flags disabled for riscv64.
+                Gdb updated to the latest RISC-V fork.
+        - name: Meta Freescale
+          manifest_project: meta-freescale
+          features:
+            - heading: Layer Update
+              summary: |
+                U-boot-fslc updated to the 2018.07-based release.
+                Firmware-imx updated to 7.5.
+        - name: Meta Freescale 3rdparty
+          manifest_project: meta-freescale-3rdparty
+          features:
+            - heading: Layer Update
+              summary: |
+                U-boot-toradex updated to the latest git revision.
+                New machine configuration for colibri-imx6ull.
+        - name: Meta LMP Layer
+          manifest_project: meta-lmp
+          features:
+            - heading: Layer Update
+              summary: |
+                Initramfs-ostree-osf-image was renamed to initramfs-ostree-lmp-image.
+                Linux-osf recipe was renamed to linux-lmp.
+                OSF_LMP_GIT variables were renamed to FIO_LMP_GIT.
+                Python3-docker updated to 3.4.1.
+                Python3-docker-compose updated to 1.22.0.
+                U-boot-compulab updated to the Compulab 1.5 release.
+
 - update: "0.24"
   highlights:
     - lmp-device-register updated to use app.foundries.io.
