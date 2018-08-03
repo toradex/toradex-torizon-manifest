@@ -43,6 +43,12 @@
                 Python3-cryptography updated to 2.3.
                 Python3-ndg-httpsclient updated to 0.5.1.
                 Python3-pyasn1 updated to 0.4.4.
+        - name: Meta Qualcomm
+          manifest_project: meta-qcom
+          features:
+            - heading: Layer Update
+              summary: |
+                Updated bootrr to the latest revision available.
 
 - update: "0.25"
   highlights:
