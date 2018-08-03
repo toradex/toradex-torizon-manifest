@@ -35,6 +35,14 @@
                 specific conditions.
               cves:
                 - 2017-2616
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                Python3-cryptography updated to 2.3.
+                Python3-ndg-httpsclient updated to 0.5.1.
+                Python3-pyasn1 updated to 0.4.4.
 
 - update: "0.25"
   highlights:
