@@ -49,6 +49,12 @@
             - heading: Layer Update
               summary: |
                 Updated bootrr to the latest revision available.
+        - name: Meta 96boards
+          manifest_project: meta-96boards
+          features:
+            - heading: Layer Update
+              summary: |
+                Edk2 updated to latest revision for GCC 8.1 support.
 
 - update: "0.25"
   highlights:
