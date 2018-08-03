@@ -1,3 +1,41 @@
+- update: "0.26"
+  highlights:
+    - Binutils updated to the 2.31 release branch.
+    - GCC updated to the latest 8.2 release.
+  summary: |
+   Default GCC version was updated to the latest upstream 8.2 release.
+   Core layer updates based on the latest OE/Yocto master changes.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates.
+      projects:
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Bind updated to 9.11.4.
+                Binutils updated to 2.31.
+                Coreutils updated to 2.2.8.
+                E2fsprogs updated to 1.44.3.
+                GCC updated to the 8.2 release.
+                Gnu-config updated to 2018-07-13.
+                Iputils updated to s20190629.
+                Libidn updated to 2.0.5.
+                Shadow updated to 4.6.
+                Speedup of do_package and do_populate_sysroot tasks via
+                parallel execution.
+          bug_fixes:
+            - heading: shadow
+              summary: |
+                A race condition was found in the way su handled the management
+                of child processes. A local authenticated attacker could use
+                this flaw to kill other processes with root privileges under
+                specific conditions.
+              cves:
+                - 2017-2616
+
 - update: "0.25"
   highlights:
     - Linux microPlatform meta-osf layer was renamed to meta-lmp
