@@ -25,7 +25,7 @@ RUN apt-get update \
 		file gawk g++ iproute2 iputils-ping less libmagickwand-dev \
 		libmath-prime-util-perl libsdl1.2-dev libssl-dev locales \
 		openjdk-9-jre openssh-client perl-modules python2.7 python-requests python3 \
-		repo sudo texinfo vim-tiny wget whiptail \
+		repo sudo texinfo vim-tiny wget whiptail libelf-dev \
 	&& apt-get autoremove -y \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* \
