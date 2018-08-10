@@ -76,6 +76,18 @@
                 OTA+ director service in order to work correctly. Please check
                 https://github.com/advancedtelematic/ota-community-edition/issues/89
                 for more information.
+        - name: Meta LMP Layer
+          manifest_project: meta-lmp
+          features:
+            - heading: Layer Update
+              summary: |
+                Docker now rotates the container logs by default.
+                Jool and ethtool included by default in lmp-gateway-image
+                for NAT64 support.
+                Klogd and syslog were removed from the base images,
+                as they are not required with systemd.
+                Ota-tar.xz is now built by default in LMP.
+                Systemd journal-upload added by default in LMP.
 
 - update: "0.25"
   highlights:
