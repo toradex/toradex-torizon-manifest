@@ -55,6 +55,27 @@
             - heading: Layer Update
               summary: |
                 Edk2 updated to latest revision for GCC 8.1 support.
+        - name: Meta Updater Layer
+          manifest_project: meta-updater
+          features:
+            - heading: Layer Update
+              summary: |
+                Aktualizr updated to the latest revision available.
+                Support for building ota-tar.xz in addition to the ext4 image.
+                Ostree updated to the v2018.7 release.
+            - heading: Aktualizr Updates
+              summary: |
+                Aktualizr filesystem storage configuration was removed in
+                favor of supporting only the SQLite backend. Systems using
+                the filesystem backend will be automatically converted to
+                sqlite during the initialization process.
+            - heading: Aktualizr Uptane Metadata Update
+              summary: |
+                The Aktualizr Uptane metadata verification was updated to be
+                in line with the specification, and it now requires an updated
+                OTA+ director service in order to work correctly. Please check
+                https://github.com/advancedtelematic/ota-community-edition/issues/89
+                for more information.
 
 - update: "0.25"
   highlights:
