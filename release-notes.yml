@@ -1,3 +1,94 @@
+- update: "0.26"
+  highlights:
+    - Binutils updated to the 2.31 release branch.
+    - GCC updated to the latest 8.2 release.
+  summary: |
+   Default GCC version was updated to the latest upstream 8.2 release.
+   Core layer updates based on the latest OE/Yocto master changes.
+  parts:
+    - name: Linux microPlatform
+      summary: |
+        Core layer updates.
+      projects:
+        - name: OpenEmbedded-Core Layer
+          manifest_project: openembedded-core
+          features:
+            - heading: Layer Update
+              summary: |
+                Bind updated to 9.11.4.
+                Binutils updated to 2.31.
+                Coreutils updated to 2.2.8.
+                E2fsprogs updated to 1.44.3.
+                GCC updated to the 8.2 release.
+                Gnu-config updated to 2018-07-13.
+                Iputils updated to s20190629.
+                Libidn updated to 2.0.5.
+                Shadow updated to 4.6.
+                Speedup of do_package and do_populate_sysroot tasks via
+                parallel execution.
+          bug_fixes:
+            - heading: shadow
+              summary: |
+                A race condition was found in the way su handled the management
+                of child processes. A local authenticated attacker could use
+                this flaw to kill other processes with root privileges under
+                specific conditions.
+              cves:
+                - 2017-2616
+        - name: Meta OpenEmbedded Layer
+          manifest_project: meta-openembedded
+          features:
+            - heading: Layer Update
+              summary: |
+                Python3-cryptography updated to 2.3.
+                Python3-ndg-httpsclient updated to 0.5.1.
+                Python3-pyasn1 updated to 0.4.4.
+        - name: Meta Qualcomm
+          manifest_project: meta-qcom
+          features:
+            - heading: Layer Update
+              summary: |
+                Updated bootrr to the latest revision available.
+        - name: Meta 96boards
+          manifest_project: meta-96boards
+          features:
+            - heading: Layer Update
+              summary: |
+                Edk2 updated to latest revision for GCC 8.1 support.
+        - name: Meta Updater Layer
+          manifest_project: meta-updater
+          features:
+            - heading: Layer Update
+              summary: |
+                Aktualizr updated to the latest revision available.
+                Support for building ota-tar.xz in addition to the ext4 image.
+                Ostree updated to the v2018.7 release.
+            - heading: Aktualizr Updates
+              summary: |
+                Aktualizr filesystem storage configuration was removed in
+                favor of supporting only the SQLite backend. Systems using
+                the filesystem backend will be automatically converted to
+                sqlite during the initialization process.
+            - heading: Aktualizr Uptane Metadata Update
+              summary: |
+                The Aktualizr Uptane metadata verification was updated to be
+                in line with the specification, and it now requires an updated
+                OTA+ director service in order to work correctly. Please check
+                https://github.com/advancedtelematic/ota-community-edition/issues/89
+                for more information.
+        - name: Meta LMP Layer
+          manifest_project: meta-lmp
+          features:
+            - heading: Layer Update
+              summary: |
+                Docker now rotates the container logs by default.
+                Jool and ethtool included by default in lmp-gateway-image
+                for NAT64 support.
+                Klogd and syslog were removed from the base images,
+                as they are not required with systemd.
+                Ota-tar.xz is now built by default in LMP.
+                Systemd journal-upload added by default in LMP.
+
 - update: "0.25"
   highlights:
     - Linux microPlatform meta-osf layer was renamed to meta-lmp
