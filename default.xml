@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote fetch="https://source.foundries.io" name="subscriber-microplatorms" />
-  <remote fetch="https://source.foundries.io/lmp-mirrors" name="lmp-mirrors" />
+  <remote fetch="https://source.foundries.io/lmp-mirrors" name="lmp-mirrors"/>
+  <remote fetch="https://brandon.shibley:eN0LF238yZ7ubj9M3SpDUF9Y5SMbqdtAJxnfilqh@source.foundries.io" name="subscriber-microplatforms"/>
+  <remote fetch="http://gitlab.toradex.int/tordyos" name="toradex-tordy"/>
   
-  <default remote="lmp-mirrors" revision="master" sync-j="4" />
+  <default remote="lmp-mirrors" revision="master" sync-j="4"/>
   
   <project name="bitbake" revision="8e482342c652e298b5f5ea58eda72c5eb14ce2bd" />
   <project name="core-containers" path="containers/core-containers" remote="subscriber-microplatforms" revision="c1210bf5971f37b162156d95b92eacdfdd0e3e30" />
@@ -19,6 +21,8 @@
   <project name="meta-raspberrypi" path="layers/meta-raspberrypi" revision="2e23e17666e0bdda98205429803fad72f21aba1d" />
   <project name="meta-riscv" path="layers/meta-riscv" revision="2cf991cc3191c1df88edc4ec7883429c43933b7e" />
   <project name="meta-rtlwifi" path="layers/meta-rtlwifi" revision="9a5f962cb1822c6b4e9e9d13c30c29eb9e0988bd" />
+  <project name="meta-toradex-bsp-common" path="layers/meta-toradex-bsp-common" remote="toradex-tordy" revision="cordoba-dev"/>
+  <project name="meta-toradex-tordy" path="layers/meta-toradex-tordy" remote="toradex-tordy" revision="master-toradex"/>
   <project name="meta-updater" path="layers/meta-updater" remote="subscriber-microplatforms" revision="cb3ed7f4459b8d496ef77c9ef6b0910abf573232" />
   <project name="meta-virtualization" path="layers/meta-virtualization" revision="f5f8849df623ed5d33d091d42c7b9504b3ce77c5" />
   <project name="meta-yocto" path="layers/meta-yocto" revision="0b78254b373c23f2c1a2bf7db0108a350266ab85">
