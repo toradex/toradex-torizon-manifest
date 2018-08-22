@@ -1,11 +1,11 @@
-Linux microPlatform Manifest
+TordyOS Manifest
 ============================
 
-Open Source Foundries Linux microPlatform manifest.
+Toradex TordyOS manifest, based on Linux microPlatform from foundries.io.
 
 This directory contains a Repo manifest and setup scripts for the
-Linux microPlatform build system. If you want to modify, extend or port Linux
-microPlatform to a new hardware platform, this is the manifest repository to
+TordyOS build system. If you want to modify, extend or port TordyOS
+to a new hardware platform, this is the manifest repository to
 use.
 
 The build system uses various components from the Yocto
@@ -26,16 +26,10 @@ Run `repo init` to bring down the latest stable version of Repo. You must
 specify a URL for the manifest, which specifies the various repositories that
 will be placed within your working directory.
 
-To check out the latest LMP subscriber continuous release:
+To check out the latest TordyOS release:
 
 ```
-repo init -u https://source.foundries.io/lmp-manifest
-```
-
-To check out the latest LMP public release:
-
-```
-repo init -u https://github.com/OpenSourceFoundries/lmp-manifest
+repo init -u http://gitlab.toradex.int/tordyos/lmp-manifest.git -b master-toradex
 ```
 
 When prompted, configure Repo with your real name and email address.
@@ -75,20 +69,17 @@ repo sync -j1
 Setup Environment
 -----------------
 
-Supported **MACHINE** targets (officially tested by OSF):
-* beaglebone
-* cl-som-imx7
-* cubox-i
-* dragonboard-410c
-* dragonboard-820c
-* hikey
-* raspberrypi3
+Supported **MACHINE** targets (officially tested by Toradex):
+* Colibri i.MX7 (raw NAND & eMMC)
+* Colibri i.MX6
+* Apalis i.MX6
 
 Supported image targets:
 * lmp-gateway-image
+* lmp-mini-image
 
-The default distribution (DISTRO) variable is automatically set to `lmp`,
-which is provided by the `meta-osf` layer.
+The default distribution (DISTRO) variable is automatically set to `tordy`,
+which is provided by the `meta-toradex-tordy` layer.
 
 Setup the work environment by using the `setup-environment` script:
 
@@ -99,14 +90,8 @@ Setup the work environment by using the `setup-environment` script:
 If **MACHINE** is not provided, the script will list all possible machines and
 force one to be selected.
 
-To build the Linux microPlatform gateway image:
+To build the TordyOS gateway image:
 
 ```
 bitbake lmp-gateway-image
 ```
-
-Issues and Support
-------------------
-
-Please report any bugs, issues or suggestions at
-https://opensourcefoundries.freshdesk.com.
