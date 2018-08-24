@@ -92,6 +92,10 @@ force one to be selected.
 
 To build the TordyOS gateway image:
 
+As of now we do not have a stable SSTATE cache for TordyOS so you'll want to 
+comment out/remove the SSTATE_MIRRORS varible in local.conf. Also you'll want 
+to add ACCEPT_FSL_EULA="1" to local.conf. 
+
 ```
 bitbake lmp-gateway-image
 ```
