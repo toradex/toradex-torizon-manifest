@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote fetch="https://source.foundries.io/lmp-mirrors" name="lmp-mirrors"/>
-  <remote fetch="https://brandon.shibley:eN0LF238yZ7ubj9M3SpDUF9Y5SMbqdtAJxnfilqh@source.foundries.io" name="subscriber-microplatforms"/>
   <remote fetch="http://gitlab.toradex.int/tordyos" name="toradex-tordy"/>
   
   <default remote="lmp-mirrors" revision="master" sync-j="4"/>
   
   <project name="bitbake" revision="8e482342c652e298b5f5ea58eda72c5eb14ce2bd"/>
-  <project name="core-containers" path="containers/core-containers" remote="subscriber-microplatforms" revision="c1210bf5971f37b162156d95b92eacdfdd0e3e30"/>
-  <project name="extra-containers" path="containers/extra-containers" remote="subscriber-microplatforms" revision="8ed7fc11e4e4ff8825174a725bc5b956f5e202a6"/>
-  <project name="gateway-containers" path="containers/gateway-containers" remote="subscriber-microplatforms" revision="0c9787bd8c8aaf7834c52779f1f5cfa2727953a6"/>
   <project name="meta-96boards" path="layers/meta-96boards" revision="311cf10e5f3b613baea68427889bd45ad8f526d1"/>
   <project name="meta-freescale" path="layers/meta-freescale" revision="8629b06da99c77f1808c6ec58c4406c279eea0b5"/>
   <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="9bc8e34a806388e42c536a8609916c6e87c95f18"/>
   <project name="meta-linaro" path="layers/meta-linaro" revision="fca140e5e15831e31bb4d3916d191b4b3176fc5c"/>
-  <project name="meta-lmp" path="layers/meta-lmp" remote="subscriber-microplatforms" revision="420d96bfa6c623c25c67471f1557584d83285047"/>
+  <project name="meta-lmp" path="layers/meta-lmp" remote="toradex-tordy" revision="420d96bfa6c623c25c67471f1557584d83285047"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" revision="a001e465293b36c03d4ca4500857fe0a67d13e20"/>
   <project name="meta-toradex-bsp-common" path="layers/meta-toradex-bsp-common" remote="toradex-tordy" revision="cordoba-dev"/>
   <project name="meta-toradex-tordy" path="layers/meta-toradex-tordy" remote="toradex-tordy" revision="master-toradex"/>
-  <project name="meta-updater" path="layers/meta-updater" remote="subscriber-microplatforms" revision="c4902394cc6673b07ad5ee87570e02afbdf7b022"/>
+  <project name="meta-updater" path="layers/meta-updater" remote="toradex-tordy" revision="c4902394cc6673b07ad5ee87570e02afbdf7b022"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" revision="f5f8849df623ed5d33d091d42c7b9504b3ce77c5"/>
   <project name="meta-yocto" path="layers/meta-yocto" revision="0b78254b373c23f2c1a2bf7db0108a350266ab85">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
