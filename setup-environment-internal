@@ -287,6 +287,8 @@ Your build environemnt has been configured with:
 You can now run 'bitbake <target>'
 
 Some of common targets are:
-    lmp-gateway-image
+    full-container-image
+    full-balena-image
+    mini-ota-image
 
 EOF
