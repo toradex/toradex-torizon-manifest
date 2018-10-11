@@ -1,101 +1,137 @@
-TordyOS Manifest
-============================
+TorizonCore Getting Started Guide
+ 
 
-Toradex TordyOS manifest, based on Linux microPlatform from foundries.io.
+## Installation
 
-This directory contains a Repo manifest and setup scripts for the
-TordyOS build system. If you want to modify, extend or port TordyOS
-to a new hardware platform, this is the manifest repository to
-use.
+TorizonCore is installed via the Toradex Easy Installer. The latest builds can be obtained by switching on the "Toradex Continous Integration Server" feed in the Toradex Easy Installer UI. We currently have two flavors of images:
 
-The build system uses various components from the Yocto
-Project, most importantly the OpenEmbedded build system, the bitbake
-task executor and various application and BSP layers.
+* full-container-image: A full featured image containing docker and OTA.
+* full-balena-image: Similar to the above but with Balena instead of docker for a smaller footprint.
+* mini-ota-image: A minimal image only containing OTA.
 
-To configure the scripts and download the build metadata, do:
-
-```
-mkdir ~/bin
-PATH=~/bin:$PATH
-
-curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-chmod a+x ~/bin/repo
-```
-
-Run `repo init` to bring down the latest stable version of Repo. You must
-specify a URL for the manifest, which specifies the various repositories that
-will be placed within your working directory.
-
-To check out the latest TordyOS release:
-
-```
-repo init -u http://gitlab.toradex.int/tordyos/lmp-manifest.git -b master-toradex
-```
-
-When prompted, configure Repo with your real name and email address.
-
-A successful initialization will end with a message stating that Repo
-is initialized in your working directory. Your client directory should
-now contain a .repo directory where files such as the manifest will be
-kept.
-
-To pull down the metadata sources to your working directory from the
-repositories as specified in the Linux microPlatform manifest, run:
-
-```
-repo sync
-```
-
-When downloading from behind a proxy (which is common in some
-corporate environments), it might be necessary to explicitly specify
-the proxy that is then used by repo:
-
-```
-export HTTP_PROXY=http://<proxy_user_id>:<proxy_password>@<proxy_server>:<proxy_port>
-export HTTPS_PROXY=http://<proxy_user_id>:<proxy_password>@<proxy_server>:<proxy_port>
-```
-
-More rarely, Linux clients experience connectivity issues, getting
-stuck in the middle of downloads (typically during "Receiving
-objects"). It has been reported that tweaking the settings of the
-TCP/IP stack and using non-parallel commands can improve the
-situation. You need root access to modify the TCP setting:
-
-```
-sudo sysctl -w net.ipv4.tcp_window_scaling=0
-repo sync -j1
-```
-
-Setup Environment
------------------
-
-Supported **MACHINE** targets (officially tested by Toradex):
-* Colibri i.MX7 (raw NAND & eMMC)
+As of now the following machines are supported:
+* Colibri i.MX7 (raw NAND & eMMC)*
 * Colibri i.MX6
 * Apalis i.MX6
 
-Supported image targets:
-* lmp-gateway-image
-* lmp-mini-image
+**Note:** Unlike our usual BSP in which Colibri i.MX7 has separate images for raw NAND and eMMC, we are currently experimenting with a combined image configuration in TorizonCore.
 
-The default distribution (DISTRO) variable is automatically set to `tordy`,
-which is provided by the `meta-toradex-tordy` layer.
+In case the image does not boot, make sure to clear the U-Boot environment by using `env default -a && env save`.
 
-Setup the work environment by using the `setup-environment` script:
+## Features
+
+The full image is quite minimal featuring basic command line utilities. The main points are the [docker](https://www.docker.com/) and [OSTree](https://ostree.readthedocs.io/en/latest/) support. Another experimental feature in the image is tooling to make use of device tree overlays. The kernel itself is following mainline (Linux 4.18). A docker container can be created to acquire other needed features. The minimal image is even more bare-bones containing just the bare minimum to support OTA+.
+
+Upon booting one can login using the following users:
+* login: root
+
+  password: n/a
+
+* login: torizon
+
+  password: torizon
+
+The non-root user is primarily for ssh purposes and has sudo permissions.
+
+### Device Tree Overlays
+
+The traditional device tree process was a slog of editing the source file, compiling it, then deploying the binary to the device and testing your changes. With Torizon we hope to somewhat streamline this process with the use of device tree overlays. With overlays now you only have to create a smaller snippet with the hardware changes you need.
+
+There will also be tooling provided to allow you to edit and compile device tree files on device. Deployment has also been streamlined letting you deploy these overlays from the device and only requiring a quick reboot to review your changes. For more information on this provided tooling check this article [here](docs/device-tree-and-overlays.md).
+
+### Containers
+
+Along with TorizonCore we provide a default container as a sort of friendly starting environment. The container is Debian buster release based featuring an xserver display as well as a internet browser. To download this container enter the following:
+  
+```
+docker run -d -it --restart=always --privileged -v /var/run/dbus:/var/run/dbus \
+       -v /dev:/dev bclouser/debian-lxde:buster startx
+```
+
+This will ask docker to run a container using the `bclouser/debian-lxde` image. Since the image is not preinstalled, it will get downloaded from Docker Hub and installed on the module. This will require internet connection on the device and make take a few minutes. It will start a Debian environment (HDMI on i.MX6, parallel RGB on i.MX 7). Connecting to the device over serial/ssh will allow access to the base TorizonCore
+console.
+
+To get a second shell inside the container `docker exec` can be used as such:
 
 ```
-[MACHINE=<MACHINE>] source setup-environment [BUILDDIR]
+colibri-imx6:~$ docker ps
+CONTAINER ID        IMAGE                             COMMAND                  CREATED             STATUS
+c696a76d3021        bclouser/debian-lxde-x11:buster   "/usr/bin/entry.sh s…"   11 minutes ago      Up 11 minutes
+colibri-imx6:~$ docker exec -it c696 /bin/bash
 ```
 
-If **MACHINE** is not provided, the script will list all possible machines and
-force one to be selected.
-
-To build the TordyOS gateway image:
-
-As of now we do not have a stable SSTATE cache for TordyOS so you'll want to 
-comment out/remove the SSTATE_MIRRORS varible in local.conf. Also you'll want 
-to add ACCEPT_FSL_EULA="1" to local.conf. 
+Resin.io offers minimal Debian images on Docker Hub at [resin/armv7hf-debian](https://hub.docker.com/r/resin/armv7hf-debian/tags/). Those are small enough to run
 
 ```
-bitbake lmp-gateway-image
+docker run -it resin/armv7hf-debian /bin/bash
 ```
+
+### Ostree/OTA
+
+TorizonCore is built with OSTree a shared library and suite of command line tools that combines a "git-like" model for committing and downloading bootable filesystem trees, along with a layer for deploying them and managing the bootloader configuration". In short this image has the foundation for OTA (over-the-air) update capabilities.
+
+For a look at a more managed, service based approach to OTA take a look at [OTA Community Edition](docs/ota-community-edition.md).
+
+Alternatively, here's a quick demo on performing an update on device:
+
+Say you have Torizon device and you want to update the kernel
+```
+root@apalis-imx6:~# uname -a
+Linux apalis-imx6 4.18.9 #1 SMP Thu Oct 4 16:34:24 UTC 2018 armv7l armv7l armv7l GNU/Linux
+``` 
+
+Whenever you build TorizonCore a directory `ostree_repo` gets produced during the build. This directory is git-like containing the meta-data for that build's filesystem.
+
+In my case I have a Torizon build with an updated kernel on our build machine. Using OSTree I can add this like how you would add a remote git repo.
+```
+root@apalis-imx6:~# ostree remote add --no-gpg-verify origin http://seahawk.toradex.int/archive/coj/temp/build-tordy/deploy/images/apalis-imx6/ostree_repo/ apalis-imx6
+```
+
+Following standard git procedure you'd then perform a pull.
+```
+root@apalis-imx6:~# ostree pull origin
+172 metadata, 485 content objects fetched; 17704 KiB transferred in 12 seconds 
+```
+
+Next you queue the commit for deployment upon next boot
+```
+root@apalis-imx6:~# ostree admin deploy origin:apalis-imx6
+Copying /etc changes: 5 modified, 2 removed, 7 added
+Transaction complete; bootconfig swap: yes; deployment count change: 1
+```
+
+Now after a quick reboot you can see the updated kernel deployed.
+```
+root@apalis-imx6:~# uname -a
+Linux apalis-imx6 4.18.10 #1 SMP Wed Oct 3 20:44:50 UTC 2018 armv7l armv7l armv7l GNU/Linux
+```
+
+Finally, you can view your current and previous deployment which you can rollback to if need be.
+```
+root@apalis-imx6:~# ostree admin status
+* lmp 7f8c3031efef2793803273ef85a259ecaedcdfcd4afdb6914bda79c60f9e4ebb.0
+    origin refspec: origin:apalis-imx6
+  lmp fa2db9cfb4209e6dcbc42ef8710c70c77030d11f9e2c9f02fe138691a61ebfe2.0 (rollback)
+    origin refspec: fa2db9cfb4209e6dcbc42ef8710c70c77030d11f9e2c9f02fe138691a61ebfe2
+```
+
+### Building TorizonCore
+
+To build/develop TorizonCore follow the README [here](docs/building-torizon.md) to set up your build environment.
+
+
+## Known Problems/Issues
+
+* Image Space limitation
+
+  The full featured image is rather large taking up most of the space on the Colibri i.MX7 raw NAND. As such it is not recommended to experiment with containers on this device since there isn't much space for containers as is. In the future we hope to slim down the footprint.
+  *The Balena based image is slimmer by about ~70MB
+
+* Xorg video driver
+
+  In our i.MX6 Debian containers we are using the [Armada X.org DDX driver](http://git.arm.linux.org.uk/cgit/xf86-video-armada.git/) which seems to have worked fine in our tests but, it might show stability issues.
+
+ 
+* Error "No session for pid" on container startup
+
+   The error is probably related to missing session management inside the container.
