@@ -2,6 +2,7 @@
 <manifest>
   <remote fetch="https://source.foundries.io/lmp-mirrors" name="lmp-mirrors"/>
   <remote fetch="http://gitlab.toradex.int/tordyos" name="toradex-tordy"/>
+  <remote fetch="http://gitlab.toradex.int/bsp/oe" name="toradex-bsp"/>
   
   <default remote="lmp-mirrors" revision="master" sync-j="4"/>
   
@@ -12,7 +13,7 @@
   <project name="meta-linaro" path="layers/meta-linaro" revision="fca140e5e15831e31bb4d3916d191b4b3176fc5c"/>
   <project name="meta-lmp" path="layers/meta-lmp" remote="toradex-tordy" revision="51028679d5967d2d1cd464bcc9536e2c3ac50c58"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" revision="a06c29be2f5bc204f965ee07298c34232c5c39fc"/>
-  <project name="meta-toradex-bsp-common" path="layers/meta-toradex-bsp-common" remote="toradex-tordy" revision="cordoba-dev"/>
+  <project name="meta-toradex-bsp-common" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
   <project name="meta-toradex-tordy" path="layers/meta-toradex-tordy" remote="toradex-tordy" revision="master-toradex"/>
   <project name="meta-updater" path="layers/meta-updater" remote="toradex-tordy" revision="f12efe18a25397ef2c7d1514321b9bf7b2cef2e7"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" revision="cea8ca7c9c92f5cccc2dc4725d0e7de934f9c100"/>
