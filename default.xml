@@ -7,7 +7,7 @@
   <remote fetch="http://gitlab.toradex.int/tordyos" name="toradex-tordy"/>
   <remote fetch="http://gitlab.toradex.int/bsp/oe" name="toradex-bsp"/>
   
-  <project name="bitbake" remote="oe" revision="e72be96cfa9f05fda5f420c7cfa8bcfa9304b884"/>
+  <project name="bitbake" remote="oe" revision="fd9893c338df7828b2c01f1d548aa86dfcf7c50a"/>
   <project name="meta-freescale" remote="fsl" path="layers/meta-freescale" revision="501b840982a51311feef3efdfa548ca2efcf4a31"/>
   <project name="meta-freescale-3rdparty" remote="fsl" path="layers/meta-freescale-3rdparty" revision="0736ea5ba478929e2aaca7ea1d65beb8eb18a35b"/>
   <project name="meta-linaro" remote="linaro" path="layers/meta-linaro" revision="fca140e5e15831e31bb4d3916d191b4b3176fc5c"/>
