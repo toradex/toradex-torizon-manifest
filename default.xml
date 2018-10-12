@@ -4,7 +4,6 @@
   <remote fetch="http://gitlab.toradex.int/bsp/oe" name="toradex-bsp"/>
   
   <project name="bitbake" revision="e72be96cfa9f05fda5f420c7cfa8bcfa9304b884"/>
-  <project name="meta-96boards" path="layers/meta-96boards" revision="80c26c1e41c3a963c59d135beffea520a3d7744f"/>
   <project name="meta-freescale" path="layers/meta-freescale" revision="501b840982a51311feef3efdfa548ca2efcf4a31"/>
   <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" revision="0736ea5ba478929e2aaca7ea1d65beb8eb18a35b"/>
   <project name="meta-linaro" path="layers/meta-linaro" revision="fca140e5e15831e31bb4d3916d191b4b3176fc5c"/>
