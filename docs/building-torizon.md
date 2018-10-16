@@ -29,7 +29,7 @@ will be placed within your working directory.
 To check out the latest TordyOS release:
 
 ```
-repo init -u http://gitlab.toradex.int/tordyos/lmp-manifest.git -b master-toradex
+repo init -u http://gitlab.toradex.int/torizon-core/toradex-torizon-manifest.git -b master-toradex
 ```
 
 When prompted, configure Repo with your real name and email address.
@@ -75,11 +75,12 @@ Supported **MACHINE** targets (officially tested by Toradex):
 * Apalis i.MX6
 
 Supported image targets:
-* lmp-gateway-image
-* lmp-mini-image
+* torizon-core-docker
+* torizon-core-balena
+* torizon-core-lite
 
-The default distribution (DISTRO) variable is automatically set to `tordy`,
-which is provided by the `meta-toradex-tordy` layer.
+The default distribution (DISTRO) variable is automatically set to `torizon`,
+which is provided by the `meta-toradex-torizon` layer.
 
 Setup the work environment by using the `setup-environment` script:
 
@@ -97,5 +98,5 @@ comment out/remove the SSTATE_MIRRORS varible in local.conf. Also you'll want
 to add ACCEPT_FSL_EULA="1" to local.conf. 
 
 ```
-bitbake lmp-gateway-image
+bitbake torizon-core-docker
 ```

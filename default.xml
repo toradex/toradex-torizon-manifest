@@ -4,18 +4,18 @@
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
   <remote fetch="https://github.com/freescale" name="fsl"/>
   <remote fetch="https://git.linaro.org/openembedded/" name="linaro"/>
-  <remote fetch="http://gitlab.toradex.int/tordyos" name="toradex-tordy"/>
+  <remote fetch="http://gitlab.toradex.int/torizon-core" name="toradex-torizon"/>
   <remote fetch="http://gitlab.toradex.int/bsp/oe" name="toradex-bsp"/>
   
   <project name="bitbake" remote="oe" revision="fd9893c338df7828b2c01f1d548aa86dfcf7c50a"/>
   <project name="meta-freescale" remote="fsl" path="layers/meta-freescale" revision="501b840982a51311feef3efdfa548ca2efcf4a31"/>
   <project name="meta-freescale-3rdparty" remote="fsl" path="layers/meta-freescale-3rdparty" revision="0736ea5ba478929e2aaca7ea1d65beb8eb18a35b"/>
   <project name="meta-linaro" remote="linaro" path="layers/meta-linaro" revision="fca140e5e15831e31bb4d3916d191b4b3176fc5c"/>
-  <project name="meta-lmp" path="layers/meta-lmp" remote="toradex-tordy" revision="51028679d5967d2d1cd464bcc9536e2c3ac50c58"/>
+  <project name="meta-lmp" remote="toradex-torizon" path="layers/meta-lmp" revision="51028679d5967d2d1cd464bcc9536e2c3ac50c58"/>
   <project name="meta-openembedded" remote="oe" path="layers/meta-openembedded" revision="a06c29be2f5bc204f965ee07298c34232c5c39fc"/>
   <project name="meta-toradex-bsp-common" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
-  <project name="meta-toradex-tordy" path="layers/meta-toradex-tordy" remote="toradex-tordy" revision="master-toradex"/>
-  <project name="meta-updater" path="layers/meta-updater" remote="toradex-tordy" revision="16a9ad69902fc0d5ec275ade8770940b9d1616f7"/>
+  <project name="meta-toradex-torizon" remote="toradex-torizon" path="layers/meta-toradex-torizon" revision="master-toradex"/>
+  <project name="meta-updater" remote="toradex-torizon" path="layers/meta-updater" revision="16a9ad69902fc0d5ec275ade8770940b9d1616f7"/>
   <project name="meta-virtualization" remote="yocto" path="layers/meta-virtualization" revision="cea8ca7c9c92f5cccc2dc4725d0e7de934f9c100"/>
   <project name="meta-yocto" remote="yocto" path="layers/meta-yocto" revision="a75ad2e4227f715146fc1e07f9abef4e80c1aa12">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
