@@ -273,7 +273,7 @@ fi
 
 cat <<EOF
 
-Welcome to Open Source Foundries Linux microPlatform (OSF LMP)
+Welcome to Toradex TorizonCore
 
 For more information about OpenEmbedded see their website:
     http://www.openembedded.org/
@@ -287,8 +287,8 @@ Your build environemnt has been configured with:
 You can now run 'bitbake <target>'
 
 Some of common targets are:
-    full-container-image
-    full-balena-image
-    mini-ota-image
+    torizon-core-docker
+    torizon-core-balena
+    torizon-core-lite
 
 EOF
