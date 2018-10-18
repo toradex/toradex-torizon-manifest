@@ -2,7 +2,7 @@
 Device trees are... prone to error and the cause of much grief. The source files come from a number of places, the syntax is unique to itself, building them requires a kernel tree and working build environment, and to even know if they work you need a booting system! While we can't solve all these problems, we can make it a little easier with overlays and containers.
 
 ## What are Device Trees?
-You are likely already familiar with Device Trees, and I won't go into detail here. If you are not, I would reccommend a few links to get started:
+You are likely already familiar with Device Trees, and I won't go into detail here. If you are not, I would recommend a few links to get started:
 
 https://elinux.org/Device_Tree_Reference  
 https://saurabhsengarblog.wordpress.com/2015/11/28/device-tree-tutorial-arm/  
@@ -23,13 +23,13 @@ The bulk of the tools in this container are part of the "dtc" (device tree compi
 
 High-Level description of tools in this container are:
 ### dtc
-The Device Tree Compiler. Used (unsurprisingly) to compile device trees and device tree overlays
+The Device Tree Compiler. Used to compile device trees and device tree overlays.
 
 ### fdtget
-Used for reading properties from a device tree 
+Used for reading properties from a device tree.
 
 ### fdtput
-Used for setting properties in a device tree
+Used for setting properties in a device tree.
 
 ### fdtdump
 Used to print the contents of a device tree binary in plain text.
@@ -48,13 +48,13 @@ This container also comes with device-tree and device-tree overlay source files.
 ```
 docker run --rm -it --privileged -v /dev:/dev bclouser/device-tree:latest /bin/bash
 ```
-This will drop your prompt into the /dt-sandbox directory which contains these folders
+This will drop your prompt into the /dt-sandbox directory which contains the following folders.
 #### overlays/
 Overlay source files developed by Toradex or the community for the module.
 #### sys-overlays/
-Any overlays (.dtbo) found on the boot partition of the module
+Any overlays (.dtbo) found on the boot partition of the module.
 #### sys-device-trees/
-Any Device Trees found on the boot partition of the module and their de-compiled source
+Any Device Trees found on the boot partition of the module and their de-compiled source.
 
 **NOTE:** dtc, fdtput, fdtget, fdtdump, dtoverlay, and dtconf should all be in your path.
 
@@ -70,11 +70,11 @@ dtconf --build ./input-dt-file.dts
 dtc -@ -I dts -O dtb -o output-filename.dtb  input-dt-file.dts
 ```
 **NOTE:** Both device trees (.dtb) and device tree overlays (.dtbo) are built from the same source file (.dts).
-In an attempt to determine the output file type, the dtconf script will scan the .dts file for the "fragment@0" string. If this string is found it assumes file is an overlay and names the output with a .dtbo extension, otherwise, it is named with a .dtb
+In an attempt to determine the output file type, the dtconf script will scan the .dts file for the "fragment@0" string. If this string is found it assumes file is an overlay and names the output with a .dtbo extension, otherwise, it is named with a .dtb.
 
 #### Verify device tree overlay against base device tree
 This simply ensures that the device tree overlay is compatable with a specified device tree.
-The device-tree parameter is optional, by default it will verify the overlay against the active device tree
+The device-tree parameter is optional, by default it will verify the overlay against the active device tree:
 ```bash
 dtconf --overlay verify ./some-overlay.dtbo
 ```
@@ -111,19 +111,19 @@ dpi_fusion7_timings.dtbo
 ```
 Where:
 
-`Active Device Tree` is the device tree that is setup to be used on boot,
+`Active Device Tree` is the device tree that is setup to be used on boot.
 
-`System Device Trees` are the device trees found on the boot partition,
+`System Device Trees` are the device trees found on the boot partition.
 
-`Active Overlays` are the overlays setup to be applied to the Active Device Tree on next boot,
+`Active Overlays` are the overlays setup to be applied to the Active Device Tree on next boot.
 
-`System Overlays` are the overlays found on the boot partition,
+`System Overlays` are the overlays found on the boot partition.
 
-`Other Overlays` are the overlays that are shipped with the container
+`Other Overlays` are the overlays that are shipped with the container.
 
 #### Modify parameter in an overlay
 Lets say we wanted to modify the resolution of our display panel to be 1280 x 720
-Note: the actual resolution for the fusion 7 inch panel is 800 x 480 (0x320 x 0x1e0)
+Note: the actual resolution for the fusion 7 inch panel is 800 x 480 (0x320 x 0x1e0):
 ```bash
 cp ./overlays/dpi_fusion7_timings.dtbo ./dpi_fusion7_custom.dtbo
 fdtput ./dpi_fusion7_custom.dtbo /fragment@0/__overlay__/panel-timing hactive 1280
@@ -138,7 +138,7 @@ And finally set it to be active by executing:
 ```bash
 dtconf --overlay active ./dpi_fusion7_custom.dtbo
 ```
-You would now be required to reboot for these changes to take effect
+You would now be required to reboot for these changes to take effect.
 
 #### Known Issues
 * Stack trace complaining about "possible recursive locking" gets produced, upon starting container for the first time after boot.

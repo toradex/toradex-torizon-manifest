@@ -1,10 +1,10 @@
-TordyOS Manifest
+TorizonCore Build Guide
 ============================
 
-Toradex TordyOS manifest, based on Linux microPlatform from foundries.io.
+Toradex TorizonCore, based on Linux microPlatform from foundries.io.
 
 This directory contains a Repo manifest and setup scripts for the
-TordyOS build system. If you want to modify, extend or port TordyOS
+TorizonCore build system. If you want to modify, extend or port TorizonCore
 to a new hardware platform, this is the manifest repository to
 use.
 
@@ -26,7 +26,7 @@ Run `repo init` to bring down the latest stable version of Repo. You must
 specify a URL for the manifest, which specifies the various repositories that
 will be placed within your working directory.
 
-To check out the latest TordyOS release:
+To check out the latest TorizonCore release:
 
 ```
 repo init -u http://gitlab.toradex.int/torizon-core/toradex-torizon-manifest.git -b master-toradex
@@ -91,11 +91,10 @@ Setup the work environment by using the `setup-environment` script:
 If **MACHINE** is not provided, the script will list all possible machines and
 force one to be selected.
 
-To build the TordyOS gateway image:
+To build the TorizonCore image:
 
-As of now we do not have a stable SSTATE cache for TordyOS so you'll want to 
-comment out/remove the SSTATE_MIRRORS varible in local.conf. Also you'll want 
-to add ACCEPT_FSL_EULA="1" to local.conf. 
+The above setup script should properly prepare the enviroment with correct defaults. 
+Additonally you'll want to modify the local.conf file by adding `ACCEPT_FSL_EULA="1"`.
 
 ```
 bitbake torizon-core-docker

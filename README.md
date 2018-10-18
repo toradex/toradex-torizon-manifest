@@ -5,9 +5,9 @@ TorizonCore Getting Started Guide
 
 TorizonCore is installed via the Toradex Easy Installer. The latest builds can be obtained by switching on the "Toradex Continous Integration Server" feed in the Toradex Easy Installer UI. We currently have two flavors of images:
 
-* full-container-image: A full featured image containing docker and OTA.
-* full-balena-image: Similar to the above but with Balena instead of docker for a smaller footprint.
-* mini-ota-image: A minimal image only containing OTA.
+* torizon-core-docker: A full featured image containing docker and OTA.
+* torizon-core-balena: Similar to the above but with Balena instead of docker for a smaller footprint.
+* torizon-core-lite: A minimal image only containing OTA.
 
 As of now the following machines are supported:
 * Colibri i.MX7 (raw NAND & eMMC)*
@@ -60,7 +60,7 @@ c696a76d3021        bclouser/debian-lxde-x11:buster   "/usr/bin/entry.sh s…"  
 colibri-imx6:~$ docker exec -it c696 /bin/bash
 ```
 
-Resin.io offers minimal Debian images on Docker Hub at [resin/armv7hf-debian](https://hub.docker.com/r/resin/armv7hf-debian/tags/). Those are small enough to run
+In the case of devices with smaller storage the full debian container may be too large to run. Resin.io offers minimal Debian images on Docker Hub at [resin/armv7hf-debian](https://hub.docker.com/r/resin/armv7hf-debian/tags/). These should be small enough to run on more limited devices.
 
 ```
 docker run -it resin/armv7hf-debian /bin/bash
@@ -74,7 +74,7 @@ For a look at a more managed, service based approach to OTA take a look at [OTA 
 
 Alternatively, here's a quick demo on performing an update on device:
 
-Say you have Torizon device and you want to update the kernel
+Say you have Torizon device and you want to update the kernel.
 ```
 root@apalis-imx6:~# uname -a
 Linux apalis-imx6 4.18.9 #1 SMP Thu Oct 4 16:34:24 UTC 2018 armv7l armv7l armv7l GNU/Linux
@@ -82,7 +82,7 @@ Linux apalis-imx6 4.18.9 #1 SMP Thu Oct 4 16:34:24 UTC 2018 armv7l armv7l armv7l
 
 Whenever you build TorizonCore a directory `ostree_repo` gets produced during the build. This directory is git-like containing the meta-data for that build's filesystem.
 
-In my case I have a Torizon build with an updated kernel on our build machine. Using OSTree I can add this like how you would add a remote git repo.
+In this scenario I have a Torizon build with an updated kernel on a build machine. Using OSTree I can add this build like how one would add a remote git repo.
 ```
 root@apalis-imx6:~# ostree remote add --no-gpg-verify origin http://seahawk.toradex.int/archive/coj/temp/build-tordy/deploy/images/apalis-imx6/ostree_repo/ apalis-imx6
 ```
@@ -124,8 +124,7 @@ To build/develop TorizonCore follow the README [here](docs/building-torizon.md) 
 
 * Image Space limitation
 
-  The full featured image is rather large taking up most of the space on the Colibri i.MX7 raw NAND. As such it is not recommended to experiment with containers on this device since there isn't much space for containers as is. In the future we hope to slim down the footprint.
-  *The Balena based image is slimmer by about ~70MB
+  The full featured image is rather large taking up most of the space on the Colibri i.MX7 raw NAND. As such it is not recommended to experiment with containers on this device since there isn't much space for containers as is. In the future we hope to slim down the footprint. Alternativley, the Balena based image is slimmer by about ~70MB.
 
 * Xorg video driver
 
