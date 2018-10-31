@@ -29,7 +29,7 @@ will be placed within your working directory.
 To check out the latest TorizonCore release:
 
 ```
-repo init -u http://gitlab.toradex.int/torizon-core/toradex-torizon-manifest.git -b master-toradex
+repo init -u http://gitlab.toradex.int/torizon-core/toradex-torizon-manifest.git -b master
 ```
 
 When prompted, configure Repo with your real name and email address.

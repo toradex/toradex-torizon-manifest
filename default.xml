@@ -14,7 +14,7 @@
   <project name="meta-lmp" path="layers/meta-lmp" remote="toradex-torizon" revision="37ed4a55c1ac1a0c97ad3a308d83839820f16751"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="a5591f7aee24a4ad792d7dd0dea0f7252a68c7a8"/>
   <project name="meta-toradex-bsp-common" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
-  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master-toradex"/>
+  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master"/>
   <project name="meta-updater" path="layers/meta-updater" remote="toradex-torizon" revision="b4754d39d6eebc624b1380d9ce5097bc597f5a44"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="87526423d572b435002f54c6e9e28e4591c53447"/>
   <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="7cf931279918affe77330f7803e57678c33f5e51">
