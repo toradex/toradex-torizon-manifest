@@ -1,26 +1,21 @@
-TorizonCore Getting Started Guide
- 
+# TorizonCore Getting Started Guide
 
 ## Installation
 
-TorizonCore is installed via the Toradex Easy Installer. The latest builds can be obtained by switching on the "Toradex Continous Integration Server" feed in the Toradex Easy Installer UI. We currently have two flavors of images:
+TorizonCore is installed via the [Toradex Easy Installer](https://developer.toradex.com/software/toradex-easy-installer). The latest builds can be obtained by enabling the **Toradex Continous Integration Server** feed in the Toradex Easy Installer Feeds dialog. We currently have three flavors of images:
 
 * torizon-core-docker: A full featured image containing docker and OTA.
 * torizon-core-balena: Similar to the above but with Balena instead of docker for a smaller footprint.
 * torizon-core-lite: A minimal image only containing OTA.
 
 As of now the following machines are supported:
-* Colibri i.MX7 (raw NAND & eMMC)*
+* Colibri i.MX7 (raw NAND & eMMC)
 * Colibri i.MX6
 * Apalis i.MX6
 
-**Note:** Unlike our usual BSP in which Colibri i.MX7 has separate images for raw NAND and eMMC, we are currently experimenting with a combined image configuration in TorizonCore.
-
-In case the image does not boot, make sure to clear the U-Boot environment by using `env default -a && env save`.
-
 ## Features
 
-The full image is quite minimal featuring basic command line utilities. The main points are the [docker](https://www.docker.com/) and [OSTree](https://ostree.readthedocs.io/en/latest/) support. Another experimental feature in the image is tooling to make use of device tree overlays. The kernel itself is following mainline (Linux 4.18). A docker container can be created to acquire other needed features. The minimal image is even more bare-bones containing just the bare minimum to support OTA+.
+The full image is quite minimal featuring basic command line utilities. The main points are [OSTree](https://ostree.readthedocs.io/en/latest/) and [Docker](https://www.docker.com/) support. OSTree allows updating the root filesystem transactionally and incrementally. Another experimental feature in the image is tooling to make use of device tree overlays. The kernel itself is following mainline (Linux 4.19). There is no package management in the base system. Docker containers can be used to acquire other needed features. The minimal image is even more bare-bones containing just the bare minimum to support OTA+.
 
 Upon booting one can login using the following users:
 * login: root
@@ -41,15 +36,14 @@ There will also be tooling provided to allow you to edit and compile device tree
 
 ### Containers
 
-Along with TorizonCore we provide a default container as a sort of friendly starting environment. The container is Debian buster release based featuring an xserver display as well as a internet browser. To download this container enter the following:
+Along with TorizonCore we provide a default container as a sort of friendly starting environment. The container is Debian buster release based featuring an X-Server desktop as well as a internet browser. To download this container enter the following:
   
 ```
 docker run -d -it --restart=always --privileged -v /var/run/dbus:/var/run/dbus \
        -v /dev:/dev bclouser/debian-lxde:buster startx
 ```
 
-This will ask docker to run a container using the `bclouser/debian-lxde` image. Since the image is not preinstalled, it will get downloaded from Docker Hub and installed on the module. This will require internet connection on the device and make take a few minutes. It will start a Debian environment (HDMI on i.MX6, parallel RGB on i.MX 7). Connecting to the device over serial/ssh will allow access to the base TorizonCore
-console.
+This will ask Docker to run a container using the `bclouser/debian-lxde` image. Since the image is not preinstalled, it will get downloaded from Docker Hub and installed on the module. This will require internet connection on the device and make take a few minutes. It will start a Debian environment (HDMI on i.MX6, parallel RGB on i.MX 7). Connecting to the device over serial/ssh will allow access to the base TorizonCore console.
 
 To get a second shell inside the container `docker exec` can be used as such:
 
@@ -66,7 +60,7 @@ In the case of devices with smaller storage the full debian container may be too
 docker run -it resin/armv7hf-debian /bin/bash
 ```
 
-### Ostree/OTA
+### OSTree/OTA
 
 TorizonCore is built with OSTree a shared library and suite of command line tools that combines a "git-like" model for committing and downloading bootable filesystem trees, along with a layer for deploying them and managing the bootloader configuration". In short this image has the foundation for OTA (over-the-air) update capabilities.
 
@@ -134,3 +128,7 @@ To build/develop TorizonCore follow the README [here](docs/building-torizon.md) 
 * Error "No session for pid" on container startup
 
    The error is probably related to missing session management inside the container.
+
+* Image not booting properly
+
+   Make sure to clear the U-Boot environment by using `env default -a && env save`.

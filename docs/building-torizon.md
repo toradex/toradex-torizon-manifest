@@ -1,9 +1,7 @@
-TorizonCore Build Guide
-============================
+# TorizonCore Build Guide
 
-Toradex TorizonCore, based on Linux microPlatform from foundries.io.
 
-This directory contains a Repo manifest and setup scripts for the
+This repository contains a Repo manifest and setup scripts for the
 TorizonCore build system. If you want to modify, extend or port TorizonCore
 to a new hardware platform, this is the manifest repository to
 use.
@@ -11,6 +9,11 @@ use.
 The build system uses various components from the Yocto
 Project, most importantly the OpenEmbedded build system, the bitbake
 task executor and various application and BSP layers.
+
+Toradex TorizonCore is based on Linux microPlatform from foundries.io
+and therefor requires the meta-lmp layer.
+
+## Download Metadata
 
 To configure the scripts and download the build metadata, do:
 
@@ -66,8 +69,7 @@ sudo sysctl -w net.ipv4.tcp_window_scaling=0
 repo sync -j1
 ```
 
-Setup Environment
------------------
+## Setup Environment
 
 Supported **MACHINE** targets (officially tested by Toradex):
 * Colibri i.MX7 (raw NAND & eMMC)
@@ -90,6 +92,8 @@ Setup the work environment by using the `setup-environment` script:
 
 If **MACHINE** is not provided, the script will list all possible machines and
 force one to be selected.
+
+## Start Building
 
 To build the TorizonCore image:
 
