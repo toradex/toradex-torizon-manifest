@@ -4,8 +4,8 @@
   <remote fetch="https://git.linaro.org/openembedded/" name="linaro"/>
   <remote fetch="https://github.com/openembedded" name="oe"/>
   <remote fetch="https://github.com/advancedtelematic" name="ats"/>
-  <remote fetch="http://gitlab.toradex.int/bsp/oe" name="toradex-bsp"/>
-  <remote fetch="http://gitlab.toradex.int/torizon-core" name="toradex-torizon"/>
+  <remote fetch="https://git.toradex.com" name="toradex-bsp"/>
+  <remote fetch="https://github.com/toradex" name="toradex-torizon"/>
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
   
   <project name="bitbake" remote="oe" revision="7d5af23d560b38fb5558d4ac51c3c9611d6d904f"/>
@@ -14,7 +14,7 @@
   <project name="meta-linaro" path="layers/meta-linaro" remote="linaro" revision="7e7f09b731ac8ec09cc87ed058908c8479b8c7ab"/>
   <project name="meta-lmp" path="layers/meta-lmp" remote="toradex-torizon" revision="37ed4a55c1ac1a0c97ad3a308d83839820f16751"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="a5591f7aee24a4ad792d7dd0dea0f7252a68c7a8"/>
-  <project name="meta-toradex-bsp-common" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
+  <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
   <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master"/>
   <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="c684c3474cb580a8f58b8299e9e901440ebf56d0"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="87526423d572b435002f54c6e9e28e4591c53447"/>
