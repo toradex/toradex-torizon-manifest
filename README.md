@@ -64,50 +64,60 @@ docker run -it resin/armv7hf-debian /bin/bash
 
 TorizonCore is built with OSTree a shared library and suite of command line tools that combines a "git-like" model for committing and downloading bootable filesystem trees, along with a layer for deploying them and managing the bootloader configuration". In short this image has the foundation for OTA (over-the-air) update capabilities.
 
-For a look at a more managed, service based approach to OTA take a look at [OTA Community Edition](docs/ota-community-edition.md).
+Torizon Update System reuses what Linux microPlatform and meta-updater are providing. You can find more about the OTA strategy on the [foundries.io Blog](https://foundries.io/insights/2018/05/25/ota-part-1/).
 
-Alternatively, here's a quick demo on performing an update on device:
+Here's a quick demo on performing an update using the underlaying OSTree technologoy on the device manually.
 
-Say you have Torizon device and you want to update the kernel.
+Whenever you build TorizonCore a directory `ostree_repo` gets produced during the build. This directory is git-like containing the meta-data for that build's filesystem. Toradex uploads the nightly build OSTree repository and makes it available at http://feeds.toradex.com/ostree/nightly/apalis-imx6/.
+
+Using OSTree I can add this repository like how one would add a remote git repo.
 ```
-root@apalis-imx6:~# uname -a
-Linux apalis-imx6 4.18.9 #1 SMP Thu Oct 4 16:34:24 UTC 2018 armv7l armv7l armv7l GNU/Linux
-``` 
+ostree remote add --no-gpg-verify toradex-nightly \
+       http://feeds.toradex.com/ostree/nightly/apalis-imx6/
 
-Whenever you build TorizonCore a directory `ostree_repo` gets produced during the build. This directory is git-like containing the meta-data for that build's filesystem.
-
-In this scenario I have a Torizon build with an updated kernel on a build machine. Using OSTree I can add this build like how one would add a remote git repo.
 ```
-root@apalis-imx6:~# ostree remote add --no-gpg-verify origin http://seahawk.toradex.int/archive/coj/temp/build-tordy/deploy/images/apalis-imx6/ostree_repo/ apalis-imx6
+
+```
+apalis-imx6:~# ostree remote refs toradex-nightly
+toradex-nightly:torizon-core-balena
+toradex-nightly:torizon-core-docker
+toradex-nightly:torizon-core-lite
 ```
 
 Following standard git procedure you'd then perform a pull.
 ```
-root@apalis-imx6:~# ostree pull origin
+root@apalis-imx6:~# ostree pull toradex-nightly:torizon-core-docker
 172 metadata, 485 content objects fetched; 17704 KiB transferred in 12 seconds 
 ```
 
 Next you queue the commit for deployment upon next boot
 ```
-root@apalis-imx6:~# ostree admin deploy origin:apalis-imx6
+root@apalis-imx6:~# ostree admin deploy toradex-nightly:torizon-core-docker
 Copying /etc changes: 5 modified, 2 removed, 7 added
 Transaction complete; bootconfig swap: yes; deployment count change: 1
 ```
 
-Now after a quick reboot you can see the updated kernel deployed.
+OSTree shows that there is a switch to a new tree pending
 ```
-root@apalis-imx6:~# uname -a
-Linux apalis-imx6 4.18.10 #1 SMP Wed Oct 3 20:44:50 UTC 2018 armv7l armv7l armv7l GNU/Linux
+root@apalis-imx6:~# ostree admin status
+  torizon 0cbeafe2973079d5edb4457839054af3c1bb8ea09678c92bcf022eea2ca92e60.0 (pending)
+    origin refspec: toradex-nightly:torizon-core-docker
+* torizon 4fc80f14d5ee2160004e3252080226f8f1d6f6ad4d8d7024b4198584c23afaa6.0
+    origin refspec: 4fc80f14d5ee2160004e3252080226f8f1d6f6ad4d8d7024b4198584c23afaa6
 ```
+
+After a quick reboot you can see the new OSTree active
 
 Finally, you can view your current and previous deployment which you can rollback to if need be.
 ```
 root@apalis-imx6:~# ostree admin status
-* lmp 7f8c3031efef2793803273ef85a259ecaedcdfcd4afdb6914bda79c60f9e4ebb.0
-    origin refspec: origin:apalis-imx6
-  lmp fa2db9cfb4209e6dcbc42ef8710c70c77030d11f9e2c9f02fe138691a61ebfe2.0 (rollback)
-    origin refspec: fa2db9cfb4209e6dcbc42ef8710c70c77030d11f9e2c9f02fe138691a61ebfe2
+* torizon 0cbeafe2973079d5edb4457839054af3c1bb8ea09678c92bcf022eea2ca92e60.0
+    origin refspec: toradex-nightly:torizon-core-docker
+  torizon 4fc80f14d5ee2160004e3252080226f8f1d6f6ad4d8d7024b4198584c23afaa6.0 (rollback)
+    origin refspec: 4fc80f14d5ee2160004e3252080226f8f1d6f6ad4d8d7024b4198584c23afaa6
 ```
+
+The complete and automated OTA update system is still in the works.
 
 ### Building TorizonCore
 
