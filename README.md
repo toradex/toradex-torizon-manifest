@@ -38,17 +38,17 @@ Along with TorizonCore we provide a default container as a sort of friendly star
   
 ```
 docker run -d -it --restart=always --privileged -v /var/run/dbus:/var/run/dbus \
-       -v /dev:/dev bclouser/debian-lxde:buster startx
+       -v /dev:/dev torizon/debian-lxde:buster startx
 ```
 
-This will ask Docker to run a container using the `bclouser/debian-lxde` image. Since the image is not preinstalled, it will get downloaded from Docker Hub and installed on the module. This will require internet connection on the device and make take a few minutes. It will start a Debian environment (HDMI on i.MX6, parallel RGB on i.MX 7). Connecting to the device over serial/ssh will allow access to the base TorizonCore console.
+This will ask Docker to run a container using the `torizon/debian-lxde` image. Since the image is not preinstalled, it will get downloaded from Docker Hub and installed on the module. This will require internet connection on the device and make take a few minutes. It will start a Debian environment (HDMI on i.MX6, parallel RGB on i.MX 7). Connecting to the device over serial/ssh will allow access to the base TorizonCore console.
 
 To get a second shell inside the container `docker exec` can be used as such:
 
 ```
 colibri-imx6:~$ docker ps
 CONTAINER ID        IMAGE                             COMMAND                  CREATED             STATUS
-c696a76d3021        bclouser/debian-lxde-x11:buster   "/usr/bin/entry.sh s…"   11 minutes ago      Up 11 minutes
+c696a76d3021        torizon/debian-lxde-x11:buster    "/usr/bin/entry.sh s…"   11 minutes ago      Up 11 minutes
 colibri-imx6:~$ docker exec -it c696 /bin/bash
 ```
 
