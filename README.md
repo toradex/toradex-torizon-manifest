@@ -86,6 +86,14 @@ root@apalis-imx6:~# ostree pull toradex-nightly:torizon-core-docker
 172 metadata, 485 content objects fetched; 17704 KiB transferred in 12 seconds 
 ```
 
+To see which files got updated, `ostree diff` can be used.
+```
+ostree diff toradex-nightly:torizon-core-docker
+M    /usr/package.manifest
+M    /usr/etc/manifest.xml
+...
+```
+
 Next you queue the commit for deployment upon next boot
 ```
 root@apalis-imx6:~# ostree admin deploy toradex-nightly:torizon-core-docker
