@@ -52,11 +52,9 @@ c696a76d3021        torizon/debian-lxde-x11:buster    "/usr/bin/entry.sh s…"  
 colibri-imx6:~$ docker exec -it c696 /bin/bash
 ```
 
-In the case of devices with smaller storage the full debian container may be too large to run. Resin.io offers minimal Debian images on Docker Hub at [resin/armv7hf-debian](https://hub.docker.com/r/resin/armv7hf-debian/tags/). These should be small enough to run on more limited devices.
+This will create a prompt with root priviledges inside the container.
 
-```
-docker run -it resin/armv7hf-debian /bin/bash
-```
+The article [Install Debian Packages on Target](docs/install-debian-packages-on-target.md) shows how to install Debian packages on the target and create a new Docker image from it.
 
 ### OSTree/OTA
 
