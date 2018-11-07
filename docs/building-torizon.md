@@ -103,3 +103,17 @@ Additonally you'll want to modify the local.conf file by adding `ACCEPT_FSL_EULA
 ```
 bitbake torizon-core-docker
 ```
+
+## Building Torizon Tools Container
+
+To build the Torizon-Tools-Container image:
+
+The above setup script should properly prepare the enviroment with correct defaults.
+
+You just need to change distro inside conf/auto.conf to  `DISTRO ?= "torizon-container"`.
+
+Additonally you'll want to modify the local.conf file by adding `ACCEPT_FSL_EULA="1"`.
+
+```
+bitbake torizon-tools-container
+```
