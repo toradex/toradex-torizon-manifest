@@ -121,8 +121,6 @@ root@apalis-imx6:~# ostree admin status
     origin refspec: 4fc80f14d5ee2160004e3252080226f8f1d6f6ad4d8d7024b4198584c23afaa6
 ```
 
-The complete and automated OTA update system is still in the works.
-
 ### Building TorizonCore
 
 To build/develop TorizonCore follow the README [here](docs/building-torizon.md) to set up your build environment.

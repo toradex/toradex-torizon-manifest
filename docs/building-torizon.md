@@ -117,3 +117,45 @@ Additonally you'll want to modify the local.conf file by adding `ACCEPT_FSL_EULA
 ```
 bitbake torizon-tools-container
 ```
+
+## HERE OTA Connect
+
+Prerequisites for using this is that you have credentials file provided by HERE OTA Connect ( You can find some more documentation here https://docs.atsgarage.com/index.html)
+```
+credentials.zip 
+```
+
+### Pushing images to HERE OTA Connect
+
+To push OSTree automatically to HERE OTA Connect after every build edit local.conf by adding: 
+
+```
+SOTA_PACKED_CREDENTIALS = "<PATH TO CREDENTIALS>/credentials.zip"
+```
+
+### Registering a device
+
+Copy credentials.zip inside 
+```
+/etc/sota/conf.d
+```
+And create a file called
+ ```
+/etc/sota/conf.d/sota.toml
+```
+Add below text to sota.toml
+```
+[provision]
+provision_path = "/etc/sota/conf.d/credentials.zip" 
+[storage]   
+type = "sqlite" 
+```
+
+Aktualizr should automatically detect changes and register this device to your HERE OTA Connect.
+
+You can also force Aktualizr to restart and register device.
+```
+systemctl restart aktualizr 
+```
+The complete and automated OTA update system is still in the works.
+
