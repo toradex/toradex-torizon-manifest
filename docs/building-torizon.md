@@ -11,7 +11,7 @@ Project, most importantly the OpenEmbedded build system, the bitbake
 task executor and various application and BSP layers.
 
 Toradex TorizonCore is based on Linux microPlatform from foundries.io
-and therefor requires the meta-lmp layer.
+and therefore requires the meta-lmp layer.
 
 ## Download Metadata
 
