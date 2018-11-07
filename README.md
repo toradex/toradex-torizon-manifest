@@ -38,25 +38,23 @@ Along with TorizonCore we provide a default container as a sort of friendly star
   
 ```
 docker run -d -it --restart=always --privileged -v /var/run/dbus:/var/run/dbus \
-       -v /dev:/dev bclouser/debian-lxde:buster startx
+       -v /dev:/dev torizon/debian-lxde:buster startx
 ```
 
-This will ask Docker to run a container using the `bclouser/debian-lxde` image. Since the image is not preinstalled, it will get downloaded from Docker Hub and installed on the module. This will require internet connection on the device and make take a few minutes. It will start a Debian environment (HDMI on i.MX6, parallel RGB on i.MX 7). Connecting to the device over serial/ssh will allow access to the base TorizonCore console.
+This will ask Docker to run a container using the `torizon/debian-lxde` image. Since the image is not preinstalled, it will get downloaded from Docker Hub and installed on the module. This will require internet connection on the device and make take a few minutes. It will start a Debian environment (HDMI on i.MX6, parallel RGB on i.MX 7). Connecting to the device over serial/ssh will allow access to the base TorizonCore console.
 
 To get a second shell inside the container `docker exec` can be used as such:
 
 ```
 colibri-imx6:~$ docker ps
 CONTAINER ID        IMAGE                             COMMAND                  CREATED             STATUS
-c696a76d3021        bclouser/debian-lxde-x11:buster   "/usr/bin/entry.sh s…"   11 minutes ago      Up 11 minutes
+c696a76d3021        torizon/debian-lxde-x11:buster    "/usr/bin/entry.sh s…"   11 minutes ago      Up 11 minutes
 colibri-imx6:~$ docker exec -it c696 /bin/bash
 ```
 
-In the case of devices with smaller storage the full debian container may be too large to run. Resin.io offers minimal Debian images on Docker Hub at [resin/armv7hf-debian](https://hub.docker.com/r/resin/armv7hf-debian/tags/). These should be small enough to run on more limited devices.
+This will create a prompt with root priviledges inside the container.
 
-```
-docker run -it resin/armv7hf-debian /bin/bash
-```
+The article [Install Debian Packages on Target](docs/install-debian-packages-on-target.md) shows how to install Debian packages on the target and create a new Docker image from it.
 
 ### OSTree/OTA
 
@@ -86,6 +84,14 @@ Following standard git procedure you'd then perform a pull.
 ```
 root@apalis-imx6:~# ostree pull toradex-nightly:torizon-core-docker
 172 metadata, 485 content objects fetched; 17704 KiB transferred in 12 seconds 
+```
+
+To see which files got updated, `ostree diff` can be used.
+```
+ostree diff toradex-nightly:torizon-core-docker
+M    /usr/package.manifest
+M    /usr/etc/manifest.xml
+...
 ```
 
 Next you queue the commit for deployment upon next boot
