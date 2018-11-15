@@ -4,11 +4,11 @@
 
 TorizonCore is installed via the [Toradex Easy Installer](https://developer.toradex.com/software/toradex-easy-installer). The latest builds can be obtained by enabling the **Toradex Continous Integration Server** feed in the Toradex Easy Installer Feeds dialog. We currently have three flavors of images:
 
-* torizon-core-docker: A full featured image containing docker and OTA.
+* torizon-core-docker: A full-featured image containing docker and OTA.
 * torizon-core-balena: Similar to the above but with Balena instead of docker for a smaller footprint.
 * torizon-core-lite: A minimal image only containing OTA.
 
-As of now the following machines are supported:
+As of now, the following machines are supported:
 * Colibri i.MX7 (raw NAND & eMMC)
 * Colibri i.MX6
 * Apalis i.MX6
@@ -28,13 +28,13 @@ Upon booting one can login using the following users:
 
 ### Device Tree Overlays
 
-The traditional device tree process was a slog of editing the source file, compiling it, then deploying the binary to the device and testing your changes. With Torizon we hope to somewhat streamline this process with the use of device tree overlays. With overlays now you only have to create a smaller snippet with the hardware changes you need.
+The traditional device tree process was a slog of editing the source file, compiling it, then deploying the binary to the device and testing your changes. With Torizon we hope to somewhat streamline this process with the use of device tree overlays. With overlays you now only have to create a smaller snippet with the hardware changes you need.
 
 There will also be tooling provided to allow you to edit and compile device tree files on device. Deployment has also been streamlined letting you deploy these overlays from the device and only requiring a quick reboot to review your changes. For more information on this provided tooling check this article [here](docs/device-tree-and-overlays.md).
 
 ### Containers
 
-Along with TorizonCore we provide a default container as a sort of friendly starting environment. The container is Debian buster release based featuring an X-Server desktop as well as a internet browser. To download this container enter the following:
+Along with TorizonCore we provide a default container as a sort of friendly starting environment. The container is Debian buster release based featuring an X-Server desktop as well as an internet browser. To download this container enter the following:
   
 ```
 docker run -d -it --restart=always --privileged -v /var/run/dbus:/var/run/dbus \
@@ -52,17 +52,17 @@ c696a76d3021        torizon/debian-lxde-x11:buster    "/usr/bin/entry.sh s…"  
 colibri-imx6:~$ docker exec -it c696 /bin/bash
 ```
 
-This will create a prompt with root priviledges inside the container.
+This will create a prompt with root privileges inside the container.
 
 The article [Install Debian Packages on Target](docs/install-debian-packages-on-target.md) shows how to install Debian packages on the target and create a new Docker image from it.
 
 ### OSTree/OTA
 
-TorizonCore is built with OSTree a shared library and suite of command line tools that combines a "git-like" model for committing and downloading bootable filesystem trees, along with a layer for deploying them and managing the bootloader configuration". In short this image has the foundation for OTA (over-the-air) update capabilities.
+TorizonCore is built with OSTree a shared library and suite of command line tools that combines a "git-like" model for committing and downloading bootable filesystem trees, along with a layer for deploying them and managing the bootloader configuration". In short, this image has the foundation for OTA (over-the-air) update capabilities.
 
 Torizon Update System reuses what Linux microPlatform and meta-updater are providing. You can find more about the OTA strategy on the [foundries.io Blog](https://foundries.io/insights/2018/05/25/ota-part-1/).
 
-Here's a quick demo on performing an update using the underlaying OSTree technologoy on the device manually.
+Here's a quick demo on performing an update using the underlaying OSTree technology on the device manually.
 
 Whenever you build TorizonCore a directory `ostree_repo` gets produced during the build. This directory is git-like containing the meta-data for that build's filesystem. Toradex uploads the nightly build OSTree repository and makes it available at http://feeds.toradex.com/ostree/nightly/apalis-imx6/.
 
@@ -94,7 +94,7 @@ M    /usr/etc/manifest.xml
 ...
 ```
 
-Next you queue the commit for deployment upon next boot
+Next, you queue the commit for deployment upon next boot
 ```
 root@apalis-imx6:~# ostree admin deploy toradex-nightly:torizon-core-docker
 Copying /etc changes: 5 modified, 2 removed, 7 added
@@ -130,7 +130,7 @@ To build/develop TorizonCore follow the README [here](docs/building-torizon.md) 
 
 * Image Space limitation
 
-  The full featured image is rather large taking up most of the space on the Colibri i.MX7 raw NAND. As such it is not recommended to experiment with containers on this device since there isn't much space for containers as is. In the future we hope to slim down the footprint. Alternativley, the Balena based image is slimmer by about ~70MB.
+  The full-featured image is rather large taking up most of the space on the Colibri i.MX7 raw NAND. As such it is not recommended to experiment with containers on this device since there isn't much space for containers as is. In the future, we hope to slim down the footprint. Alternatively, the Balena based image is slimmer by about ~70MB.
 
 * Xorg video driver
 
