@@ -62,7 +62,7 @@ TorizonCore is built with OSTree a shared library and suite of command line tool
 
 Torizon Update System reuses what Linux microPlatform and meta-updater are providing. You can find more about the OTA strategy on the [foundries.io Blog](https://foundries.io/insights/2018/05/25/ota-part-1/).
 
-Here's a quick demo on performing an update using the underlaying OSTree technology on the device manually.
+Here's a quick demo on performing an update using the underlying OSTree technology on the device manually.
 
 Whenever you build TorizonCore a directory `ostree_repo` gets produced during the build. This directory is git-like containing the meta-data for that build's filesystem. Toradex uploads the nightly build OSTree repository and makes it available at http://feeds.toradex.com/ostree/nightly/apalis-imx6/.
 
