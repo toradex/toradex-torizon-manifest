@@ -4,9 +4,9 @@
 
 TorizonCore is installed via the [Toradex Easy Installer](https://developer.toradex.com/software/toradex-easy-installer). The latest builds can be obtained by enabling the **Toradex Continous Integration Server** feed in the Toradex Easy Installer Feeds dialog. We currently have three flavors of images:
 
-* torizon-core-docker: A full-featured image containing docker and OTA.
-* torizon-core-balena: Similar to the above but with Balena instead of docker for a smaller footprint.
-* torizon-core-lite: A minimal image only containing OTA.
+* torizon-core-docker: A full-featured image containing Docker and OTA. All other instructions on this page require this image.
+* torizon-core-balena: Similar to the above but with Balena instead of Docker for a smaller footprint. Currently this image is in evaluation and might be dropped in the future.
+* torizon-core-lite: A minimal image only containing OTA. Can serve as a base for customers building custom images using OpenEmbedded and planing to leverage TorizonCore update system.
 
 As of now, the following machines are supported:
 * Colibri i.MX7 (raw NAND & eMMC)
