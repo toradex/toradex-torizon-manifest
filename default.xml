@@ -16,7 +16,7 @@
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="f1511d254632a34c1deb51f4bf8b8c21e7423f51"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
   <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master"/>
-  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="e5b71239e8d6c109bc6e1d7c3028904f09c9035e"/>
+  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="893dac8ff3e15b90d9c1eab07c47e490cf69b8c6"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="cf352d74935ec17964700f5b4f86f9a63b3a2183"/>
   <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="b5aa0db24dae27e4e66773767ea72f0e3c7c57de">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
