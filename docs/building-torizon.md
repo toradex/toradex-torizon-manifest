@@ -32,7 +32,7 @@ will be placed within your working directory.
 To check out the latest TorizonCore release:
 
 ```
-repo init -u http://gitlab.toradex.int/torizon-core/toradex-torizon-manifest.git -b master
+repo init -u https://github.com/toradex/toradex-torizon-manifest -b master
 ```
 
 When prompted, configure Repo with your real name and email address.
@@ -72,9 +72,9 @@ repo sync -j1
 ## Setup Environment
 
 Supported **MACHINE** targets (officially tested by Toradex):
-* Colibri i.MX7 (raw NAND & eMMC)
-* Colibri i.MX6
-* Apalis i.MX6
+* colibri-imx7 - Colibri i.MX7 (raw NAND & eMMC)
+* colibri-imx6 - Colibri i.MX6
+* apalis-imx6 - Apalis i.MX6
 
 Supported image targets:
 * torizon-core-docker
@@ -158,4 +158,3 @@ You can also force Aktualizr to restart and register device.
 systemctl restart aktualizr 
 ```
 The complete and automated OTA update system is still in the works.
-
