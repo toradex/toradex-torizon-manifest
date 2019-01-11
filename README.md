@@ -11,6 +11,7 @@ TorizonCore is installed via the [Toradex Easy Installer](https://developer.tora
 As of now, the following machines are supported:
 * Colibri i.MX7 (raw NAND & eMMC)
 * Colibri i.MX6
+* Colibri i.MX6ULL
 * Apalis i.MX6
 
 ## Features
