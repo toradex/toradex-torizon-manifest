@@ -10,17 +10,17 @@
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
   
   <project name="bitbake" remote="oe" revision="afee3f594e1510051a0b18e430e92549caf72fa2"/>
-  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="0daa6c78258da381fa15e98be69a8ddef5f783a5"/>
-  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="4c2970233fe68aa6fcaec894c9c92844d1aa71f9"/>
+  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="e7d8aa7d8fdf4f71d76cd3be97b7376b5761e2b9"/>
+  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="47848bff9478999019947f69a719b3d2c2a6b558"/>
   <project name="meta-linaro" path="layers/meta-linaro" remote="linaro" revision="edb7ffc2a121df7596385595abe75180296103e0"/>
   <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="6166e2b4b7fcdb3ec095860e035b7481659cd90d"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="6094ae18c8a35e5cc9998ac39869390d7f3bb1e2"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
   <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master"/>
-  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="c6cbeda3876003f9d5a179f96a406432549ae68b"/>
-  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="cf352d74935ec17964700f5b4f86f9a63b3a2183"/>
-  <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="b5aa0db24dae27e4e66773767ea72f0e3c7c57de">
+  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="f4e46ffa9992ee41cc6ac1dff71f2c9907290a81"/>
+  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="d56c5abfde02318666dde07e5ada0024b40a34d0"/>
+  <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="e8de212ef932e6e837483517dff324aa9d9bbe5d">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
-  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="4f22710f9a310412f1de0b4e6905c058ec416f25"/>
+  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="ad0a553f0bbdbed5f78a27162289a1e358580dcc"/>
 </manifest>
