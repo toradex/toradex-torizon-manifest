@@ -74,6 +74,7 @@ repo sync -j1
 Supported **MACHINE** targets (officially tested by Toradex):
 * colibri-imx7 - Colibri i.MX7 (raw NAND & eMMC)
 * colibri-imx6 - Colibri i.MX6
+* colibri-imx6ull - Colibri i.MX6ULL
 * apalis-imx6 - Apalis i.MX6
 
 Supported image targets:
