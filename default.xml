@@ -19,7 +19,7 @@
   <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master"/>
   <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="f4e46ffa9992ee41cc6ac1dff71f2c9907290a81"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="488b5aba28fff50c64866b42a8b66aef74ac12ad"/>
-  <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="f46c62dd3d368ab535c4b489b8adcdc0a551939e"/>
+  <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="f46c62dd3d368ab535c4b489b8adcdc0a551939e">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
   <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="57a925dbd949e488980b02896106efd82bf47ed2"/>
