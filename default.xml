@@ -9,12 +9,12 @@
   <remote fetch="https://github.com/foundriesio" name="foundriesio"/>
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
   
-  <project name="bitbake" remote="oe" revision="c1fcc46e2498ddd41425d8756754f814d682aba3"/>
+  <project name="bitbake" remote="oe" revision="0ec98c01ae50f95c9c74acf53013ac59e0e72b08"/>
   <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="e7d8aa7d8fdf4f71d76cd3be97b7376b5761e2b9"/>
   <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="47848bff9478999019947f69a719b3d2c2a6b558"/>
   <project name="meta-linaro" path="layers/meta-linaro" remote="linaro" revision="edb7ffc2a121df7596385595abe75180296103e0"/>
   <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="6166e2b4b7fcdb3ec095860e035b7481659cd90d"/>
-  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="6ceb78f3f0aedc6c97146e14a1fbe8fd04c48431"/>
+  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="bd6803523cf5d831e08d2a30c018828c0266af1a"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
   <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master"/>
   <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="f4e46ffa9992ee41cc6ac1dff71f2c9907290a81"/>
@@ -22,5 +22,5 @@
   <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="f46c62dd3d368ab535c4b489b8adcdc0a551939e">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
-  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="a4edfa4cf451bf412525887b5b24b9db6486ae97"/>
+  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="f99921554fddef82eb80568125aa646a27859a4b"/>
 </manifest>
