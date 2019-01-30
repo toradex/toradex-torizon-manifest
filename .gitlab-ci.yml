@@ -1,15 +1,9 @@
-image: debian:buster-slim
+image: agners/debian-repo
 
 variables:
   GIT_STRATEGY: none
 
 before_script:
-  - apt-get update
-  - apt-get install -y --no-install-recommends curl git ca-certificates python gpg gpg-agent
-  - export PATH="$HOME/bin:$PATH"
-  - mkdir ~/bin
-  - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-  - chmod a+x ~/bin/repo
   - git config --global user.name "Gitlab CI"
   - git config --global user.name "gitlab@toradex.com"
 
