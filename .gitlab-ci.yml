@@ -5,7 +5,7 @@ variables:
 
 before_script:
   - git config --global user.name "Gitlab CI"
-  - git config --global user.name "gitlab@toradex.com"
+  - git config --global user.email "gitlab@toradex.com"
 
 test-sync:
   stage: test
