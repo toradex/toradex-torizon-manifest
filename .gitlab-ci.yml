@@ -12,4 +12,5 @@ test-sync:
   script:
     - repo init -u $CI_REPOSITORY_URL -b $CI_COMMIT_REF_NAME
     - repo sync
+    - repo info
 
