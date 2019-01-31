@@ -18,16 +18,17 @@ As of now, the following machines are supported:
 
 ## Features
 
-The full image is quite minimal featuring basic command line utilities. The main points are [OSTree](https://ostree.readthedocs.io/en/latest/) and [Docker](https://www.docker.com/) support. OSTree allows updating the root filesystem transactionally and incrementally. Another experimental feature in the image is tooling to make use of device tree overlays. The kernel itself is following mainline (Linux 4.19). There is no package management in the base system. Docker containers can be used to acquire other needed features. The minimal image is even more bare-bones containing just the bare minimum to support OTA+.
+The full image is quite minimal featuring basic command line utilities. The main points are [OSTree](https://ostree.readthedocs.io/en/latest/) and [Docker](https://www.docker.com/) support. OSTree allows updating the root filesystem transactionally and incrementally. Another experimental feature in the image is tooling to make use of device tree overlays. The kernel itself is following mainline (Linux 4.20). There is no package management in the base system. Docker containers can be used to acquire other features. The minimal image is even more bare-bones containing just the bare minimum to support OTA+.
 
 Upon booting one can login using the following users:
-* login: root (only on serial console)
 
-  password: n/a
+* login: root
+  * password: (none)
+  * Only active on serial console!
 
 * login: torizon
-
-  password: torizon
+  * password: torizon
+  * Available on SSH/serial console
 
 ### Device Tree Overlays
 
