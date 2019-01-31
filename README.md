@@ -53,6 +53,8 @@ Note: Currently Weston requires an input device being available (e.g. USB Keyboa
 
 This will ask Docker to run a container using the `torizon/debian-lxde` image. Since the image is not preinstalled, it will get downloaded from Docker Hub and installed on the module. This will require internet connection on the device and make take a few minutes. It will start Weston (HDMI on Apalis iMX6, parallel RGB on Colibri iMX6/iMX7). Connecting to the device over serial/ssh will allow access to the base TorizonCore console.
 
+On modules without GPU like Colibri iMX7/iMX6ULL use `weston-launch --tty=/dev/tty7 --user=root -- --use-pixman` to start Weston with Pixman.
+
 Weston creates a unix socket file (typically `0-runtime-dir`) in /tmp. By bind mounting /tmp into a second container, a Wayland client application can access the Wayland compositor despite being in separate containers. The Wayland client application will talk to Weston (the Wayland Compositor) through the unix socket file and draw in a window on Weston. E.g. this example reuses the same image to run a second container, but this time using `es2gears_wayland`.
 
 ```
