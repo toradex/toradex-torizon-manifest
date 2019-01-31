@@ -38,25 +38,49 @@ There will also be tooling provided to allow you to edit and compile device tree
 
 ### Containers
 
-Along with TorizonCore we provide a default container as a sort of friendly starting environment. The container is Debian buster release based featuring an X-Server desktop as well as an internet browser. To download this container enter the following:
-  
+Along with TorizonCore we provide a default container as a sort of friendly starting environment. 
+
+#### Debian with Weston Wayland compositor
+
+The container is Debian buster release based featuring the Weston Wayland compositor. To download this container enter the following:
+
+```
+docker run -d -it --restart=always --privileged -v /tmp:/tmp \
+       torizon/arm32v7-debian-weston:buster weston-launch --tty=/dev/tty7 --user=root
+```
+
+Note: Currently Weston requires an input device being available (e.g. USB Keyboard/Mouse).
+
+This will ask Docker to run a container using the `torizon/debian-lxde` image. Since the image is not preinstalled, it will get downloaded from Docker Hub and installed on the module. This will require internet connection on the device and make take a few minutes. It will start Weston (HDMI on Apalis iMX6, parallel RGB on Colibri iMX6/iMX7). Connecting to the device over serial/ssh will allow access to the base TorizonCore console.
+
+Weston creates a unix socket file (typically `0-runtime-dir`) in /tmp. By bind mounting /tmp into a second container, a Wayland client application can access the Wayland compositor despite being in separate containers. The Wayland client application will talk to Weston (the Wayland Compositor) through the unix socket file and draw in a window on Weston. E.g. this example reuses the same image to run a second container, but this time using `es2gears_wayland`.
+
+```
+docker run -d -it --restart=always --privileged -v /tmp:/tmp \
+       torizon/arm32v7-debian-weston:buster es2gears_wayland
+```
+
+To get a shell inside the container `docker exec` can be used:
+
+```
+colibri-imx6:~$ docker ps
+CONTAINER ID   IMAGE                                  COMMAND                  CREATED         STATUS
+61b85bc37644   torizon/arm32v7-debian-weston:buster   "/usr/bin/entry.sh w…"   2 hours ago     Up 2 hours
+colibri-imx6:~$ docker exec -it 61b8 /bin/bash
+```
+
+This will create a prompt with root privileges inside the container.
+
+#### Debian with LXDE and X.org
+
+The container is Debian buster release based featuring an X-Server desktop as well as an internet browser. To download this container enter the following:
+
 ```
 docker run -d -it --restart=always --privileged -v /var/run/dbus:/var/run/dbus \
        -v /dev:/dev torizon/debian-lxde:buster startx
 ```
 
-This will ask Docker to run a container using the `torizon/debian-lxde` image. Since the image is not preinstalled, it will get downloaded from Docker Hub and installed on the module. This will require internet connection on the device and make take a few minutes. It will start a Debian environment (HDMI on i.MX6, parallel RGB on i.MX 7). Connecting to the device over serial/ssh will allow access to the base TorizonCore console.
-
-To get a second shell inside the container `docker exec` can be used as such:
-
-```
-colibri-imx6:~$ docker ps
-CONTAINER ID        IMAGE                             COMMAND                  CREATED             STATUS
-c696a76d3021        torizon/debian-lxde-x11:buster    "/usr/bin/entry.sh s…"   11 minutes ago      Up 11 minutes
-colibri-imx6:~$ docker exec -it c696 /bin/bash
-```
-
-This will create a prompt with root privileges inside the container.
+This will run a container using the `torizon/debian-lxde` image. It will start a Debian LXDE environment (HDMI on i.MX6, parallel RGB on i.MX 7). Connecting to the device over serial/ssh will allow access to the base TorizonCore console.
 
 The article [Install Debian Packages on Target](docs/install-debian-packages-on-target.md) shows how to install Debian packages on the target and create a new Docker image from it.
 
