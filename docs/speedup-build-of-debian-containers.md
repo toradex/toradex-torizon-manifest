@@ -80,7 +80,7 @@ RUN if [ "$APT_PROXY" != "" ]; then rm /etc/apt/apt.conf.d/30proxy; fi
 To pass the argument to command line you should add a --build-arg entry to your docker build command line:  
 
 ```bash
-docker build docker build --rm -t myimagename:latest --build-arg APT_PROXY=$APT_PROXY_ARG .
+docker build --rm -t myimagename:latest --build-arg APT_PROXY=$APT_PROXY_ARG .
 ```
 
 If you build your container using a shell script (this is anyway a good idea to avoid mistakes like misspelling the tags or forgetting some additional parms) you can add this code to automatically detect if squid-deb-proxy is running on your machine and set the argument accordingly:
