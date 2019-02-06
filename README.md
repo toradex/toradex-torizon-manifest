@@ -9,10 +9,12 @@ TorizonCore is installed via the [Toradex Easy Installer](https://developer.tora
 * torizon-core-lite: A minimal image only containing OTA. Can serve as a base for customers building custom images using OpenEmbedded and planing to leverage TorizonCore update system.
 
 As of now, the following machines are supported:
-* Colibri i.MX7 (raw NAND & eMMC)
+* Colibri i.MX7 (eMMC and raw NAND*)
 * Colibri i.MX6
-* Colibri i.MX6ULL
+* Colibri i.MX6ULL*
 * Apalis i.MX6
+
+*raw NAND-based modules are currently supported only by experimental releases and they may not be supported in the stable versions of TorizonCore.
 
 ## Features
 
