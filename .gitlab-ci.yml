@@ -1,6 +1,7 @@
 image: agners/debian-repo
 
 variables:
+  MACHINE: "colibri-imx7"
   GIT_STRATEGY: none
 
 before_script:
@@ -13,4 +14,6 @@ test-sync:
     - repo init -u $CI_REPOSITORY_URL -b $CI_COMMIT_REF_NAME --no-clone-bundle
     - repo sync --no-clone-bundle
     - repo info
+    - source setup-environment
+    - bitbake --parse-only
 
