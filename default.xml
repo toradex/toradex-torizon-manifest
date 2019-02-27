@@ -13,12 +13,12 @@
   <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="44db9c85e5ae9ed6be8dd2b0ff32badc62521b6e"/>
   <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="3b60f3e31a9aba22bd635d7f0d34fd2304296bdc"/>
   <project name="meta-linaro" path="layers/meta-linaro" remote="linaro" revision="a6db64d7e165f8850877721df43d57600f3761d7"/>
-  <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="6166e2b4b7fcdb3ec095860e035b7481659cd90d"/>
+  <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="b53bda580a79affde5b782388d7ccad0d7c42814"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="2b5beadcdf371b925ba10be94f7b5f7767881f71"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
   <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master"/>
-  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="29c3476c8286649210ab8d731bfa063c76907f3b"/>
-  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="488b5aba28fff50c64866b42a8b66aef74ac12ad"/>
+  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="a56c8b483d9ba88c1506e2c86a6784499a94b00b"/>
+  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="4cbd6c2b467c1f4caa32b2f782072739ab373065"/>
   <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="9b00dcb40b7b8a1aeb57fa8447900cf1fe832e2e">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
