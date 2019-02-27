@@ -1,4 +1,4 @@
-image: agners/debian-repo
+image: agners/torizon-builder:ubuntu-18.04
 
 variables:
   MACHINE: "colibri-imx7"
