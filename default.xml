@@ -14,7 +14,7 @@
   <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="3b60f3e31a9aba22bd635d7f0d34fd2304296bdc"/>
   <project name="meta-linaro" path="layers/meta-linaro" remote="linaro" revision="a6db64d7e165f8850877721df43d57600f3761d7"/>
   <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="6166e2b4b7fcdb3ec095860e035b7481659cd90d"/>
-  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="a06c29be2f5bc204f965ee07298c34232c5c39fc"/>
+  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="2b5beadcdf371b925ba10be94f7b5f7767881f71"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
   <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master"/>
   <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="29c3476c8286649210ab8d731bfa063c76907f3b"/>
@@ -22,5 +22,5 @@
   <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="9b00dcb40b7b8a1aeb57fa8447900cf1fe832e2e">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
-  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="957a2f95b839f2d871c658d6e8ea8c0f4d6c41e5"/>
+  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="d2b1a889ef8fb9e6a2fa3d9bfc3eaf6113db9b1f"/>
 </manifest>
