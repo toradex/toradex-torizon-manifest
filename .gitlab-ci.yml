@@ -10,7 +10,7 @@ before_script:
 test-sync:
   stage: test
   script:
-    - repo init -u $CI_REPOSITORY_URL -b $CI_COMMIT_REF_NAME
-    - repo sync
+    - repo init -u $CI_REPOSITORY_URL -b $CI_COMMIT_REF_NAME --no-clone-bundle
+    - repo sync --no-clone-bundle
     - repo info
 
