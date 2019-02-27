@@ -9,7 +9,7 @@
   <remote fetch="https://github.com/foundriesio" name="foundriesio"/>
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
   
-  <project name="bitbake" remote="oe" revision="fd9893c338df7828b2c01f1d548aa86dfcf7c50a"/>
+  <project name="bitbake" remote="oe" revision="fef56d28c3efec4876c379898cbc4d4c65303aee"/>
   <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="44db9c85e5ae9ed6be8dd2b0ff32badc62521b6e"/>
   <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="3b60f3e31a9aba22bd635d7f0d34fd2304296bdc"/>
   <project name="meta-linaro" path="layers/meta-linaro" remote="linaro" revision="a6db64d7e165f8850877721df43d57600f3761d7"/>
