@@ -8,6 +8,7 @@ https://connect.ota.here.com/. In your account settings download
 
 ## Prepare device for update
 
+You will need to execute the commands as root. You can login as root or (better) use sudo command when logged in with a regular user to do it.  
 First, make sure that aktualizr is stopped so it won't interfere while creating
 configuration files:
 
