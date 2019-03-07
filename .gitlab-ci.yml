@@ -16,4 +16,9 @@ test-sync:
     - repo info
     - source setup-environment
     - bitbake --parse-only
-
+  only:
+    changes:
+      - default.xml
+      - setup-environment
+      - setup-environment-internal
+      - conf/*
