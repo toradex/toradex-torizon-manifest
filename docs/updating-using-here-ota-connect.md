@@ -16,44 +16,35 @@ configuration files:
 systemctl stop aktualizr.service
 ```
 
-### Copy credentials.zip to device
+### Import credentials and generate certificates
 
-Copy the credentials.zip onto the device, e.g. using scp:
+You can use the aktualizr-cert-provider tool to import security information from the credentials.zip file that you can download from the portal. **You should not copy this file to the device because it contains your private keys, during device setup you may access it from a USB thumbdrive or SD card. If you have to copy it, ensure that you delete the file after you executed the command below.**
+
 
 ```
-host $ scp credentials.zip torizon@colibri-imx7-02965221.local:sota_provisioning_credentials.zip
+aktualizr-cert-provider -c <path to removable media>/credentials.zip -l / -u -r
 ```
 
-Make sure to store it on /var/sota/
-```
-root@colibri-imx7-02965221.local # mv /home/torizon/sota_provisioning_credentials.zip /var/sota/
-```
+### Add unique device id
 
-**If this does not match you wont be able to push updates**
+You should set a unique id for your device to do this you have to edit a configuration file, but first you have to copy it to a different folder to be able to modify it.
 
-### Create auto provisioning configuration
-
-The provision configuration is needed by Aktualizr to be able to provision a device.
-
-Create an aktualizr configuration file for provisioning:
-```
-vi /etc/sota/conf.d/20-sota_autoprov.toml
+```bash
+cp /usr/lib/sota/conf.d/40-hardware-id.toml /etc/sota/conf.d/
+vi /etc/sota/conf.d/40-hardware-id.toml
 ```
 
-And paste this content into it:
+You can find your device unique id inside the proc filesystem:
+```bash
+cat /proc/device-tree/serial-number
 ```
+
+In the hardware-id file you will have to add a line with the id:
+```bash
 [provision]
-provision_path = "/var/sota/sota_provisioning_credentials.zip"
-primary_ecu_hardware_id = "apalis-imx6"
-[storage]
-type = "sqlite"
-[uptane]
-secondary_configs_dir = "/etc/sota/secondary/"
+primary_ecu_hardware_id = colibri-imx6
+primary_ecu_serial = <your unique id>
 ```
-
-The `primary_ecu_hardware_id` is the string which will appear as "Hardware id"
-on HERE OTA Connect.
-
 
 ### Add secondary system (optional)
 
@@ -100,25 +91,45 @@ systemctl start ostree-pending-reboot.path
 
 ## Start aktualizr
 
-Our image has a systemd service which starts aktualizr. If you stopped the
-service, start it agian using `systemctl start aktualizr.service` or reboot
-the device. Check aktualizr's output using `systemd status aktualizr.service`.
-If provisioning succeeds you should see something like this in the output:
+Our image has a systemd service which starts aktualizr.  
+To check your configuration it's better to start aktualizer interactively and check its output.  
+To run the tool you can just type:
+
+```bash
+aktualizr --loglevel 1
+```
+
+On the output you will see what files are parsed and the requests made to the server.  
 
 ```
-aktualizr[797]: Aktualizr version 1.0+gitAUTOINC+1cad6d1028 starting
-aktualizr[797]: Reading config: "/etc/sota/conf.d/20-sota_autoprov.toml"
-aktualizr[797]: Reading config: "/usr/lib/sota/conf.d/40-hardware-id.toml"
-aktualizr[797]: Parsing secondary config: "/etc/sota/secondary/docker-test.json"
-aktualizr[797]: Bootstrap empty SQL storage
-aktualizr[797]: Could not find primary ecu serial, defaulting to empty serial: no more rows available
-aktualizr[797]: Provisioned successfully on Device Gateway
-aktualizr[797]: ECUs have been successfully registered to the server
-aktualizr[797]: created: /var/sota/storage
-aktualizr[797]: created: /var/sota/storage/demo-vsec1
-aktualizr[797]: created: /var/sota/storage/demo-vsec1/metadata
-aktualizr[797]: got SendDeviceDataComplete event
+Aktualizr version 1.0+gitAUTOINC+505627bbf4 starting
+Reading config: "/usr/lib/sota/conf.d/20-sota_implicit_prov_ca.toml"
+Reading config: "/etc/sota/conf.d/40-hardware-id.toml"
+Current directory: /sysroot/home/torizon
+Use existing SQL storage: "/var/sota/sql.db"
+Checking if device is provisioned...
+ECUs have been successfully registered to the server
+... provisioned OK
+Reporting network information
+No installation result to report in manifest
+got SendDeviceDataComplete event
+Reporting network information
+No installation result to report in manifest
+GET https://ffcec23d-cf13-4021-bbf8-2ef63bc4b5d7.device-gateway.ota.api.here.com:443/director/1.root.json
+GET https://ffcec23d-cf13-4021-bbf8-2ef63bc4b5d7.device-gateway.ota.api.here.com:443/director/root.json
+GET https://ffcec23d-cf13-4021-bbf8-2ef63bc4b5d7.device-gateway.ota.api.here.com:443/director/targets.json
+No new updates found in Uptane metadata.
+Reporting network information
+No installation result to report in manifest
+GET https://ffcec23d-cf13-4021-bbf8-2ef63bc4b5d7.device-gateway.ota.api.here.com:443/director/root.json
+GET https://ffcec23d-cf13-4021-bbf8-2ef63bc4b5d7.device-gateway.ota.api.here.com:443/director/targets.json
+No new updates found in Uptane metadata.
 ```
+
+Above you can see the output of a successful execution.  
+If you need to report issues, please include aktualizr output to help support in understanding the reasons for failure.  
+
+Once you have tested that Aktualizr can connect to the server you may reboot your device and start deploying updates to it.
 
 ### Troubleshooting
 
