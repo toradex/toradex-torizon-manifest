@@ -64,9 +64,9 @@ if [ $# -gt 1 ]; then
 fi
 
 # Create a common list of "<machine>(<layer>)", sorted by <machine>
-# Blacklist OE-core and meta-linaro, we only want BSP layers
+# Blacklist OE-core, we only want BSP layers
 MACHLAYERS=$(find layers -print | grep "conf/machine/.*\.conf" |
-            grep -v scripts | grep -v openembedded-core | grep -v meta-linaro |
+            grep -v scripts | grep -v openembedded-core |
             sed -e 's/\.conf//g' -e 's/layers\///' |
             awk -F'/conf/machine/' '{print $NF "(" $1 ")"}' | LANG=C sort)
 
@@ -208,7 +208,7 @@ fi
 # FIXME: there is a potential issue if the same $MACHINE is set in
 # more than one layer.. but we should assert that earlier
 EULA=$(find ../layers -path "*/conf/eula/$MACHINE" -print | grep -v scripts |
-       grep -v openembedded-core | grep -v meta-linaro || true)
+       grep -v openembedded-core || true)
 
 if [ -n "$EULA" ]; then
     # remove '-' since we are constructing a bash variable name here
