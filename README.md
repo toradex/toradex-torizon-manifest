@@ -94,6 +94,8 @@ Torizon Update System reuses what Linux microPlatform and meta-updater are provi
 
 Here's a quick demo on performing an update using the underlying OSTree technology on the device manually.
 
+Please notice that all device commands must be executed as root, so you have to login as root on the device or, if you are logged-in using the torizon user, prefix the following command lines with "sudo" to execute them as root.
+
 Whenever you build TorizonCore a directory `ostree_repo` gets produced during the build. This directory is git-like containing the meta-data for that build's filesystem. Toradex uploads the nightly build OSTree repository and makes it available at http://feeds.toradex.com/ostree/nightly/apalis-imx6/.
 
 Using OSTree I can add this repository like how one would add a remote git repo.
@@ -150,6 +152,14 @@ root@apalis-imx6:~# ostree admin status
   torizon 4fc80f14d5ee2160004e3252080226f8f1d6f6ad4d8d7024b4198584c23afaa6.0 (rollback)
     origin refspec: 4fc80f14d5ee2160004e3252080226f8f1d6f6ad4d8d7024b4198584c23afaa6
 ```
+
+If you are building torizon image locally you may provide an ostree repo directly from your PC.  
+If you have python installed, just move to the ostree_repo folder of your build directory (should be under deploy/images/$MACHINE/ostree_repo) and type:
+```
+python -m SimpleHTTPServer 8081
+```
+In this way your PC will be sharing the image you just built on port 8081. You can replace http://feeds.toradex.com/ostree/nightly/apalis-imx6/ in the above instructions with <your PC ip address>:8081 and update your device directly from your build machine.  
+Please notice that this kind of operation is not secure and such a configuration should be used only for debugging purposes.  
 
 ### Building TorizonCore
 
