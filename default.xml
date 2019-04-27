@@ -8,17 +8,17 @@
   <remote fetch="https://github.com/foundriesio" name="foundriesio"/>
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
   
-  <project name="bitbake" remote="oe" revision="30fe86d22c239afa75168cc5eb262b880886ef8a"/>
-  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="3d7696d9c33bfc72d4d4df77322a92837ab3971b"/>
-  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="a38e633379f8b38ded9aec095248ee3f7f20a758"/>
-  <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="90b7980b709bc173489bd5316b6da9ffe97930a6"/>
-  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="4a9deabbc8fb0b54e64b0a21af5bfb1527a9891d"/>
-  <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
+  <project name="bitbake" remote="oe" revision="cd8d4ec8ec6650b756dafe750436528f736b3938"/>
+  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="a047911c5ad1e06d7878dfdffa8674a7edc28961"/>
+  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="55356fd749bc820521cecfc8cd92e15461f0ff8a"/>
+  <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="140e05b239dcef926baf65160913304daf5ac22d"/>
+  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="50108c18e5ca21cc5c014a45b81c66c5b110fc8b"/>
+  <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="warrior-next"/>
   <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master"/>
-  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="121bb090d7336c8a9180f9908fb011adda05f70c"/>
-  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="261cdbefcbaa56d27fcf53f2bd140a8f0d63c6f3"/>
-  <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="476f2fd598c12bfee7d2aeddbe72a360826f249c">
+  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="6e35fce737605ce41050c4e4decb6f7c66671cd5"/>
+  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="3038a912be24f7586dba4c70ec96d01a6c9f1852"/>
+  <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="299b4150c66520985415fcc91119d563f7ba663c">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
-  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="d7c0e9d1800912a0f35fb554d54945b728a04a6f"/>
+  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="f571b188177788d8ed0a7f3efe3569f153b1b0d3"/>
 </manifest>
