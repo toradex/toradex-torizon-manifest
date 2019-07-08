@@ -17,7 +17,7 @@
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
   <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master"/>
   <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="37201eba4e17aea092a242b793424135cba3c8b8"/>
-  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="ee9a745a731561b0daac49486b66b802ef3f69f6"/>
+  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="c6e7bf94debb7bdd7a2b52b222a4b0da732a24b4"/>
   <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="f19f3a7a5286cabf42a0f6d0ea8f7841dc043324">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
