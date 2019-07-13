@@ -120,11 +120,10 @@ fi
 MANIFESTS="${OEROOT}"/.repo/manifests
 
 # We can be called with only 1 parameter max (build folder)
-BUILDDIR=build-$DISTRO
-if [ $# -eq 1 ]; then
-    BUILDDIR=$1
-fi
-BUILDDIR=$OEROOT/$BUILDDIR
+BUILDDIR=${1:-build-$DISTRO}
+# Get rid of double slash. sed calls in OE staging_processfixme
+# seems to have troubles if this makes it into OE variables.
+BUILDDIR=$OEROOT/${BUILDDIR%%/}
 
 # Clean up PATH, because if it includes tokens to current directories somehow,
 # wrong binaries can be used instead of the expected ones during task execution
