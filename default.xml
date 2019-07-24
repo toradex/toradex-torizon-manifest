@@ -8,17 +8,17 @@
   <remote fetch="https://github.com/foundriesio" name="foundriesio"/>
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
   
-  <project name="bitbake" remote="oe" revision="cd8d4ec8ec6650b756dafe750436528f736b3938"/>
-  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="a047911c5ad1e06d7878dfdffa8674a7edc28961"/>
-  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="55356fd749bc820521cecfc8cd92e15461f0ff8a"/>
+  <project name="bitbake" remote="oe" revision="34ed28a412af642a993642c14bd8b95d5ef22cd8"/>
+  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="7f92a041728ad401f3b4a6025f96e493a20b229a"/>
+  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="a8a3f652f7948e5d30dcc7bd2432c8933e457515"/>
   <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="ab3dff281348841f0e6ac7b45a75a4d150ede885"/>
-  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="d7338c2b3a96ef7d8bf9df59dcde11f8c131f9c0"/>
+  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="8d5dcd6522e9d15e68637b6d7dda0401f9bb91d0"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="warrior-next"/>
   <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="warrior"/>
   <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="550ef5c1c32be58cca91f80afbedc23d5e9b79b6"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="2c6f451aa2b954c0cab2052d4f4635618050f648"/>
-  <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="299b4150c66520985415fcc91119d563f7ba663c">
+  <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="c16082ffa61f485e120670fbdf075f3fa8597494">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
-  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="fdc068de3c493dea3a22bb8f91273f7b7978c639"/>
+  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="886deb4d0919c7a81036ea14fb8fd0f1619dd3a3"/>
 </manifest>
