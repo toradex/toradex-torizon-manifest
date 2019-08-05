@@ -15,6 +15,7 @@
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="e90eda09984f0548b58d0839d6d9734d584496d9"/>
   <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="thud-next"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
+  <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="thud-next"/>
   <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master"/>
   <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="48959a970f4754c101d32864847509250b0bc931"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="f73eb0b2c9cbacb52131c3c67b8995a746e13106"/>
