@@ -13,6 +13,7 @@
   <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="cc6475e9a620da6fce022bf5cc59b6a8c8fcd81d"/>
   <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="e4117bfe18af2ee0cdf7d832d24a15140ca315bd"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="e90eda09984f0548b58d0839d6d9734d584496d9"/>
+  <project name="meta-selinux" path="layers/meta-selinux" remote="yocto" revision="a917c322c120c05fc6746fc9aca38c27398ffb4a"/>
   <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="thud-next"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
   <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="thud-next"/>
