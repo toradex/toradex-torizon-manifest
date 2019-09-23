@@ -8,13 +8,13 @@
   <remote fetch="https://github.com/foundriesio" name="foundriesio"/>
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
   
-  <project name="bitbake" remote="oe" revision="22082c7b3ca0cffcedb7d1d8c6681d35286376db"/>
-  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="a1b81241bc3ed8efcbcf5395db0c3eb5b0834d72"/>
-  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="9a96fb93f100f067729dce2b9d794333fcf1f627"/>
-  <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="ef5f3e59b505e24d07072267b6194d8eee7d8e5a"/>
-  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="19528ba2a6014ebe32b7a3d3099b037330228b88"/>
+  <project name="bitbake" remote="oe" revision="797354d285f6d624d9adb52bab65823572da0e39"/>
+  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="b61675eccc5ac3cf73f9e24bc651a08ab37110de"/>
+  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="e6b784734ab5c15e16c71f8775471dc6435f8a91"/>
+  <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="0c9f7b853ded6a8345bd814789b331dcf994dcb3"/>
+  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="290ad988fb94ccde70dcfcba573d162a5c56c339"/>
   <project name="meta-security" path="layers/meta-security" remote="yocto" revision="76d3625bcf63aa61e9f8d238842d094c03de6790"/>
-  <project name="meta-selinux" path="layers/meta-selinux" remote="yocto" revision="e2185e487b437e811725e8bbe489d5194267a56a"/>
+  <project name="meta-selinux" path="layers/meta-selinux" remote="yocto" revision="b40dafeb6d049c8f50ee8e6b165cb3f34a057b96"/>
   <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="thud-next"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
   <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="thud-next"/>
@@ -24,5 +24,5 @@
   <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="a058af8c82738620c9aab784118fd9680abfcf55">
     <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
-  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="56e4e05417f8ddba60a8b76fa4c8834aa8ea4692"/>
+  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="95ad5626296380358c8a502a3e04879dab653d78"/>
 </manifest>
