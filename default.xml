@@ -14,7 +14,6 @@
   <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="0c9f7b853ded6a8345bd814789b331dcf994dcb3"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="290ad988fb94ccde70dcfcba573d162a5c56c339"/>
   <project name="meta-security" path="layers/meta-security" remote="yocto" revision="76d3625bcf63aa61e9f8d238842d094c03de6790"/>
-  <project name="meta-selinux" path="layers/meta-selinux" remote="yocto" revision="b40dafeb6d049c8f50ee8e6b165cb3f34a057b96"/>
   <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="thud-next"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master-next"/>
   <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="thud-next"/>
