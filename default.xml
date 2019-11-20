@@ -17,7 +17,7 @@
   <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="master"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master"/>
   <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="master"/>
-  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master"/>
+  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="zeus"/>
   <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="21a463dc264434dc132ae79526a824e7955e0032"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="062d9f1f4faf2ca8a1fe78b7c7365e6378c15836"/>
   <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="edf4ab9bd70216ae0f3736fd8562938a103da3b2">
