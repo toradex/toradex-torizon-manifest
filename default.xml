@@ -14,9 +14,9 @@
   <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="c4d523b5f3faf8f8fc5f755adab95effe1a138ab"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="0d16b31c3d96e0797d3335d44545412996c48c9a"/>
   <project name="meta-security" path="layers/meta-security" remote="yocto" revision="27ddb455543b670097e252ba0d0ad5b7e4101748"/>
-  <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="master"/>
-  <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master"/>
-  <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="master"/>
+  <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="zeus"/>
+  <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="zeus"/>
+  <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="zeus"/>
   <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="zeus"/>
   <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="a6ef1ed2784fde198baef0e6b12e4b0d86e8bb66"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="f4262ab75d36a06c528cc1630b48b817fb0acf8f"/>
