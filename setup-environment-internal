@@ -287,7 +287,7 @@ You can now run 'bitbake <target>'
 
 Some of common targets are:
     torizon-core-docker
-    torizon-core-balena
+    torizon-core-podman
     torizon-core-lite
 
 EOF
