@@ -9,19 +9,19 @@
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
   
   <project name="bitbake" remote="oe" revision="1a026d4aca47ed1b0b74a8a818635e7520e8f9c8"/>
+  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="2bba0052597020ea887c84419440df11f9859283"/>
   <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="6e1034e8613d749d28aef5913d83689835d071ab"/>
   <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="aea3771baa77e74762358ceb673d407e36637e5f"/>
   <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="38ea0ae0aed1c887fbdb7f371de2efa230c33d8b"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="e855ecc6d35677e79780adc57b2552213c995731"/>
   <project name="meta-security" path="layers/meta-security" remote="yocto" revision="ecd8c30af6b1b957b4fa814d3f25c40f060b3ac1"/>
+  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="e81f2e7d2a74fe27a0840aacfcfe547acbdcac0c"/>
+  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="3ab5647d7cfa9d46a155be80934e0bc8a44dbf4b"/>
+  <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="1fd5a106ed22e1c932ec25b5bbd977440cdb2232"/>
   <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="zeus"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="zeus"/>
   <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="zeus"/>
-  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="zeus"/>
-  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="e81f2e7d2a74fe27a0840aacfcfe547acbdcac0c"/>
-  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="3ab5647d7cfa9d46a155be80934e0bc8a44dbf4b"/>
-  <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="1fd5a106ed22e1c932ec25b5bbd977440cdb2232">
-    <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
+  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="zeus">
+    <linkfile dest="setup-environment" src="scripts/setup-environment"/>
   </project>
-  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="2bba0052597020ea887c84419440df11f9859283"/>
 </manifest>
