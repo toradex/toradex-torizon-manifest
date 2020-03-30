@@ -10,8 +10,8 @@
   
   <project name="bitbake" remote="oe" revision="51f827911b7202de3e855e683fdbd732d7a84e09"/>
   <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="db80305e10d501900e1e371a6f9a4da5cf0b033e"/>
-  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="d24d855c9b5e15f89bb94ed9448f31587125c358"/>
-  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="911167728fd794c7cb161690f56a81265712e4f7"/>
+  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="74eb1e5b9ca95c5c60136553fbc33c497490807a"/>
+  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="cda11dc260b5b1ce2809e27321ff0ad9f469839f"/>
   <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="4e23d4fed624aa95f13cbe8722e48dc210753045"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="86c5a40313a8c5372bee5490bd377d88dde23c8b"/>
   <project name="meta-security" path="layers/meta-security" remote="yocto" revision="4229f5025e628d48665be95880fe1e458df5dda3"/>
