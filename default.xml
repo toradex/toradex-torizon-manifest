@@ -19,9 +19,9 @@
   <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="561b597d4ba91dd36147e1af81bd1edc2d6636db"/>
   <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="f9fe37c5dca3e3fd384b70d2f5e7a890271d8d70"/>
   <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="aa92a5f987267f557aecf5d312fd7f99554a9515"/>
-  <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="c6be4ddf709f00546caa534f96cb553b883d1ea3"/>
+  <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="45bd3b76849449d2b6de2b75e07d49097d5f1dbf"/>
   <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="32d4cdf84966fd20d7dcd58c25d574f3e1ff947f"/>
-  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="adaf60e442a811c3c954bfa1da0913e99c5eb212">
+  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="01c52c8dc7974f7345d0c5783783b3f70ad97fcf">
     <linkfile dest="setup-environment" src="scripts/setup-environment"/>
   </project>
 </manifest>
