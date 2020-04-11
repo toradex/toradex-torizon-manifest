@@ -9,14 +9,14 @@
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
   
   <project name="bitbake" remote="oe" revision="6836184ef5220488a1127413c7d2e523fc37e2e9"/>
-  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="c78140941f8a98e013932023a63501ba3b7e975a"/>
-  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="db6cdd204764228a2f45f45c346dc026a70c6423"/>
-  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="aea3771baa77e74762358ceb673d407e36637e5f"/>
-  <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="a50e1ae57510f5a84dd8dcea858ef8d9995bee7d"/>
-  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="bb65c27a772723dfe2c15b5e1b27bcc1a1ed884c"/>
+  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="0743dcd0cd70dee87a49d3bcd017168352e60982"/>
+  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="73969511275bfc4c83ff73d0737a340a9f12d8c4"/>
+  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="3e7b9150b7ac6f24f4a6249eaabd05b553a8b031"/>
+  <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="f9f98d3d8dd61fb3d9b47dbbc847e945ff7af7a6"/>
+  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="9e60d30669a2ad0598e9abf0cd15ee06b523986b"/>
   <project name="meta-security" path="layers/meta-security" remote="yocto" revision="ecd8c30af6b1b957b4fa814d3f25c40f060b3ac1"/>
-  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="bf39f0fec9ad410aa37d3001b11d9e731b39d6e7"/>
-  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="561b597d4ba91dd36147e1af81bd1edc2d6636db"/>
+  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="416a934b0555a1131490644a7edcbb644a934e76"/>
+  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="2f3c13ba3b41dfe07d17a1ca65902a2d794b26dc"/>
   <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="f9fe37c5dca3e3fd384b70d2f5e7a890271d8d70"/>
   <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="zeus"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="zeus"/>
