@@ -7,7 +7,7 @@
   <remote fetch="https://github.com/toradex" name="toradex-torizon"/>
   <remote fetch="https://github.com/foundriesio" name="foundriesio"/>
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
-  
+
   <project name="bitbake" remote="oe" revision="6836184ef5220488a1127413c7d2e523fc37e2e9"/>
   <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="0743dcd0cd70dee87a49d3bcd017168352e60982"/>
   <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="db6cdd204764228a2f45f45c346dc026a70c6423"/>
@@ -18,10 +18,10 @@
   <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="416a934b0555a1131490644a7edcbb644a934e76"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="2f3c13ba3b41dfe07d17a1ca65902a2d794b26dc"/>
   <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="f9fe37c5dca3e3fd384b70d2f5e7a890271d8d70"/>
-  <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="aa92a5f987267f557aecf5d312fd7f99554a9515"/>
-  <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="45bd3b76849449d2b6de2b75e07d49097d5f1dbf"/>
-  <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="32d4cdf84966fd20d7dcd58c25d574f3e1ff947f"/>
-  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="01c52c8dc7974f7345d0c5783783b3f70ad97fcf">
+  <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="zeus"/>
+  <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="zeus"/>
+  <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="zeus"/>
+  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="zeus">
     <linkfile dest="setup-environment" src="scripts/setup-environment"/>
   </project>
 </manifest>
