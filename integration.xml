@@ -9,9 +9,9 @@
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
 
   <project name="bitbake" remote="oe" revision="6836184ef5220488a1127413c7d2e523fc37e2e9"/>
-  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="0743dcd0cd70dee87a49d3bcd017168352e60982"/>
-  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="db6cdd204764228a2f45f45c346dc026a70c6423"/>
-  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="aea3771baa77e74762358ceb673d407e36637e5f"/>
+  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="5ac98c776f9b77804a0ee812f47f3ecf593e432f"/>
+  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="361e5a9aa02b4da4936c70f19e98ea82c77b5668"/>
+  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="3e7b9150b7ac6f24f4a6249eaabd05b553a8b031"/>
   <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="f9f98d3d8dd61fb3d9b47dbbc847e945ff7af7a6"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="9e60d30669a2ad0598e9abf0cd15ee06b523986b"/>
   <project name="meta-security" path="layers/meta-security" remote="yocto" revision="ecd8c30af6b1b957b4fa814d3f25c40f060b3ac1"/>
