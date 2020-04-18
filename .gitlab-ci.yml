@@ -38,3 +38,14 @@ test-sync-integration:
       - conf/*
   variables:
     MANIFEST_FILE: 'integration.xml'
+
+test-sync-next:
+  extends: .test-sync
+  only:
+    changes:
+      - next.xml
+      - setup-environment
+      - setup-environment-internal
+      - conf/*
+  variables:
+    MANIFEST_FILE: 'next.xml'
