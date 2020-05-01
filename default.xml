@@ -21,7 +21,7 @@
   <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="418f948282e5fec815f9b1b46337a1d8de431f1c"/>
   <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="d5cf98d28411b3dc0a63db2367df70ebf401d70c"/>
   <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="cc096714dfd8069eba39e290dba3d361a59e6073"/>
-  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="01c52c8dc7974f7345d0c5783783b3f70ad97fcf">
+  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="059dbfee8724019ce0a3f5a2bcf9aad394ed7944">
     <linkfile dest="setup-environment" src="scripts/setup-environment"/>
   </project>
 </manifest>
