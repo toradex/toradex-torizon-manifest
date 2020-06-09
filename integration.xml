@@ -12,7 +12,7 @@
   <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="ee95a399285abbde84e0148ca957b59d65bcad0a"/>
   <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="22738a7e7d0f3b06d9b793a2e5fe3515c1668cb2"/>
   <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="dbcc686f52c3c84db8cb86aa8973a4e373651b98"/>
-  <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="ca98b18db3b3132d970f8b9d3dedaab9b53d32ec"/>
+  <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="067487d1d4a823237eb6e7bbdebf9b023b58affa"/>
   <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="9e60d30669a2ad0598e9abf0cd15ee06b523986b"/>
   <project name="meta-security" path="layers/meta-security" remote="yocto" revision="ecd8c30af6b1b957b4fa814d3f25c40f060b3ac1"/>
   <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="1739961a0a52c10e2839a99ff67f619128bff921"/>
