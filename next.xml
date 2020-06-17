@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote fetch="https://github.com/freescale" name="fsl"/>
+  <remote fetch="https://github.com/openembedded" name="oe"/>
+  <remote fetch="https://github.com/advancedtelematic" name="ats"/>
+  <remote fetch="https://git.toradex.com" name="toradex-bsp"/>
+  <remote fetch="https://github.com/toradex" name="toradex-torizon"/>
+  <remote fetch="https://github.com/foundriesio" name="foundriesio"/>
+  <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
+
+  <project name="bitbake" remote="oe" revision="master"/>
+  <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="master"/>
+  <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="master"/>
+  <project name="meta-freescale-3rdparty" path="layers/meta-freescale-3rdparty" remote="fsl" revision="master"/>
+  <project name="meta-lmp" path="layers/meta-lmp" remote="foundriesio" revision="master"/>
+  <project name="meta-openembedded" path="layers/meta-openembedded" remote="oe" revision="master"/>
+  <project name="meta-security" path="layers/meta-security" remote="yocto" revision="master"/>
+  <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="master"/>
+  <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="master"/>
+  <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="master"/>
+  <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="master"/>
+  <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="master"/>
+  <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="master"/>
+  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="master">
+    <linkfile dest="setup-environment" src="scripts/setup-environment"/>
+  </project>
+</manifest>

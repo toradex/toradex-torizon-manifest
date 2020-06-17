@@ -7,7 +7,7 @@
   <remote fetch="https://github.com/toradex" name="toradex-torizon"/>
   <remote fetch="https://github.com/foundriesio" name="foundriesio"/>
   <remote fetch="https://git.yoctoproject.org/git/" name="yocto"/>
-  
+
   <project name="bitbake" remote="oe" revision="9a5dd1be63395c76d3fac2c3c7ba6557fe47b442"/>
   <project name="openembedded-core" path="layers/openembedded-core" remote="oe" revision="ff074f495dd4bb637618f790dd30e51e542cd30a"/>
   <project name="meta-freescale" path="layers/meta-freescale" remote="fsl" revision="6ca16f44b8a2d148e74cf9c1a2eb8790e0bb0d51"/>

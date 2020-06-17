@@ -8,17 +8,33 @@ before_script:
   - git config --global user.name "Gitlab CI"
   - git config --global user.email "gitlab@toradex.com"
 
-test-sync:
+.test-sync:
   stage: test
   script:
-    - repo init -u $CI_REPOSITORY_URL -b $CI_COMMIT_REF_NAME --no-clone-bundle
+    - repo init -u $CI_REPOSITORY_URL -b $CI_COMMIT_REF_NAME -m $MANIFEST_FILE --no-clone-bundle
     - repo sync --no-clone-bundle
     - repo info
     - source setup-environment
     - bitbake --parse-only
+
+test-sync-integration:
+  extends: .test-sync
   only:
     changes:
-      - default.xml
+      - integration.xml
       - setup-environment
       - setup-environment-internal
       - conf/*
+  variables:
+    MANIFEST_FILE: 'integration.xml'
+
+test-sync-next:
+  extends: .test-sync
+  only:
+    changes:
+      - next.xml
+      - setup-environment
+      - setup-environment-internal
+      - conf/*
+  variables:
+    MANIFEST_FILE: 'next.xml'
