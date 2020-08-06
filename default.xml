@@ -18,10 +18,10 @@
   <project name="meta-updater" path="layers/meta-updater" remote="ats" revision="1739961a0a52c10e2839a99ff67f619128bff921"/>
   <project name="meta-virtualization" path="layers/meta-virtualization" remote="yocto" revision="1bb515609594215aaf950555211e18c6c9a8e308"/>
   <project name="meta-yocto" path="layers/meta-yocto" remote="yocto" revision="2d2dc20359ca75203f2194415b53731ad8ff0066"/>
-  <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="926d09720bb3d6388b32736ab7fd63d71f443edc"/>
-  <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="5c82f9ec57e0676de240acaa40b78ce4d3cd2181"/>
+  <project name="meta-toradex-nxp.git" path="layers/meta-toradex-nxp" remote="toradex-bsp" revision="9e5be3ec9692276079804072784b80431892f206"/>
+  <project name="meta-toradex-bsp-common.git" path="layers/meta-toradex-bsp-common" remote="toradex-bsp" revision="cf3aca30b171672fe011b404d0c12378b7c79f5d"/>
   <project name="meta-toradex-distro.git" path="layers/meta-toradex-distro" remote="toradex-bsp" revision="276c966a04bbe4d19866becb3b8fc147d1079049"/>
-  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="cfd28e879310de6ce91f6ff45e60d048d0a9387d">
+  <project name="meta-toradex-torizon" path="layers/meta-toradex-torizon" remote="toradex-torizon" revision="91a0ad6fad89a9512ac8ffc4695a2dec4e0bd8fb">
     <linkfile dest="setup-environment" src="scripts/setup-environment"/>
   </project>
 </manifest>
