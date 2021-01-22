@@ -1,3 +1,11 @@
+# Deprecation notice
+
+*ATTENTION*!!! This project has been DEPRECATED.
+
+You must use the http://git.toradex.com/cgit/toradex-manifest.git/.
+
+Refer to the article [Build TorizonCore With Yocto](https://developer.toradex.com/knowledge-base/build-torizoncore) for more information.
+
 # TorizonCore
 
 Torizon is a new Linux-based software platform that simplifies the process of developing and maintaining embedded software. It allows you to configure the system for your use case quickly and easily, so you can focus on application development instead of Linux builds.
